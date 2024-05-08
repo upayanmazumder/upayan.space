@@ -9,6 +9,9 @@ export default component$(() => {
       <Hero />
 
       <div role="presentation" class="ellipsis"></div>
+      <div class="container">
+        TODO.. TODO.. TODO....
+      </div>
     </>
   );
 });
