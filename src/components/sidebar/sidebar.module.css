@@ -3,7 +3,8 @@
   top: 0;
   left: 0;
   bottom: 0;
-  background-color: #1a1a1a;
+  background-color: #1a1a1ab8;
+  backdrop-filter: blur(4px);
   color: #fff;
   width: 15%;
   padding: 20px;
