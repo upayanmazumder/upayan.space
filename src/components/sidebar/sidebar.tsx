@@ -27,13 +27,7 @@ export default component$(() => {
           <div class={styles.section}>
             <ul class={styles.navList}>
               <li><a href="/">Home</a></li>
-            </ul>
-          </div>
-          <div class={styles.section}>
-            <ul class={styles.navList}>
-              <li><a href="/privacy-policy">Privacy Policy</a></li>
-              <li><a href="/terms-of-service">Terms of Service</a></li>
-              <li><a href="/cookies">Cookies Policy</a></li>
+              <li><a href="/blog">Blog</a></li>
             </ul>
           </div>
         </div>
