@@ -4,7 +4,11 @@ import { component$, $ } from "@builder.io/qwik";
 import styles from "./sidebar.module.css";
 import upayanlogo from "../../media/upayan.png";
 import hamburgerIcon from "../../media/hamburger.svg";
-
+import instagramIcon from "../../media/instagram.png";
+import githubIcon from "../../media/github.png";
+import linkedinIcon from "../../media/linkedin.png";
+import facebookIcon from "../../media/facebook.png"
+import pinterestIcon from "../../media/pinterest.png"
 export default component$(() => {
   const toggleSidebar = $(() => {
     const sidebar = document.querySelector(`.${styles.sidebar}`);
@@ -36,12 +40,11 @@ export default component$(() => {
       {/* Social Media Icons and GitHub Sponsor Button */}
       <div class={styles.socialContainer}>
         <div class={styles.socialIcons}>
-          <a href="https://www.instagram.com/_._upayan_._/" target="_blank" rel="noopener">
-            <img src="https://img.icons8.com/?size=256&id=Xy10Jcu1L2Su&format=png" alt="Instagram" />
-          </a>
-          <a href="https://github.com/upayanmazumder" target="_blank" rel="noopener">
-            <img src="https://img.icons8.com/?size=256&id=52539&format=png" alt="GitHub" />
-          </a>
+          <a href="https://github.com/upayanmazumder" target="_blank" rel="noopener noreferrer"><img src={githubIcon} alt="GitHub" /></a>
+          <a href="https://www.instagram.com/_._upayan_._/" target="_blank" rel="noopener noreferrer"><img src={instagramIcon} alt="Instagram" /></a>
+          <a href="https://www.linkedin.com/in/upayanmazumder/" target="_blank" rel="noopener noreferrer"><img src={linkedinIcon} alt="LinkedIn" /></a>
+          <a href="https://www.facebook.com/upayan.mazumder" target="_blank" rel="noopener noreferrer"><img src={facebookIcon} alt="Facebook" /></a>
+          <a href="https://in.pinterest.com/upayanmazumder/" target="_blank" rel="noopener noreferrer"><img src={pinterestIcon} alt="Pinterest" /></a>
         </div>
       </div>
     </aside>
