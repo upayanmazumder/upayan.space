@@ -126,15 +126,26 @@ button {
   color: white;
   cursor: pointer;
   font-size: 0.8rem;
-  padding: 15px 20px;
+  padding: 10px 14px;
   text-align: center;
+  position: relative;
+  overflow: hidden;
 }
 
 a.button,
 button:hover::after {
   content: "⤤";
   margin-left: 5px;
+  position: absolute;
+  left: 90%;
+  transition: left 0.3s ease;
 }
+
+a.button:hover::after,
+button:hover::after {
+  left: calc(100% - 30px);
+}
+
 
 a.button.button-dark,
 button.button-dark {

@@ -32,11 +32,23 @@
 }
 
 button.linkedin-button {
-  background-color: #0762C8;
+  background-color: #0662be;
 }
 
 button.github-button {
   background-color: black;
+}
+
+button.instagram-button {
+  background-color: #f223d8;
+}
+
+button.facebook-button {
+  background-color: #0966ff;
+}
+
+button.pinterest-button {
+  background-color: #e20123;
 }
 
 @media screen and (min-width: 768px) {
