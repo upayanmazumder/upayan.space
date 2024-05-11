@@ -1,23 +1,20 @@
-.anchor {
-  color: white !important;
-  display: block;
-  font-size: 0.8rem;
+.footer {
+  background-color: #00000062;
+  padding: 20px;
   text-align: center;
+}
+
+.anchor {
+  color: #9c9c9c;
   text-decoration: none;
-  line-height: 1.5;
 }
 
-.anchor span:not(.spacer) {
-  display: block;
+.anchor:hover {
+  color: #007bff;
 }
 
-.spacer {
-  display: none;
-  padding: 0 15px;
-}
-
-@media screen and (min-width: 768px) {
-  .anchor span {
-    display: inline !important;
+@media (max-width: 768px) {
+  .footer {
+    padding: 10px;
   }
 }

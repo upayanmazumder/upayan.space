@@ -17,6 +17,7 @@
   z-index: -1;
   opacity: 0.2;
   pointer-events: none;
+  top: -180px;
 }
 
 .hero p {
@@ -29,6 +30,14 @@
   display: flex;
   flex-direction: row;
   gap: 24px;
+}
+
+button.linkedin-button {
+  background-color: #0762C8;
+}
+
+button.github-button {
+  background-color: black;
 }
 
 @media screen and (min-width: 768px) {

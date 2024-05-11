@@ -1,8 +1,7 @@
-/* Base styles */
 .header {
   background-color: transparent;
   height: fit-content;
-  padding: 20px 15px; /* Adjust padding for smaller screens */
+  padding: 20px 15px;
 }
 
 .wrapper {
@@ -26,13 +25,12 @@
   list-style: none;
   margin: 0;
   padding: 0;
+  display: flex; /* Display navigation items as flex items */
 }
 
 .navbar ul li {
-  display: block; /* Display list items vertically */
-  margin-bottom: 10px; /* Add margin between list items */
   border-radius: 5px;
-  padding: 10px 15px; /* Adjust padding for smaller screens */
+  padding: 10px 15px;
   transition: background-color 0.2s ease;
 }
 
@@ -41,13 +39,13 @@
 }
 
 .navbar ul li:first-child {
-  margin-top: 0; /* Remove margin from the first list item */
+  margin-left: 0;
 }
 
 .navbar ul li a {
   color: white;
   text-decoration: none;
-  font-size: 16px; /* Adjust font size for smaller screens */
+  font-size: 16px;
 }
 
 /* Media queries for responsiveness */
@@ -58,17 +56,25 @@
 
   .logo img {
     max-width: 50px;
-    height: 100%;
-    width: 100%;
+    height: auto;
+  }
+
+  .contentWrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar ul {
+    text-align: center;
+    flex-direction: column; /* Display navigation items in a column on smaller screens */
   }
 
   .navbar ul li {
-    display: inline-block; /* Revert back to horizontal layout */
-    margin-bottom: 0;
-    margin-left: 20px; /* Add margin between list items */
+    display: block;
+    margin: 0 auto 10px;
   }
 
   .navbar ul li:first-child {
-    margin-left: 0; /* Remove margin from the first list item */
+    margin-top: 0;
   }
 }

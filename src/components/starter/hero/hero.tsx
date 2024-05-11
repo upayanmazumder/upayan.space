@@ -12,9 +12,9 @@ export default component$(() => {
         to have <span class="highlight">you</span> here
       </h1>
       <div class={styles["button-group"]}>
-        {/*Youtube Button*/}
+        {/*LinkedIn Button*/}
         <button
-          class={styles["youtube-button"]}
+          class={styles["linkedin-button"]}
           onClick$={async (evt) => {
             // Get button position
             const buttonRect = evt.target.getBoundingClientRect();
@@ -76,15 +76,15 @@ export default component$(() => {
 
             // Open website in new tab after animation
             setTimeout(() => {
-              window.open("https://www.youtube.com/@G9AEROSPACEYT", "_blank");
+              window.open("https://www.linkedin.com/in/upayanmazumder/", "_blank");
             }, 990); // Adjust the delay time as needed
           }}
         >
-          Youtube
+          LinkedIn
         </button>
-        {/*BuyMeaCoffee Button*/}
+        {/*Github Button*/}
         <button
-          class={styles["bmc-button"]}
+          class={styles["github-button"]}
           onClick$={async (evt) => {
             // Get button position
             const buttonRect = evt.target.getBoundingClientRect();
@@ -146,11 +146,11 @@ export default component$(() => {
 
             // Open website in new tab after animation
             setTimeout(() => {
-              window.open("https://buymeacoffee.com/g9aerospace", "_blank");
+              window.open("https://github.com/upayanmazumder", "_blank");
             }, 990); // Adjust the delay time as needed
           }}
         >
-          Buy me a jet!
+          Github
         </button>
       </div>
     </div>
