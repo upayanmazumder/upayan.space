@@ -132,6 +132,12 @@ button {
   text-align: center;
 }
 
+a.button,
+button:hover::after {
+  content: "⤤";
+  margin-left: 5px;
+}
+
 a.button.button-dark,
 button.button-dark {
   background: var(--qwik-dirty-black);
