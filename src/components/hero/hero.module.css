@@ -4,12 +4,11 @@
   align-items: center;
   justify-content: center;
   gap: 40px;
-  height: 100vh;
 }
 
 .hero-image {
   width: 100vw;
-  height: 100vh;
+  height: fit-content;
   position: absolute;
   object-fit: cover;
   z-index: -1;
