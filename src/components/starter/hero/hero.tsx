@@ -15,14 +15,7 @@ export default component$(() => {
         {/*LinkedIn Button*/}
         <button
           class={styles["linkedin-button"]}
-          onClick$={async (evt) => {
-            // Get button position
-            const buttonRect = evt.target.getBoundingClientRect();
-
-            // Calculate position relative to the viewport
-            const x = buttonRect.left + buttonRect.width / 2;
-            const y = buttonRect.top + buttonRect.height / 2;
-
+          onClick$={async () => {
             const defaults = {
               spread: 360,
               ticks: 70,
@@ -31,8 +24,8 @@ export default component$(() => {
               startVelocity: 30,
               colors: ["006ce9", "ac7ff4", "18b6f6", "713fc2", "ffffff"],
               origin: {
-                x: x / window.innerWidth, // Convert to relative position
-                y: y / window.innerHeight, // Convert to relative position
+                x: 0.5,
+                y: 0.35,
               },
             };
 
@@ -73,26 +66,14 @@ export default component$(() => {
             setTimeout(shoot, 200);
             setTimeout(shoot, 300);
             setTimeout(shoot, 400);
-
-            // Open website in new tab after animation
-            setTimeout(() => {
-              window.open("https://www.linkedin.com/in/upayanmazumder/", "_blank");
-            }, 990); // Adjust the delay time as needed
           }}
         >
-          LinkedIn
+          Time to celebrate
         </button>
         {/*Github Button*/}
         <button
           class={styles["github-button"]}
-          onClick$={async (evt) => {
-            // Get button position
-            const buttonRect = evt.target.getBoundingClientRect();
-
-            // Calculate position relative to the viewport
-            const x = buttonRect.left + buttonRect.width / 2;
-            const y = buttonRect.top + buttonRect.height / 2;
-
+          onClick$={async () => {
             const defaults = {
               spread: 360,
               ticks: 70,
@@ -101,8 +82,8 @@ export default component$(() => {
               startVelocity: 30,
               colors: ["006ce9", "ac7ff4", "18b6f6", "713fc2", "ffffff"],
               origin: {
-                x: x / window.innerWidth, // Convert to relative position
-                y: y / window.innerHeight, // Convert to relative position
+                x: 0.5,
+                y: 0.35,
               },
             };
 
@@ -143,14 +124,9 @@ export default component$(() => {
             setTimeout(shoot, 200);
             setTimeout(shoot, 300);
             setTimeout(shoot, 400);
-
-            // Open website in new tab after animation
-            setTimeout(() => {
-              window.open("https://github.com/upayanmazumder", "_blank");
-            }, 990); // Adjust the delay time as needed
           }}
         >
-          Github
+          Time to celebrate
         </button>
       </div>
     </div>

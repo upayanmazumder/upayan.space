@@ -1,6 +1,6 @@
 .footer {
-  background-color: #00000062;
-  padding: 20px;
+  background-color: transparent;
+  padding: 15px;
   text-align: center;
 }
 
@@ -10,7 +10,7 @@
 }
 
 .anchor:hover {
-  color: #007bff;
+  cursor:default;
 }
 
 @media (max-width: 768px) {
