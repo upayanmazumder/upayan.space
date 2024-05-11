@@ -4,7 +4,7 @@ import HeroImage from "../../../media/mig21-1.png?jsx";
 
 export default component$(() => {
   return (
-    <div class={["container", styles.hero]}>
+    <div class={[styles.hero]}>
       <HeroImage class={styles["hero-image"]} alt="Hero Image" />
       <h1>
         So <span class="highlight">fantastic</span>

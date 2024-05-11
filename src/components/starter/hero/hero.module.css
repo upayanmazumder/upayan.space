@@ -1,23 +1,22 @@
 .hero {
   display: flex;
-  vertical-align: middle;
   flex-direction: column;
-  flex-wrap: nowrap;
   align-items: center;
-  height: 450px;
   justify-content: center;
   gap: 40px;
+  height: 100vh;
 }
 
 .hero-image {
-  width: 100%;
+  width: 100vw;
+  height: 100vh;
   position: absolute;
-  height: auto;
   object-fit: cover;
   z-index: -1;
   opacity: 0.2;
   pointer-events: none;
-  top: -180px;
+  top: 0;
+  left: 0;
 }
 
 .hero p {
@@ -43,7 +42,7 @@ button.github-button {
 @media screen and (min-width: 768px) {
   .hero {
     gap: 60px;
-    height: 500px;
+    height: 100vh;
   }
 
   .hero p {
