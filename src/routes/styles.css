@@ -1,5 +1,4 @@
-/* Import Red Hat font from Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Text:wght@400;700&display=swap');
+/* THIS FILE IS JUST FOR EXAMPLES, DELETE IT IF YOU DON'T NEED IT */
 
 /* SHELL ---------------------------------------- */
 html {
@@ -24,9 +23,6 @@ body {
   background: var(--qwik-dark-background);
   color: var(--qwik-dark-text);
   overflow-x: hidden;
-  margin: 10px 15% 30px;
-  padding: 10px 2% 10px;
-  font-family: 'Red Hat Text', sans-serif;
 }
 
 /* HEADINGS ------------------------------------- */
@@ -58,7 +54,7 @@ h3 {
   font-size: 2rem;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (min-width: 768px) {
   h1 {
     font-size: 5rem;
   }
@@ -67,10 +63,6 @@ h3 {
   }
   h3 {
     font-size: 3rem;
-  }
-  body {
-    margin: 0px;
-    padding: 0px;
   }
 }
 
@@ -94,7 +86,7 @@ ul {
 /* CONTAINER ------------------------------------ */
 .container {
   margin: 0 auto;
-  padding: 1.5px 5px;
+  padding: 30px 40px;
 }
 .container.container-purple {
   background: var(--qwik-light-purple);
@@ -106,41 +98,38 @@ ul {
 .container.container-center {
   text-align: center;
 }
+.container.container-flex {
+  /* does nothing on mobile */
+}
 .container.container-spacing-xl {
-  padding: 4px 10px;
+  padding: 50px 40px;
 }
 
 @media screen and (min-width: 768px) {
   .container {
-    padding: 60px 5%; /* Adjusted padding for smaller screens */
+    padding: 60px 80px;
   }
   .container.container-spacing-xl {
-    padding: 100px 5%; /* Adjusted padding for smaller screens */
+    padding: 100px 60px;
   }
   .container.container-flex {
     display: flex;
     justify-content: center;
-    gap: 30px; /* Adjusted gap for smaller screens */
+    gap: 60px;
   }
 }
 
 /* BUTTONS -------------------------------------- */
 a.button,
 button {
-  background: var(--qwik-dark-blue);
+  background: var(--qwik-light-blue);
   border: none;
-  border-radius: var(--medium-border-radius);
+  border-radius: 8px;
   color: white;
   cursor: pointer;
   font-size: 0.8rem;
   padding: 15px 20px;
   text-align: center;
-  transition: background-color 0.2s ease;
-}
-
-button:hover {
-  background-color: var(--qwik-light-blue);
-  transition: background-color 0.3s ease;
 }
 
 a.button.button-dark,
@@ -187,46 +176,6 @@ button.button-small {
   );
   transform: rotate(-5deg);
 }
-.ellipsis.ellipsis-blue {
-  top: 1350px;
-  left: -100px;
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(34, 88, 215, 0.5) 0%,
-    rgba(21, 25, 52, 0) 100%
-  );
-  transform: rotate(-5deg);
-}
-.ellipsis.ellipsis-green {
-  top: 1350px;
-  left: -100px;
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(2, 255, 48, 0.5) 0%,
-    rgba(21, 25, 52, 0) 100%
-  );
-  transform: rotate(-5deg);
-}
-.ellipsis.ellipsis-red {
-  top: 1350px;
-  left: -100px;
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(168, 0, 0, 0.5) 0%,
-    rgba(21, 25, 52, 0) 100%
-  );
-  transform: rotate(-5deg);
-}
-.ellipsis.ellipsis-yellow {
-  top: 1350px;
-  left: -100px;
-  background: radial-gradient(
-    50% 50% at 50% 50%,
-    rgba(219, 246, 48, 0.41) 0%,
-    rgba(52, 35, 21, 0) 100%
-  );
-  transform: rotate(-5deg);
-}
 
 @media screen and (min-width: 768px) {
   .ellipsis {
@@ -237,26 +186,6 @@ button.button-small {
   }
   .ellipsis.ellipsis-purple {
     top: 1300px;
-    left: -200px;
-  }
-  .ellipsis.ellipsis-blue {
-    top: 1300px;
-    left: -200px;
-  }
-  .ellipsis.ellipsis-red {
-    top: -100px;
-    left: 350px;
-    width: 1400px;
-    height: 800px;
-  }
-  .ellipsis.ellipsis-green {
-    top: -100px;
-    left: 350px;
-    width: 1400px;
-    height: 800px;
-  }
-  .ellipsis.ellipsis-yellow {
-    top: 800px;
     left: -200px;
   }
 }
@@ -281,48 +210,5 @@ button.button-small {
 }
 
 .icon-community:before {
-  background-image: url("data:image/svg+xml,%3Csvg fill='%23ffffff' width='20px' height='20px' viewBox='0 0 256 256' id='Flat' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M246.40381 143.19434a4.00061 4.00061 0 0 1-5.60108-.7959A55.57857 55.57857 0 0 0 196 120a4 4 0 0 1 0-8 28 28 0 1 0-27.50732-33.26074 4.00013 4.00013 0 0 1-7.85987-1.49219 36.00191 36.00191 0 1 1 54.06494 37.50513 63.58068 63.58068 0 0 1 32.50147 22.84155A3.99993 3.99993 0 0 1 246.40381 143.19434Zm-57.24268 71.05273a3.9998 3.9998 0 1 1-7.1914 3.50391 60.02582 60.02582 0 0 0-107.93946 0 3.9998 3.9998 0 1 1-7.1914-3.50391a67.56008 67.56008 0 0 1 40.90625-35.20581 44 44 0 1 1 40.50976 0A67.56139 67.56139 0 0 1 189.16113 214.24707ZM128 176a36 36 0 1 0-36-36A36.04061 36.04061 0 0 0 128 176ZM60 112A28 28 0 1 1 87.50732 78.73828a3.99989 3.99989 0 1 0 7.85938-1.49219A36.00177 36.00177 0 1 0 41.30225 114.7522 63.5829 63.5829 0 0 0 8.79883 137.5957a4 4 0 1 0 6.39648 4.80469A55.58072 55.58072 0 0 1 60 120a4 4 0 0 0 0-8Z'/%3E%3C/svg%3E");
-}
-
-/* SCROLLBAR ------------------------------------ */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.173);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: rgba(255, 255, 255, 0.286);
-}
-
-::-webkit-scrollbar-thumb:active {
-  background: rgba(255, 255, 255, 0.599);
-}
-
-/* BUTTONS -------------------------------------- */
-.scroll-button {
-  position: fixed;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 40px;
-  height: 40px;
-  background: #000;
-  color: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 9999;
-}
-
-.scroll-button-left {
-  left: 10px;
-}
-
-.scroll-button-right {
-  right: 10px;
+  background-image: url("data:image/svg+xml,%3Csvg fill='%23ffffff' width='20px' height='20px' viewBox='0 0 256 256' id='Flat' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M246.40381 143.19434a4.00061 4.00061 0 0 1-5.60108-.7959A55.57857 55.57857 0 0 0 196 120a4 4 0 0 1 0-8 28 28 0 1 0-27.50732-33.26074 4.00013 4.00013 0 0 1-7.85987-1.49219 36.00191 36.00191 0 1 1 54.06494 37.50513 63.58068 63.58068 0 0 1 32.50147 22.84155A3.99993 3.99993 0 0 1 246.40381 143.19434Zm-57.24268 71.05273a3.9998 3.9998 0 1 1-7.1914 3.50391 60.02582 60.02582 0 0 0-107.93946 0 3.9998 3.9998 0 1 1-7.1914-3.50391 67.56008 67.56008 0 0 1 40.90625-35.20581 44 44 0 1 1 40.50976 0A67.56139 67.56139 0 0 1 189.16113 214.24707ZM128 176a36 36 0 1 0-36-36A36.04061 36.04061 0 0 0 128 176ZM60 112A28 28 0 1 1 87.50732 78.73828a3.99989 3.99989 0 1 0 7.85938-1.49219A36.00177 36.00177 0 1 0 41.30225 114.7522 63.5829 63.5829 0 0 0 8.79883 137.5957a4 4 0 1 0 6.39648 4.80469A55.58072 55.58072 0 0 1 60 120a4 4 0 0 0 0-8Z'/%3E%3C/svg%3E");
 }

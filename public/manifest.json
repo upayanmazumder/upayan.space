@@ -1,9 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "name": "Upayan",
-  "short_name": "Upayan",
+  "name": "qwik-project-name",
+  "short_name": "Welcome to Qwik",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#267bfc",
-  "description": "G9 Aerospace's Website"
+  "background_color": "#fff",
+  "description": "A Qwik project app."
 }
