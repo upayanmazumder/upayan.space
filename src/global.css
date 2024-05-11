@@ -9,10 +9,10 @@
 :root {
   --qwik-dark-blue: #006ce9;
   --qwik-light-blue: #18b6f6;
-  --qwik-light-purple: #ac7ff4;
-  --qwik-dark-purple: #713fc2;
-  --qwik-dirty-black: #1d2033;
-  --qwik-dark-background: #151934;
+  --qwik-light-purple: #2e4ede;
+  --qwik-dark-purple: #1a3265;
+  --qwik-dirty-black: #1c1f32;
+  --qwik-dark-background: #212d3b;
   --qwik-dark-text: #ffffff;
 }
 
