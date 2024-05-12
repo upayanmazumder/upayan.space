@@ -2,15 +2,9 @@
   background-color: transparent;
   padding: 15px;
   text-align: center;
-}
-
-.anchor {
-  color: #9c9c9c;
-  text-decoration: none;
-}
-
-.anchor:hover {
-  cursor:default;
+  height: fit-content;
+  width: 100vw;
+  margin: 0;
 }
 
 @media (max-width: 768px) {

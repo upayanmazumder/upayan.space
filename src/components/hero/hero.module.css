@@ -1,22 +1,11 @@
+/* Base styles */
 .hero {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 40px;
-  height: 100vh;
-}
-
-.hero-image {
-  width: 100vw;
-  height: 100vh;
-  position: absolute;
-  object-fit: cover;
-  z-index: -1;
-  opacity: 0.2;
-  pointer-events: none;
-  top: 0;
-  left: 0;
+  height: 80vh;
+  max-height: min-content;
 }
 
 .hero p {
@@ -25,12 +14,26 @@
   font-size: 1rem;
 }
 
+h1 {
+  padding-bottom: 40px;
+}
+
 .button-group {
   display: flex;
   flex-direction: row;
   gap: 24px;
 }
 
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Button specific styles */
 button.linkedin-button {
   background-color: #0662be;
 }
@@ -51,13 +54,19 @@ button.pinterest-button {
   background-color: #e20123;
 }
 
-@media screen and (min-width: 768px) {
+/* Media queries for smaller devices */
+@media screen and (max-width: 768px) {
   .hero {
-    gap: 60px;
-    height: 100vh;
+    height: auto;
+    padding: 40px 20px;
+  }
+  
+  .hero p {
+    font-size: 0.8rem;
   }
 
-  .hero p {
-    font-size: 1.3rem;
+  .button-group {
+    flex-direction: column;
+    gap: 16px;
   }
 }

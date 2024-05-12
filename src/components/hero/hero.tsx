@@ -1,15 +1,13 @@
 import { component$ } from "@builder.io/qwik";
 import styles from "./hero.module.css";
-import HeroImage from "../../media/mig21-1.png?jsx";
 
 export default component$(() => {
   return (
     <div class={[styles.hero]}>
-      <HeroImage class={styles["hero-image"]} alt="Hero Image" />
       <h1>
-        So <span class="highlight">fantastic</span>
+        <span class="highlight">Welcome </span>to
         <br />
-        to have <span class="highlight">you</span> here
+        <span class="highlight">upayan.space</span>!!!
       </h1>
       <div class={styles["button-group"]}>
         {/*LinkedIn Button*/}
