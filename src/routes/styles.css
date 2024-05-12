@@ -241,6 +241,7 @@ button.button-small {
 /* SCROLLBAR ------------------------------------ */
 ::-webkit-scrollbar {
   width: 8px;
+  background-color: #000000;
 }
 
 ::-webkit-scrollbar-thumb {

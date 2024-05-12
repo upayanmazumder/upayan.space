@@ -5,9 +5,9 @@ export default component$(() => {
   return (
     <div class={[styles.hero]}>
       <h1>
-        So <span class="highlight">fantastic</span>
+        <span class="highlight">Welcome </span>to
         <br />
-        to have <span class="highlight">you</span> here
+        <span class="highlight">upayan.space</span>!!!
       </h1>
       <div class={styles["button-group"]}>
         {/*LinkedIn Button*/}
