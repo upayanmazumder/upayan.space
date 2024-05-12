@@ -8,39 +8,12 @@
 
 :root {
   --qwik-dark-blue: #006ce9;
-  --qwik-light-blue: #5797ff;
-  --qwik-light-purple: #74a5f3;
-  --qwik-dark-purple: #0a1992;
-  --qwik-dirty-black: #1d2033;
-  --qwik-dark-background: #151e2c;
+  --qwik-light-blue: #18b6f6;
+  --qwik-light-purple: #2e4ede;
+  --qwik-dark-purple: #1a3265;
+  --qwik-dirty-black: #1c1f32;
+  --qwik-dark-background: #212d3b;
   --qwik-dark-text: #ffffff;
-
-  --section-border-radius: var(--medium-border-radius);
-  --section-background-color: #ffffff17;
-  --section-padding: 20px auto;
-
-  --small-padding: 5px;
-  --medium-padding: 10px;
-  --large-padding: 20px;
-
-  --item-background-color: #0000002e;
-  --item-border-radius: var(--small-border-radius);
-  --item-margin-tb: 5px;
-  --item-margin-lr: 5px;
-  --item-padding-tb: 4px;
-  --item-padding-lr: 4px;
-
-  --item-list-border-radius: var(--medium-border-radius);
-  --item-list-margin-tb: 10px;
-  --item-list-margin-lr: 10px;
-  --item-list-padding-tb: 7px;
-  --item-list-padding-lr: 5px;
-
-  --small-border-radius: 3px;
-  --medium-border-radius: 8px;
-  --large-border-radius: 15px;
-  
-  --hover-background-color:  #ffffff11;
 }
 
 html {
@@ -49,12 +22,25 @@ html {
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
-  font-family: 'Red Hat Text', sans-serif;
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    "Helvetica Neue",
+    Arial,
+    "Noto Sans",
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji";
 }
 
 body {
   padding: 0;
   margin: 0;
   line-height: inherit;
-  font-family: 'Red Hat Text', sans-serif;
 }

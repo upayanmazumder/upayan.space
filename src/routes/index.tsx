@@ -7,21 +7,16 @@ export default component$(() => {
   return (
     <>
       <Hero />
-
-      <div role="presentation" class="ellipsis"></div>
-      <div class="container">
-        TODO.. TODO.. TODO....
-      </div>
     </>
   );
 });
 
 export const head: DocumentHead = {
-  title: "",
+  title: "Upayan",
   meta: [
     {
       name: "description",
-      content: "Welcome to Upayan's website!",
+      content: "Portfolio Site",
     },
   ],
 };

@@ -1,7 +1,6 @@
 {
-  "name": "upayan.space",
-  "description": "Source code of upayan.space. Built in Qwik",
-  "version": "1.0.0",
+  "name": "my-qwik-basic-starter",
+  "description": "Demo App with Routing built-in (recommended)",
   "engines": {
     "node": "^18.17.0 || ^20.3.0 || >=21.0.0"
   },

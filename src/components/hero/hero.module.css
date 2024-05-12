@@ -1,43 +1,22 @@
 .hero {
   display: flex;
-  vertical-align: middle;
   flex-direction: column;
-  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
   gap: 40px;
-  height: 60vh;
+  height: 100vh;
 }
 
 .hero-image {
-  width: 110vw;
+  width: 100vw;
+  height: 100vh;
   position: absolute;
-  height: auto;
   object-fit: cover;
   z-index: -1;
-  opacity: 0.3;
+  opacity: 0.2;
   pointer-events: none;
-  animation: moveBackground 8s ease-in-out infinite;
-  filter: blur(4px); 
-}
-
-@keyframes moveBackground {
-  0%, 100% {
-    margin-left: 0;
-    transform: translateX(0) rotate(0deg);
-  }
-  25% {
-    margin-left: -20px; /* Move left 20px in 3 seconds */
-    transform: translateX(0) rotate(-5deg);
-  }
-  50% {
-    margin-left: -10px; /* Move right 10px in 2 seconds */
-    transform: translateX(0) rotate(2.5deg);
-  }
-  75% {
-    margin-left: 10px; /* Move left 10px in 2 seconds */
-    transform: translateX(0) rotate(-2.5deg);
-  }
+  top: 0;
+  left: 0;
 }
 
 .hero p {
@@ -46,16 +25,39 @@
   font-size: 1rem;
 }
 
-/* Media query for smaller screens */
-@media screen and (max-width: 768px) {
+.button-group {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+button.linkedin-button {
+  background-color: #0662be;
+}
+
+button.github-button {
+  background-color: black;
+}
+
+button.instagram-button {
+  background-color: #f223d8;
+}
+
+button.facebook-button {
+  background-color: #0966ff;
+}
+
+button.pinterest-button {
+  background-color: #e20123;
+}
+
+@media screen and (min-width: 768px) {
   .hero {
-    height: auto;
-    margin-top: 20px;
-    padding: 40px 20px;
-    text-align: center;
+    gap: 60px;
+    height: 100vh;
   }
 
-  .hero-image {
-  display: none;
+  .hero p {
+    font-size: 1.3rem;
   }
 }
