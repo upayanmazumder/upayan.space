@@ -20,11 +20,14 @@ html {
 }
 
 body {
-  background: var(--qwik-dark-background);
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../media//mig21-1.png);
+  background-size: cover;
   color: var(--qwik-dark-text);
   overflow-x: hidden;
   height: fit-content;
+  backdrop-filter: blur(5px);
 }
+
 
 /* HEADINGS ------------------------------------- */
 h1,
@@ -232,7 +235,6 @@ button.button-small {
 /* SCROLLBAR ------------------------------------ */
 ::-webkit-scrollbar {
   width: 8px;
-  background: rgb(40, 62, 81);
 }
 
 ::-webkit-scrollbar-thumb {

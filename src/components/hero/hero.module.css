@@ -3,19 +3,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 40px;
-}
-
-.hero-image {
-  width: 100vw;
-  height: fit-content;
-  position: absolute;
-  object-fit: cover;
-  z-index: -1;
-  opacity: 0.2;
-  pointer-events: none;
-  top: 0;
-  left: 0;
+  height: 80vh;
+  max-height: min-content;
 }
 
 .hero p {
@@ -24,6 +13,9 @@
   font-size: 1rem;
 }
 
+h1 {
+  padding-bottom: 20px;
+}
 .button-group {
   display: flex;
   flex-direction: row;
@@ -50,7 +42,7 @@ button.pinterest-button {
   background-color: #e20123;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
   .hero {
     gap: 60px;
     height: 100vh;
@@ -58,5 +50,10 @@ button.pinterest-button {
 
   .hero p {
     font-size: 1.3rem;
+  }
+
+  .button-group {
+    flex-direction: column;
+    gap: 5px;
   }
 }
