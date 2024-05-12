@@ -46,6 +46,7 @@ button.pinterest-button {
   .hero {
     gap: 60px;
     height: 100vh;
+    justify-content: space-around;
   }
 
   .hero p {

@@ -28,6 +28,12 @@ body {
   backdrop-filter: blur(5px);
 }
 
+@media screen and (max-width: 768px) {
+  body {
+    background-image: none;
+    background-color: #004fcf;
+  }
+}
 
 /* HEADINGS ------------------------------------- */
 h1,
