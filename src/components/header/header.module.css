@@ -1,7 +1,6 @@
 .header {
-  background-color: transparent;
   height: fit-content;
-  padding: 20px 15px;
+  padding: 20px 100px;
 }
 
 .wrapper {
@@ -25,7 +24,7 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  display: flex; /* Display navigation items as flex items */
+  display: flex;
 }
 
 .navbar ul li {
@@ -66,7 +65,7 @@
 
   .navbar ul {
     text-align: center;
-    flex-direction: column; /* Display navigation items in a column on smaller screens */
+    flex-direction: column;
   }
 
   .navbar ul li {

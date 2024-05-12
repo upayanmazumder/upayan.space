@@ -5,7 +5,7 @@ import styles from "./footer.module.css";
 export default component$(() => {
   return (
     <footer class={styles.footer}>
-        <span>©️ upayan.space</span>
+        <span>©️ Upayan 2024</span>
     </footer>
   );
 });
