@@ -14,6 +14,14 @@
   --qwik-dirty-black: #1c1f32;
   --qwik-dark-background: #212d3b;
   --qwik-dark-text: #ffffff;
+
+  /* nav styles used in blog */
+  --background-color: rgba(0, 0, 0, 0.7);
+  --primary-color: #1e3a8a;
+  --secondary-color: #2563eb;
+  --text-color: #ffffff;
+  --hover-bg-color: #529de886;
+  --hover-text-color: #98b6f7;
 }
 
 html {
