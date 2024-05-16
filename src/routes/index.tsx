@@ -5,9 +5,9 @@ import Hero from "../components/hero/hero";
 
 export default component$(() => {
   return (
-    <>
+    <div class="override-background">
       <Hero />
-    </>
+    </div>
   );
 });
 
