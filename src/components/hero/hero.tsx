@@ -4,11 +4,11 @@ import styles from "./hero.module.css";
 export default component$(() => {
   return (
     <div class={[styles.hero]}>
-      <h1>
-        <span class="highlight">Welcome </span>to
-        <br />
-        <span class="highlight">upayan.space</span>!!!
-      </h1>
+    <h1>
+      <span class="highlight">Hello!</span> I'm
+      <br />
+      <span class="highlight">Upayan</span>
+    </h1>
       <div class={styles["button-group"]}>
         {/*LinkedIn Button*/}
           <button
