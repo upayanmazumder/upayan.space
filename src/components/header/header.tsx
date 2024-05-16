@@ -1,4 +1,5 @@
 import { component$ } from "@builder.io/qwik";
+import { HiHomeOutline, HiDocumentDuplicateOutline } from "@qwikest/icons/heroicons";
 import styles from "./header.module.css";
 import upayan from "../../media/upayan.svg";
 
@@ -12,8 +13,8 @@ export default component$(() => {
           </div>
           <nav class={styles.navbar}>
             <ul>
-              <li><a href="/">Home</a></li>
-              <li><a href="/blog">Blog</a></li>
+              <li><a href="/"><HiHomeOutline /> Home</a></li>
+              <li><a href="/blog"><HiDocumentDuplicateOutline />Blog</a></li>
             </ul>
           </nav>
         </div>
