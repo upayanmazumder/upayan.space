@@ -21,13 +21,18 @@ html {
 }
 
 body {
-  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../media//mig21-1.png);
+  background-color: #000000;
   background-size: cover;
   color: var(--qwik-dark-text);
   overflow-x: hidden;
   height: fit-content;
   backdrop-filter: blur(5px);
 }
+
+.override-background {
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../media/mig21-1.png) !important;
+}
+
 
 @media screen and (max-width: 768px) {
   body {

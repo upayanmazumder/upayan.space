@@ -1,0 +1,14 @@
+.introduction {
+    padding: 15px 20%;
+    background-color: rgba(43, 43, 43, 0.7);
+    height: 300px;
+    text-align: center;
+}
+
+.introduction h1 {
+    color: rgb(28, 114, 236);
+}
+
+.introduction p {
+    color:rgb(111, 175, 231);
+}
