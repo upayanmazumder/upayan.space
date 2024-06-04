@@ -67,7 +67,7 @@ export default component$(() => {
 
               // Open website in new tab after animation
               setTimeout(() => {
-                window.open("https://github.com/upayanmazumder", "_blank");
+                window.open("https://ds.study.iitm.ac.in/student/24F2002974", "_blank");
               }, 990); // Adjust the delay time as needed
             }}
           >
