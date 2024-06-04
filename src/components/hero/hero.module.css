@@ -31,6 +31,7 @@ button {
   color: white;
   font-size: 1rem;
   cursor: pointer;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 /* Button specific styles */
@@ -40,6 +41,12 @@ button.linkedin-button {
 
 button.github-button {
   background-color: black;
+}
+
+button.IIT-M-button {
+  background-color: #2a0908;
+  color: #d6a64f;
+
 }
 
 button.instagram-button {
