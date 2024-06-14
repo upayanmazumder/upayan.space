@@ -46,7 +46,10 @@ button.github-button {
 button.IIT-M-button {
   background-color: #2a0908;
   color: #d6a64f;
+}
 
+button.gravatar-button {
+  background-color: #4578ea;
 }
 
 button.instagram-button {
