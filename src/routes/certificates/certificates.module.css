@@ -1,15 +1,30 @@
-.image-grid {
+.imageGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    gap: 1rem;
-    width: 100%;
-    max-width: 1200px;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.imageItem {
+    border: 1px solid #505050;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .img {
-    width: auto;
+    width: 100%;
     height: auto;
-    max-height: 200px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.imageTitle {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.imageTags {
+    margin-top: 5px;
+    font-size: 0.9rem;
+    color: #666;
 }
