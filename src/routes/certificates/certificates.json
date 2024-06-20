@@ -1,0 +1,12 @@
+[
+    { 
+        "title": "C & PLT", 
+        "path": "/src/media/certificates/C_PLT_SOFTECH_20-06-2024.jpg", 
+        "tags": ["softech", "c", "plt"] 
+    },
+    { 
+        "title": "Test", 
+        "path": "/src/media/certificates/C_PLT_SOFTECH_20-06-2024 copy.jpg", 
+        "tags": ["certificate", "test"] 
+    }
+]
