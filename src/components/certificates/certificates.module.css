@@ -1,3 +1,7 @@
+:root {
+    --border-radius: 2px;
+}
+
 .imageGrid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -5,26 +9,26 @@
 }
 
 .imageItem {
-    border: 1px solid #505050;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    background-color: #41414190;
 }
 
 .img {
     width: 100%;
     height: auto;
-    border-radius: 5px;
+    border-radius: var(--border-radius);
 }
 
 .imageTitle {
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: bold;
     margin-top: 10px;
 }
 
 .imageTags {
-    margin-top: 5px;
-    font-size: 0.9rem;
+    margin-top: 2px;
+    font-size: 0.8rem;
     color: #666;
 }
