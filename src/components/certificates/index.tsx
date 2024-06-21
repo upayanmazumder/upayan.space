@@ -4,7 +4,7 @@ import { component$, useStore, useVisibleTask$ } from "@builder.io/qwik";
 import styles from './certificates.module.css';
 import certificatesData from './certificates.json';
 
-const images = import.meta.glob('/src/media/certificates/*.jpg');
+const images = import.meta.glob('/src/media/certificates/*.jpg?jsx');
 
 interface State {
   imageUrls: { title: string; url: string; tags: string[] }[];
