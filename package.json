@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cd qwik && npm install"
+    "dev": "cd qwik && npm install",
+    "start": "cd api && npx ts-node main.ts"
   },
   "repository": {
     "type": "git",
@@ -21,5 +22,16 @@
   "bugs": {
     "url": "https://github.com/upayanmazumder/upayan.space/issues"
   },
-  "homepage": "https://github.com/upayanmazumder/upayan.space#readme"
+  "homepage": "https://github.com/upayanmazumder/upayan.space#readme",
+  "dependencies": {
+    "@types/node": "^20.14.10",
+    "discord.js": "^14.15.3",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21"
+  }
 }
