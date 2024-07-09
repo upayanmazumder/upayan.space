@@ -43,6 +43,8 @@ export default component$(() => {
                 class={styles.img}
                 src={image.url}
                 alt={image.title}
+                decoding="async"
+                loading="lazy"
               />
               <p class={styles.imageTitle}>{image.title}</p>
               <p class={styles.imageTags}>{image.tags.join(", ")}</p>
