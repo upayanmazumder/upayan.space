@@ -5,7 +5,6 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-<<<<<<< HEAD
     "dev": "cd qwik && npm install",
     "start": "cd api && npx ts-node main.ts"
   },
@@ -35,23 +34,4 @@
   "devDependencies": {
     "@types/express": "^4.17.21"
   }
-=======
-    "dev": "cd qwik && npm install"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/upayanmazumder/upayan.space.git"
-  },
-  "keywords": [
-    "upayan",
-    "portfolio",
-    "qwik"
-  ],
-  "author": "upayanmazumder",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/upayanmazumder/upayan.space/issues"
-  },
-  "homepage": "https://github.com/upayanmazumder/upayan.space#readme"
->>>>>>> daa40b0a6bf13ac31c935af9dd1d85d5c1868a97
 }
