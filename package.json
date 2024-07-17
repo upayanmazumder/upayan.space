@@ -87,10 +87,10 @@
     "utils-merge": "^1.0.1",
     "v8-compile-cache-lib": "^3.0.1",
     "vary": "^1.1.2",
+    "winston": "^3.13.1",
     "ws": "^8.18.0",
     "yn": "^3.1.1"
   },
-  "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },

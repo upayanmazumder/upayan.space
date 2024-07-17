@@ -1,6 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import Hero from "../components/hero/hero";
+import Activity from "../components/activity/activity";
 
 export default component$(() => {
   return (
@@ -8,6 +9,7 @@ export default component$(() => {
     <div role="presentation" class="ellipsis"></div>
     <div class="override-background">
       <Hero />
+      <Activity />
     </div>
     </>
   );
