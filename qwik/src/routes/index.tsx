@@ -1,7 +1,7 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import Hero from "../components/hero/hero";
-import Activity from "../components/activity/activity";
+import Activity, { useGuildStatistics } from "../components/activity/activity";
 
 export default component$(() => {
   return (
@@ -24,3 +24,5 @@ export const head: DocumentHead = {
     },
   ],
 };
+
+export {useGuildStatistics};
