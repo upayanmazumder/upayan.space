@@ -2,7 +2,7 @@
   "name": "upayan.space",
   "version": "1.0.0",
   "description": "Upayan's Portfolio Website",
-  "main": "index.js",
+  "main": "api/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "cd qwik && npm install",

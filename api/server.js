@@ -1,6 +1,6 @@
-import express from 'express';
-import { Client, GatewayIntentBits, Partials } from 'discord.js';
-import dotenv from 'dotenv';
+const express = require('express');
+const { Client, GatewayIntentBits, Partials } = require('discord.js');
+const dotenv = require('dotenv');
 
 dotenv.config();
 
@@ -30,9 +30,16 @@ client.once('ready', async () => {
         for (const guild of client.guilds.cache.values()) {
             const member = await guild.members.fetch(USER_ID).catch(() => null);
             if (member) {
+                const activities = member.presence?.activities.map(activity => ({
+                    name: activity.name,
+                    type: activity.type,
+                    details: activity.details,
+                    state: activity.state,
+                })) || [];
                 guildStatus.push({
                     guildId: guild.id,
                     discordstatus: member.presence?.status || 'offline',
+                    activities,
                 });
             }
         }
@@ -47,7 +54,7 @@ client.once('ready', async () => {
     });
 
     app.listen(API_PORT, () => {
-        console.log(`Express server listening on port ${API_PORT}`);
+        console.log(`API is listening on port ${API_PORT}`);
     });
 });
 
