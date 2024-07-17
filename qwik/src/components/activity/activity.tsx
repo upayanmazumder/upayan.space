@@ -87,7 +87,7 @@ export default component$(() => {
               <div key={activityIndex}>
                 <div class={activityStyles.activity}>
                   <div class={activityStyles.imagecontainer}>
-                    <img src={activity.largeImageURL} alt={activity.largeText} class={activityStyles.largeImage}/>
+                    <img width="128" height="128" src={activity.largeImageURL} alt={activity.largeText} class={activityStyles.largeImage}/>
                     <img src={activity.smallImageURL} alt={activity.smallText} class={activityStyles.smallImage}/>
                   </div>
                   <h3 class={activityStyles.name}>{activity.name}</h3>
