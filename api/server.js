@@ -84,7 +84,7 @@ client.once('ready', async () => {
     };
 
     updateGuildStatus();
-    setInterval(updateGuildStatus, 10 * 60 * 1000);
+    setInterval(updateGuildStatus, 30 * 1000);
 
     app.get('/', async (req, res) => {
         try {
