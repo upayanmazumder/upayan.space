@@ -19,7 +19,8 @@
   max-width: 60px;
   width: 100%;
   height: 100%;
-  margin-left: 120px;
+  margin-left: auto;
+  margin-right: 200px;
 }
 
 .navbar ul {
