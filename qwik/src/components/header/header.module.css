@@ -29,13 +29,13 @@
   display: flex;
 }
 
-.navbar ul li {
+.navbar ul li a{
   border-radius: 5px;
   padding: 10px 15px;
   transition: background-color 0.2s ease;
 }
 
-.navbar ul li:hover {
+.navbar ul li a:hover {
   background-color: rgba(255, 255, 255, 0.097);
 }
 
