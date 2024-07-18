@@ -82,5 +82,11 @@ button.pinterest-button {
   .button-group {
     flex-direction: column;
     gap: 16px;
+    width: 50%;
+  }
+
+  button {
+    width: 100%;
+    padding: 15px 25px !important;
   }
 }

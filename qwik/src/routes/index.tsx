@@ -9,7 +9,9 @@ export default component$(() => {
     <div role="presentation" class="ellipsis"></div>
     <div class="override-background">
       <Hero />
-      <Activity />
+      <div class="container container-center">
+        <Activity />
+      </div>
     </div>
     </>
   );
