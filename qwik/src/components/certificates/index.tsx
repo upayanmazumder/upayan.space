@@ -6,12 +6,18 @@ import certificatesData from './certificates.json';
 
 const images = import.meta.glob('/src/media/certificates/*.jpg');
 
+interface ImageDetail {
+  title: string;
+  src: string;
+  tags: string[];
+}
+
 interface State {
-  imageUrls: { title: string; url: string; tags: string[] }[];
+  imageDetails: ImageDetail[];
 }
 
 export default component$(() => {
-  const state = useStore<State>({ imageUrls: [] });
+  const state = useStore<State>({ imageDetails: [] });
 
   useVisibleTask$(() => {
     const loadImages = async () => {
@@ -21,9 +27,9 @@ export default component$(() => {
       });
 
       const loadedImages = await Promise.all(imagePromises);
-      state.imageUrls = certificatesData.map((detail, index) => ({
+      state.imageDetails = certificatesData.map((detail, index) => ({
         title: detail.title,
-        url: loadedImages[index] || detail.path,
+        src: loadedImages[index] || detail.path,
         tags: detail.tags,
       }));
     };
@@ -37,17 +43,17 @@ export default component$(() => {
       <div class="container container-center">
         <h1>Certificates</h1>
         <div class={styles.imageGrid}>
-          {state.imageUrls.map((image, index) => (
+          {state.imageDetails.map((imageDetail, index) => (
             <div key={index} class={styles.imageItem}>
               <img
                 class={styles.img}
-                src={image.url}
-                alt={image.title}
+                src={imageDetail.src}
+                alt={imageDetail.title}
                 decoding="async"
                 loading="lazy"
               />
-              <p class={styles.imageTitle}>{image.title}</p>
-              <p class={styles.imageTags}>{image.tags.join(", ")}</p>
+              <p class={styles.imageTitle}>{imageDetail.title}</p>
+              <p class={styles.imageTags}>{imageDetail.tags.join(", ")}</p>
             </div>
           ))}
         </div>

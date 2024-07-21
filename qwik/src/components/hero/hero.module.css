@@ -29,7 +29,7 @@ h1 {
 }
 
 button {
-  padding: 10px 20px;
+  padding: 10px 30px !important;
   border: none;
   border-radius: 5px;
   color: white;
@@ -45,6 +45,10 @@ button.linkedin-button {
 
 button.github-button {
   background-color: black;
+}
+
+button.discord-button {
+  background-color: #525eeb;
 }
 
 button.IIT-M-button {
