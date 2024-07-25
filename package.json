@@ -92,7 +92,9 @@
     "yn": "^3.1.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cd qwik && npm run dev",
+    "api": "cd qwik && node ."
   },
   "repository": {
     "type": "git",

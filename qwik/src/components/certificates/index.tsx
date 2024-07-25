@@ -2,7 +2,7 @@
 /* eslint-disable qwik/jsx-img */
 import { component$, useStore, useVisibleTask$ } from "@builder.io/qwik";
 import styles from './certificates.module.css';
-import certificatesData from './certificates.json';
+import certificatesData from '../../data/certificates.json';
 
 const images = import.meta.glob('/src/media/certificates/*.jpg');
 
