@@ -31,7 +31,6 @@ const fetchGuildStatistics = async (): Promise<GuildStatistics[]> => {
     }
 
     const responseData = await response.json();
-    // Assuming responseData is an array of GuildStatistics
     return responseData.map((guildData: any) => ({
       discordstatus: guildData.discordstatus,
       activities: guildData.activities,
@@ -44,7 +43,15 @@ const fetchGuildStatistics = async (): Promise<GuildStatistics[]> => {
 
 // Function to calculate time elapsed since a given timestamp
 const calculateTimeElapsed = (timestamp: string): string => {
+  if (!timestamp) {
+    return '';
+  }
+
   const start = new Date(timestamp);
+  if (isNaN(start.getTime())) {
+    return '';
+  }
+
   const now = new Date();
   const elapsedMilliseconds = now.getTime() - start.getTime();
   const seconds = Math.floor(elapsedMilliseconds / 1000);
