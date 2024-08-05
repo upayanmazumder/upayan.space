@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import Certificates from "../../components/certificates";
+import Certificates from "../../components/certificates/certificates";
 
 export default component$(() => {
   return (
