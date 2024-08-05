@@ -10,6 +10,9 @@ export default component$(() => {
         <div class={styles.contentWrapper}>
           <div class={styles.logo}>
             <img src={upayan} alt="Upayan" height={100} width={100}/>
+            <p class={styles.name}>
+              Upayan
+            </p>
           </div>
           <nav class={styles.navbar}>
             <ul>
