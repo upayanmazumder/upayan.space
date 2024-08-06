@@ -8,5 +8,10 @@
         "title": "NodeJS", 
         "path": "/src/media/certificates/NODEJS_PROGRAMMINGHUB_05-08-2024.jpg", 
         "tags": ["programminghub", "nodejs"] 
+    },
+    { 
+        "title": "Fundamentals", 
+        "path": "/src/media/certificates/FUNDAMENTALS_PROGRAMMINGHUB_05-08-2024.jpg", 
+        "tags": ["programminghub", "fundamentals"] 
     }
 ]
