@@ -15,6 +15,11 @@
         "link": "https://github.com/upayanmazumder"
     },
     {
+        "class": "microsoftignite-button",
+        "name": "Microsoft Ignite",
+        "link": "https://learn.microsoft.com/en-gb/users/upayan"
+    },
+    {
         "class": "discord-button",
         "name": "Discord",
         "link": "https://discord.com/users/1240025366853193758"

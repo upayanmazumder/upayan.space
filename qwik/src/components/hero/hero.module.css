@@ -47,6 +47,10 @@ button.github-button {
   background-color: black;
 }
 
+button.microsoftignite-button {
+  background-color: #f25022;
+}
+
 button.discord-button {
   background-color: #525eeb;
 }
