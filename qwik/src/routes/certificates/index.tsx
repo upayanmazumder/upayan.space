@@ -14,11 +14,31 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Certificates",
+  title: "Upayan - Certificates",
   meta: [
     {
       name: "description",
-      content: "My certificates",
+      content: "View Upayan's Certificates",
+    },
+    {
+      name: "author",
+      content: "Upayan Mazumder",
+    },
+    {
+      name: "theme-color",
+      content: "#3877b4",
+    },
+    {
+      property: "og:title",
+      content: "Upayan - Certificates",
+    },
+    {
+      property: "og:description",
+      content: "Explore the work and skills of Upayan Mazumder, aspiring data scientist and developer.",
+    },
+    {
+      name: "twitter:image",
+      content: "https://i.imgur.com/sBVSdUh.jpeg",
     },
   ],
 };

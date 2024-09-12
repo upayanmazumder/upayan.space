@@ -18,11 +18,11 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Upayan - Portfolio",
+  title: "Upayan",
   meta: [
     {
       name: "description",
-      content: "Upayan's Portfolio - Explore the work and skills of Upayan, aspiring data scientist and developer.",
+      content: "Explore the work and skills of Upayan, aspiring data scientist and developer.",
     },
     {
       name: "author",
@@ -34,7 +34,7 @@ export const head: DocumentHead = {
     },
     {
       property: "og:title",
-      content: "Upayan - Portfolio",
+      content: "Upayan",
     },
     {
       property: "og:description",
