@@ -51,6 +51,10 @@ button.microsoftlearn-button {
   background-color: #f25022;
 }
 
+button.leetcode-button {
+  background-color: #ffab1d;
+}
+
 button.discord-button {
   background-color: #525eeb;
 }

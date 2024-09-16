@@ -20,6 +20,11 @@
         "link": "https://learn.microsoft.com/en-gb/users/upayan"
     },
     {
+        "class": "leetcode-button",
+        "name": "Leetcode",
+        "link": "https://leetcode.com/u/upayanmazumder/"
+    },
+    {
         "class": "discord-button",
         "name": "Discord",
         "link": "https://discord.com/users/1240025366853193758"
