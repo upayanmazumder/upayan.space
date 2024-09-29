@@ -5,8 +5,8 @@ const winston = require('winston');
 
 dotenv.config();
 
-const BOT_TOKEN = 3100;
-const API_PORT = process.env.API_PORT;
+const BOT_TOKEN = process.env.BOT_TOKEN || 3100;
+const API_PORT = process.env.API_PORT || 3110;
 const USER_ID = '1240025366853193758';
 
 // Configure logging
