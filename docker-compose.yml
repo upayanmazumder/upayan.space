@@ -3,3 +3,4 @@ services:
     image: upayanmazumder/upayan.space:latest
     ports:
       - 3100:3100
+      - 3110:3110
