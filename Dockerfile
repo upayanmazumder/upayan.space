@@ -4,14 +4,19 @@ FROM node:20
 # Create app directory
 WORKDIR /usr/src/app
 
-# Install app dependencies
+# Copy package.json and package-lock.json if available from the project root
 COPY package*.json ./
+
+# Install app dependencies
 RUN npm install --production
 
-# Bundle app source
+# Copy the entire project directory contents to the app directory
 COPY . .
 
-# Bind to the specified port
+# Copy the .env file
+COPY .env .env
+
+# Bind to the specified ports
 EXPOSE 3100
 EXPOSE 3110
 
