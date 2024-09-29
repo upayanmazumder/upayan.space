@@ -13,6 +13,7 @@ COPY . .
 
 # Bind to the specified port
 EXPOSE 3100
+EXPOSE 3110
 
 # Command to run the app
-CMD ["node", "app.js"]
+CMD ["node", "api/server.js"]
