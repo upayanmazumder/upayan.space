@@ -1,5 +1,5 @@
 services:
   backend:
-    image: upayanmazumder/learningdocker:latest
+    image: upayanmazumder/upayan.space:latest
     ports:
       - 3100:3100
