@@ -13,8 +13,10 @@ RUN npm install --production
 # Copy the entire project directory contents to the app directory
 COPY . .
 
-# Copy the .env file
-COPY .env .env
+# Define build argument
+ARG NODE_ENV
+# Set environment variable
+ENV NODE_ENV=${NODE_ENV}
 
 # Bind to the specified ports
 EXPOSE 3100
