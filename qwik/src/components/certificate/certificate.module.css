@@ -1,0 +1,31 @@
+.certificatesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.certificateCard {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5px;
+    max-width: 250px;
+    text-align: center;
+}
+
+.certificateImage img {
+    width: 100%;
+    height: auto;
+}
+
+.certificateDetailContainer {
+    text-align: center;
+}
+
+.certificateDetailContainer h2 {
+    margin-bottom: 10px;
+}
+
+.certificateDetailContainer p {
+    margin-top: 10px;
+}

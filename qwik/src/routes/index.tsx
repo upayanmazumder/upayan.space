@@ -10,7 +10,6 @@ export default component$(() => {
       <SocialMediaWorkLinks />
       <Activity />
       <Hero />
-
     </div>
   );
 });
