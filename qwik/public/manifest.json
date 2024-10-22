@@ -1,9 +1,9 @@
 {
   "$schema": "https://json.schemastore.org/web-manifest-combined.json",
-  "name": "Upayan",
-  "short_name": "Upayan",
+  "name": "qwik-project-name",
+  "short_name": "Welcome to Qwik",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#3046399",
-  "description": "Visit my portfolio!"
+  "background_color": "#fff",
+  "description": "A Qwik project app."
 }
