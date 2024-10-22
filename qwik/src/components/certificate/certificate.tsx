@@ -39,12 +39,14 @@ export default component$(() => {
     }
 
     return (
-        <div class={certificateStyles.certificateDetailContainer}>
-            <h2>{certificate.title}</h2>
-            <div class={certificateStyles.certificateImage}>
-                <certificate.path alt={`${certificate.title} certificate`} />
+        <div class="container">
+            <div class={certificateStyles.certificateDetailContainer}>
+                <h2>{certificate.title}</h2>
+                <div class={certificateStyles.certificateImage} id="image">
+                    <certificate.path alt={`${certificate.title} certificate`} />
+                </div>
+                <p>Tags: {certificate.tags.join(', ')}</p>
             </div>
-            <p>Tags: {certificate.tags.join(', ')}</p>
         </div>
     );
 });

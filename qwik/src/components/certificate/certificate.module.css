@@ -14,8 +14,9 @@
 }
 
 .certificateImage img {
-    width: 100%;
     height: auto;
+    width: auto;
+    max-height: 100vh;
 }
 
 .certificateDetailContainer {

@@ -32,7 +32,7 @@ export default component$(() => {
             {certificates.map((certificate, index) => (
                 <div key={index} class={certificateStyles.certificateCard}>
                     <h3>{certificate.title}</h3>
-                    <Link href={`/certificates/${createSlug(certificate.title)}`}>
+                    <Link href={`/certificates/${createSlug(certificate.title)}#image`}>
                         <certificate.path alt={`${certificate.title} certificate`} />
                     </Link>
                     <p>{certificate.tags.join(', ')}</p>
