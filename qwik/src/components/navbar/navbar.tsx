@@ -3,11 +3,11 @@ import styles from './navbar.module.css';
 
 export default component$(() => {
     const navItems = {
-        Home: '#home',
-        About: '#about',
+        Home: '/',
+        About: '/#about',
         Certificates: '/certificates',
-        Services: '#services',
-        Contact: '#contact'
+        Services: '/#services',
+        Contact: '/#contact'
     };
 
     return (
