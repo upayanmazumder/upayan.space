@@ -28,17 +28,6 @@ body {
     line-height: inherit;
 }
 
-.override-background {
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../media/mig21-1.png) !important;  
-}
-
-
-@media screen and (max-width: 768px) {
-    body {
-        background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9)), url(../media/su30-1.png);;
-    }
-}
-
 /* HEADINGS ------------------------------------- */
 h1,
 h2,

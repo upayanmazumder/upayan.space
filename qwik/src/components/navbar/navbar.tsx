@@ -1,5 +1,5 @@
-import { component$, useStylesScoped$ } from '@builder.io/qwik';
-import navbarStyles from './navbar.css?inline';
+import { component$ } from '@builder.io/qwik';
+import styles from './navbar.module.css';
 
 export default component$(() => {
     const navItems = {
@@ -10,14 +10,12 @@ export default component$(() => {
         Contact: '#contact'
     };
 
-    useStylesScoped$(navbarStyles);
-
     return (
-        <nav>
-            <ul>
+        <nav class={styles.nav}>
+            <ul class={styles.navList}>
                 {Object.entries(navItems).map(([name, href]) => (
-                    <li key={name}>
-                        <a href={href}>{name}</a>
+                    <li key={name} class={styles.navItem}>
+                        <a href={href} class={styles.navLink}>{name}</a>
                     </li>
                 ))}
             </ul>
