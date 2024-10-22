@@ -8,7 +8,7 @@ export default component$(() => {
     return (
         <footer class="footer">
             <SocialMediaIcons/>
-            <p class="footer-copy">&copy; {new Date().getFullYear()} Upayan. All rights reserved.</p>
+            <p class="footer-copy">&copy; {new Date().getFullYear()} Upayan</p>
         </footer>
     );
 });
