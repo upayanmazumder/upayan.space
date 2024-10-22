@@ -55,13 +55,3 @@ body {
     line-height: inherit;
     background-image: url("./media/background/bg3.svg");
 }
-
-a {
-    color: var(--link-text-color) !important;
-    transition: color 0.2s ease-in-out;
-    text-decoration: none;
-}
-
-a:hover {
-    color: var(--link-hover-color) !important;
-}

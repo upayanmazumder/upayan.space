@@ -1,9 +1,11 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
 import Activity, { useGuildStatistics } from "../components/activity/activity";
+import SocialMediaWorkLinks from "../components/social-media/work/work"
 export default component$(() => {
   return (
     <>
+      <SocialMediaWorkLinks />
       <Activity />
       <div id="about">
         <h2>About</h2>

@@ -1,0 +1,59 @@
+.hero {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #c9d1d9;
+    padding: 10px;
+    border-radius: 35px;
+    width: fit-content;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.button-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.button-group a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #161b22;
+    color: #58a6ff;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.button {
+    margin: auto 10px;
+}
+
+.button-group a:hover {
+    transform: scale(1.1);
+    background-color: #21262d;
+}
+
+.button-group a:active {
+    transform: scale(0.9);
+}
+
+button.microsoftlearn-button {
+    background-color: #f25022;
+}
+
+button.leetcode-button {
+    background-color: #ffab1d;
+}
+
+button.IIT-M-button {
+    background-color: #2a0908;
+    color: #d6a64f;
+}
+button.gravatar-button {
+    background-color: #4578ea;
+}

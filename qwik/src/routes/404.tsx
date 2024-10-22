@@ -1,15 +1,11 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
+import Four04 from "../components/404/404";
 
 export default component$(() => {
   return (
     <>
-      <h1>404 - Page Not Found</h1>
-      <div>
-        Sorry, the page you are looking for does not exist.
-        <br />
-        Please check the URL or return to the homepage.
-      </div>
+      <Four04/>
     </>
   );
 });
