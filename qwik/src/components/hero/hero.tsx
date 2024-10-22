@@ -30,7 +30,7 @@ export default component$(() => {
                 </Infobox>
             </div>
             
-            <div id="Contact">
+            <div id="contact">
                 <Infobox>
                     <span q:slot="title">Contact</span>
                     <p>
