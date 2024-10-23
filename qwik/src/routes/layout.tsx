@@ -24,7 +24,7 @@ export default component$(() => {
   useVisibleTask$(() => {
     const handleScroll = () => {
       const scrollPosition = window.pageYOffset;
-      document.body.style.backgroundPositionY = `${scrollPosition * 0.3}px`;
+      document.body.style.backgroundPositionY = `${scrollPosition * -0.05}px`;
     };
 
     window.addEventListener('scroll', handleScroll);
