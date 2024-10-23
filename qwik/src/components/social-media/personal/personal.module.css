@@ -27,11 +27,10 @@
     background-color: #161b22;
     color: #58a6ff;
     text-decoration: none;
-    transition: transform 0.3s ease, background-color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .button-group a:hover {
-    transform: scale(1.1);
     background-color: #21262d;
 }
 

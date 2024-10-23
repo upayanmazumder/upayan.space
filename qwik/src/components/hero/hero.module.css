@@ -1,4 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
 .hero {
+    font-family: 'Roboto Mono', monospace;
     color: #f1f1f1;
     padding: 40px 20px;
     display: flex;
@@ -8,6 +11,7 @@
 }
 
 .card {
+    font-family: 'Roboto Mono', monospace;
     background-color: #0f0f0fdc;
     border: 1px solid #333;
     border-radius: 10px;

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&display=swap');
+
 .hero {
     display: flex;
     justify-content: center;
@@ -8,12 +10,14 @@
     width: fit-content;
     text-align: center;
     margin: 0 auto;
+    font-family: 'Red Hat Display';
 }
 
 .button-group {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    font-family: 'Red Hat Display';
 }
 
 .button-group a {
@@ -27,10 +31,12 @@
     color: #58a6ff;
     text-decoration: none;
     transition: transform 0.3s ease, background-color 0.3s ease;
+    font-family: 'Red Hat Display';
 }
 
 .button {
     margin: auto 10px;
+    font-family: 'Red Hat Display';
 }
 
 .button-group a:hover {
@@ -44,19 +50,23 @@
 
 button.microsoftlearn-button {
     background-color: #f25022;
+    font-family: 'Red Hat Display';
 }
 
 button.leetcode-button {
     background-color: #ffab1d;
+    font-family: 'Red Hat Display';
 }
 
 button.IIT-M-button {
     background-color: #2a0908;
     color: #d6a64f;
+    font-family: 'Red Hat Display';
 }
 
 button.gravatar-button {
     background-color: #4578ea;
+    font-family: 'Red Hat Display';
 }
 
 @media (max-width: 1200px) {
