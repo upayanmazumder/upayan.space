@@ -5,7 +5,7 @@ import Certificates from "../../components/certificates/certificates";
 export default component$(() => {
   return (
     <>
-    <div role="presentation" class="ellipsis"></div>
+    <div role="presentation"></div>
     <div class="override-background">
       <Certificates />
     </div>
@@ -14,11 +14,11 @@ export default component$(() => {
 });
 
 export const head: DocumentHead = {
-  title: "Upayan - Certificates",
+  title: "Certificates",
   meta: [
     {
       name: "description",
-      content: "View Upayan's Certificates",
+      content: "Explore my certificates",
     },
     {
       name: "author",
@@ -30,14 +30,14 @@ export const head: DocumentHead = {
     },
     {
       property: "og:title",
-      content: "Upayan - Certificates",
+      content: "Upayan",
     },
     {
       property: "og:description",
       content: "Explore the work and skills of Upayan Mazumder, aspiring data scientist and developer.",
     },
     {
-      name: "twitter:image",
+      name: "og:image",
       content: "https://i.imgur.com/sBVSdUh.jpeg",
     },
   ],

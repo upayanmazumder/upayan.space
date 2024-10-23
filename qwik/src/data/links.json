@@ -1,4 +1,4 @@
-    [
+[
     {
         "class": "IIT-M-button",
         "name": "IIT-Madras",
@@ -27,7 +27,7 @@
     {
         "class": "discord-button",
         "name": "Discord",
-        "link": "https://discord.com/users/1240025366853193758"
+        "link": "https://discord.com/users/@upayanmazumder"
     },
     {
         "class": "gravatar-button",

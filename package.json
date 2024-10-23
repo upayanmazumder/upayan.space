@@ -1,6 +1,6 @@
 {
   "name": "upayan.space",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "My Portfolio Site",
   "main": "api/server.js",
   "dependencies": {
@@ -92,7 +92,8 @@
     "yn": "^3.1.1"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "cd qwik && npm run dev"
   },
   "repository": {
     "type": "git",

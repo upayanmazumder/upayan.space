@@ -1,23 +1,24 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import Hero, { useGuildStatistics } from "../components/hero/hero"
-import Details from "../components/details/details";
+import Certificate from "../../../components/certificate/certificate";
 
 export default component$(() => {
   return (
-    <div class="container container-center">
-      <Hero />
-      <Details />
+    <>
+    <div role="presentation"></div>
+    <div class="override-background">
+      <Certificate />
     </div>
+    </>
   );
 });
 
 export const head: DocumentHead = {
-  title: "Home",
+  title: "Certificates",
   meta: [
     {
       name: "description",
-      content: "Explore the work and skills of Upayan, aspiring data scientist and developer.",
+      content: "View my certificates",
     },
     {
       name: "author",
@@ -41,5 +42,3 @@ export const head: DocumentHead = {
     },
   ],
 };
-
-export { useGuildStatistics };

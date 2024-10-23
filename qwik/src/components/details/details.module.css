@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+.hero {
+    font-family: 'Roboto Mono', monospace;
+    color: #f1f1f1;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    cursor: default;
+}
+
+.card {
+    font-family: 'Roboto Mono', monospace;
+    background-color: #0f0f0fdc;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.card p {
+    margin: 10px 0;
+}
+
+.card a {
+    color: #1e90ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.card a:hover {
+    color: #00bfff;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 20px 10px;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 15px;
+    }
+}

@@ -1,11 +1,14 @@
-/* eslint-disable qwik/jsx-a */
-import { component$ } from "@builder.io/qwik";
-import styles from "./footer.module.css";
+import { component$, useStylesScoped$ } from '@builder.io/qwik';
+import footerStyles from './footer.css?inline';
+import SocialMediaIcons from "../social-media/personal/personal";
 
 export default component$(() => {
-  return (
-    <footer class={styles.footer}>
-      <span>©️ Upayan 2024. All rights reserved.</span>
-    </footer>
-  );
+    useStylesScoped$(footerStyles);
+
+    return (
+        <footer class="footer">
+            <SocialMediaIcons/>
+            <p class="footer-copy">&copy; {new Date().getFullYear()} Upayan</p>
+        </footer>
+    );
 });

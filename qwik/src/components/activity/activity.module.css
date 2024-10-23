@@ -1,25 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Roboto:wght@400;700&display=swap');
+
 .container {
   background-color: #5662f6;
   padding: 20px 30px;
   margin: 60px auto;
   width: fit-content;
   border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  color: white !important;
+  font-family: 'Red Hat Roboto', sans-serif;
+  cursor: default;
+}
+
+.container:hover {
+  transform: scale(1.05);
 }
 
 .status {
-  font-size: 1.7rem;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-.activities {
-  background-color: rgba(240, 248, 255, 0.107);
-  padding: 10px;
-  border-radius: 10px;
+  font-size: 1rem;
+  font-family: 'Red Hat Roboto', sans-serif;
+  transition: color 0.3s ease-in-out;
+  margin-left: 20px;
+  text-align: left;
 }
 
 .activity {
   display: flex;
   flex-direction: row;
+  transition: transform 0.3s ease-in-out;
+}
+
+.activity:hover {
+  transform: translateX(10px);
 }
 
 .imagecontainer {
@@ -32,6 +44,11 @@
   max-height: 50px;
   height: auto;
   width: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.largeImage:hover {
+  transform: rotate(10deg);
 }
 
 .smallImage {
@@ -39,6 +56,11 @@
   max-width: 20px;
   max-height: 20px;
   height: 20px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.smallImage:hover {
+  transform: rotate(-10deg);
 }
 
 p {
@@ -47,14 +69,18 @@ p {
 
 .name {
   margin-left: 25px;
+  transition: font-size 0.3s ease-in-out;
+  font-family: 'Red Hat Roboto', sans-serif;
 }
 
 .details {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Red Hat Roboto', sans-serif;
+  transition: font-size 0.3s ease-in-out;
 }
 
 .state {
-  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Red Hat Roboto', sans-serif;
+  transition: font-size 0.3s ease-in-out;
 }
 
 .time {
@@ -64,6 +90,7 @@ p {
 @media screen and (max-width: 768px) {
   .container {
     margin: inherit 20px !important;
+    padding: 15px 20px;
   }
 
   .name {
@@ -77,6 +104,29 @@ p {
 
   .state {
     font-size: 0.9rem;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family: 'Red Hat Roboto', sans-serif;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 10px 15px;
+  }
+
+  .status {
+    font-size: 1.5rem;
+  }
+
+  .name {
+    font-size: 1rem;
+    margin-left: 5px;
+  }
+
+  .details {
+    font-size: 0.7rem;
+  }
+
+  .state {
+    font-size: 0.8rem;
   }
 }
