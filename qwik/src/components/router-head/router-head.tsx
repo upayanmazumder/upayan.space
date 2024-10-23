@@ -1,6 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import { useDocumentHead, useLocation } from "@builder.io/qwik-city";
-import UpayanImg from "../../media/upayan.svg";
+
 /**
  * The RouterHead component is placed inside of the document `<head>` element.
  */
@@ -21,7 +21,7 @@ export const RouterHead = component$(() => {
       <meta property="og:title" content={title} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={loc.url.href} />
-      <meta property="og:image" content={UpayanImg} />
+      <meta property="og:image" content="https://imgur.com/sBVSdUh" />
       <meta property="og:description" content={head.meta.find(m => m.name === 'description')?.content || 'Welcome to Upayan\'s website'} />
 
       {head.meta.map((m) => (
