@@ -16,13 +16,13 @@
 
 .header img:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 10px #5383b1;
+    box-shadow: 0 0 10px #3877b4;
 }
 
 .title {
     font-size: 2.5em;
     margin: 10px 0;
-    color: #5383b1;
+    color: #3877b4;
 }
 
 nav ul {
