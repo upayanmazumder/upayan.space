@@ -18,7 +18,7 @@ export const head: DocumentHead = {
   meta: [
     {
       name: "description",
-      content: "Explore the work and skills of Upayan, aspiring data scientist and developer.",
+      content: "View my certificates",
     },
     {
       name: "author",
@@ -37,7 +37,7 @@ export const head: DocumentHead = {
       content: "Explore the work and skills of Upayan Mazumder, aspiring data scientist and developer.",
     },
     {
-      name: "twitter:image",
+      name: "og:image",
       content: "https://i.imgur.com/sBVSdUh.jpeg",
     },
   ],

@@ -36,7 +36,7 @@ export const head: DocumentHead = {
       content: "Explore the work and skills of Upayan Mazumder, aspiring data scientist and developer.",
     },
     {
-      name: "twitter:image",
+      name: "og:image",
       content: "https://i.imgur.com/sBVSdUh.jpeg",
     },
   ],
