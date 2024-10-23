@@ -18,7 +18,23 @@ export const head: DocumentHead = {
   meta: [
     {
       name: "description",
-      content: "View Upayan's Certificates",
+      content: "Explore the work and skills of Upayan, aspiring data scientist and developer.",
+    },
+    {
+      name: "author",
+      content: "Upayan Mazumder",
+    },
+    {
+      name: "theme-color",
+      content: "#3877b4",
+    },
+    {
+      property: "og:title",
+      content: "Upayan",
+    },
+    {
+      property: "og:description",
+      content: "Explore the work and skills of Upayan Mazumder, aspiring data scientist and developer.",
     },
     {
       name: "twitter:image",
