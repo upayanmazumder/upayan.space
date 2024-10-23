@@ -4,6 +4,7 @@
     text-align: center;
     background-color: var(--header-background-color);
     backdrop-filter: blur(10px);
+    cursor: default;
 }
 
 .header img {
