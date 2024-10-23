@@ -6,7 +6,7 @@ export default component$(() => {
 
     return (
         <div class={heroStyles.hero}>
-            <div id="about">
+            <div id="about" class={heroStyles.card}>
                 <Infobox>
                     <span q:slot="title">About Me</span>
                     <p>
@@ -18,7 +18,7 @@ export default component$(() => {
                 </Infobox>
             </div>
 
-            <div id="services">
+            <div id="services" class={heroStyles.card}>
                 <Infobox>
                     <span q:slot="title">Services</span>
                     <p>
@@ -30,7 +30,7 @@ export default component$(() => {
                 </Infobox>
             </div>
             
-            <div id="contact">
+            <div id="contact" class={heroStyles.card}>
                 <Infobox>
                     <span q:slot="title">Contact</span>
                     <p>

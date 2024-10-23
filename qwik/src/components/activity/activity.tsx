@@ -19,7 +19,6 @@ interface GuildStatistics {
   activities: Activity[];
 }
 
-// Fetch guild statistics from the API
 const fetchGuildStatistics = async (): Promise<GuildStatistics[]> => {
   try {
     const response = await fetch('https://upayan-statistics-api.upayan.space/', {
@@ -41,7 +40,6 @@ const fetchGuildStatistics = async (): Promise<GuildStatistics[]> => {
   }
 };
 
-// Function to calculate time elapsed since a given timestamp
 const calculateTimeElapsed = (timestamp: string): string => {
   if (!timestamp) {
     return '';
@@ -70,12 +68,10 @@ const calculateTimeElapsed = (timestamp: string): string => {
   }
 };
 
-// Utility function to convert a string to title case
 const toTitleCase = (str: string): string => {
   return str.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
 };
 
-// Route loader to fetch guild statistics
 // eslint-disable-next-line qwik/loader-location
 export const useGuildStatistics = routeLoader$<GuildStatistics[]>(async () => {
   return await fetchGuildStatistics();
