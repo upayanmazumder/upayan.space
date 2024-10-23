@@ -5,7 +5,7 @@ import Certificates from "../../components/certificates/certificates";
 export default component$(() => {
   return (
     <>
-    <div role="presentation" class="ellipsis"></div>
+    <div role="presentation"></div>
     <div class="override-background">
       <Certificates />
     </div>

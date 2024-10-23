@@ -4,12 +4,11 @@
     justify-content: center;
     gap: 20px;
     padding: 20px;
-    background-color: #121212;
     color: #f0f0f0;
 }
 
 .certificateCard {
-    background-color: #1a1a1a;
+    background-color: #1a1a1a69;
     border: 2px solid #2a2a2a;
     border-radius: 12px;
     width: 300px;
