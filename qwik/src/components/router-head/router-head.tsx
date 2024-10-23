@@ -22,7 +22,7 @@ export const RouterHead = component$(() => {
       <meta property="og:title" content={title} />
       <meta property="og:type" content="website" />
       <meta property="og:url" content={loc.url.href} />
-      <meta property="og:image" content="https://i.imgur.com/sBVSdUh.jpeg" />
+      <meta property="twitter:image" content="https://i.imgur.com/sBVSdUh.jpeg" />
       <meta property="og:description" content={head.meta.find(m => m.name === 'description')?.content || 'Welcome to Upayan\'s website'} />
 
       {head.meta.map((m) => (
