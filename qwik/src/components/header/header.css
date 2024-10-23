@@ -1,9 +1,9 @@
 .header {
-    background-color: #000000b1;
     color: #f1f1f1;
     padding: 20px;
     text-align: center;
-    border-bottom: 2px solid #5383b1;
+    background-color: var(--header-background-color);
+    backdrop-filter: blur(10px);
 }
 
 .header img {

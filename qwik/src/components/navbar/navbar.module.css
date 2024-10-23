@@ -3,8 +3,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    width: fit-content;
     margin: 0 auto;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: var(--header-background-color);
+    backdrop-filter: blur(10px);
 }
 
 .navList {
@@ -61,6 +66,7 @@
     .nav {
         flex-direction: column;
         padding: 1rem;
+        position: inherit;
     }
 
     .navList {

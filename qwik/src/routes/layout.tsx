@@ -1,7 +1,8 @@
-import { component$, Slot, useStyles$ } from "@builder.io/qwik";
+import { component$, Slot, useStyles$, useVisibleTask$ } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
 
 import Header from "../components/header/header";
+import NavBar from "../components/navbar/navbar"
 import Footer from "../components/footer/footer";
 
 import styles from "./styles.css?inline";
@@ -19,9 +20,25 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 
 export default component$(() => {
   useStyles$(styles);
+
+  useVisibleTask$(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.pageYOffset;
+      document.body.style.backgroundPositionY = `${scrollPosition * 0.3}px`;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  });
+
   return (
     <>
       <Header />
+      <NavBar />
       <Slot />
       <Footer />
     </>
