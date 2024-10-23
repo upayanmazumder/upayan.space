@@ -1,15 +1,13 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-import Activity, { useGuildStatistics } from "../components/activity/activity";
-import SocialMediaWorkLinks from "../components/social-media/work/work";
-import Hero from "../components/hero/hero";
+import Hero, { useGuildStatistics } from "../components/hero/hero"
+import Details from "../components/details/details";
 
 export default component$(() => {
   return (
     <div class="container container-center">
-      <SocialMediaWorkLinks />
-      <Activity />
       <Hero />
+      <Details />
     </div>
   );
 });

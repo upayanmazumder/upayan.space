@@ -99,7 +99,7 @@ export default component$(() => {
   const guildStatistics = useGuildStatistics();
 
   if (!guildStatistics.value || guildStatistics.value.length === 0) {
-    return null; // Hide the component if the API is unreachable or returns no data
+    return null;
   }
 
   return (
