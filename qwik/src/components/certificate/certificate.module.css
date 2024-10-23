@@ -29,6 +29,7 @@
 
 .certificateDetailContainer h2 {
     margin-bottom: 10px;
+    cursor: default;
 }
 
 .certificateDetailContainer p {
