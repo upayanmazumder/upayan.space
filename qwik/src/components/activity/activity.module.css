@@ -13,23 +13,11 @@
 }
 
 .status {
-  font-size: 1.7rem;
+  font-size: 1rem;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   transition: color 0.3s ease-in-out;
   margin-left: 20px;
   text-align: left;
-}
-
-.activities {
-  background-color: rgba(240, 248, 255, 0.107);
-  padding: 10px;
-  border-radius: 10px;
-  transition: background-color 0.3s ease-in-out;
-  text-overflow: clip;
-}
-
-.activities:hover {
-  background-color: rgba(240, 248, 255, 0.2);
 }
 
 .activity {

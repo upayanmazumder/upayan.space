@@ -75,16 +75,16 @@ const getStatusIcon = (status: string) => {
   switch (status.toLowerCase()) {
     case 'online':
       iconStyle.color = 'green';
-      return <BsCircleFill style={iconStyle} />;
+      return <><BsCircleFill style={iconStyle} /> Online </>;
     case 'offline':
       iconStyle.color = 'gray';
-      return <BsWifiOff style={iconStyle} />;
+      return <><BsWifiOff style={iconStyle} /> Offline </>;
     case 'dnd':
       iconStyle.color = 'red';
-      return <BsDashCircleFill style={iconStyle} />;
+      return <><BsDashCircleFill style={iconStyle} /> DND</>;
     case 'idle':
       iconStyle.color = 'yellow';
-      return <BsMoonFill style={iconStyle} />;
+      return <><BsMoonFill style={iconStyle} /> Idle</>;
     default:
       return null;
   }
