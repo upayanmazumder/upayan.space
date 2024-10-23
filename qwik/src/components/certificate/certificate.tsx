@@ -1,11 +1,11 @@
 import { component$ } from '@builder.io/qwik';
-import { useLocation, useNavigate } from '@builder.io/qwik-city';
+import { useLocation } from '@builder.io/qwik-city';
 import certificateStyles from './certificate.module.css';
 
 import CAndPLT from '/src/media/certificates/C&PLT_SOFTECH_20-06-2024.jpg?jsx';
 import NodeJS from '/src/media/certificates/NODEJS_PROGRAMMINGHUB_05-08-2024.jpg?jsx';
 import Fundamentals from '/src/media/certificates/FUNDAMENTALS_PROGRAMMINGHUB_05-08-2024.jpg?jsx';
-
+import Four04 from "../../components/404/404"
 const createSlug = (title: string) => title.toLowerCase().replace(/\s+/g, '-');
 
 const certificates = [
@@ -28,14 +28,12 @@ const certificates = [
 
 export default component$(() => {
     const loc = useLocation();
-    const navigate = useNavigate();
     const certificateSlug = loc.params.certificate;
     const certificate = certificates.find(cert => createSlug(cert.title) === certificateSlug);
 
     // Unavailable certificate
     if (!certificate) {
-        navigate('/404');
-        return null;
+        return <Four04 />;
     }
 
     return (
