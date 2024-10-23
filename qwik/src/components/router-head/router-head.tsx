@@ -19,11 +19,11 @@ export const RouterHead = component$(() => {
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       <meta name="theme-color" content="#3046399" />
 
-      <meta property="og:title" content={title} />
-      <meta property="og:type" content="website" />
-      <meta property="og:url" content={loc.url.href} />
-      <meta property="twitter:image" content="https://i.imgur.com/sBVSdUh.jpeg" />
-      <meta property="og:description" content={head.meta.find(m => m.name === 'description')?.content || 'Welcome to Upayan\'s website'} />
+      <meta name="twitter:title" content={title} />
+      <meta name="twitter:card" content="summary_large_image" />
+      <meta name="twitter:url" content={loc.url.href} />
+      <meta name="twitter:image" content="https://i.imgur.com/sBVSdUh.jpeg" />
+      <meta name="twitter:description" content={head.meta.find(m => m.name === 'description')?.content || 'Welcome to Upayan\'s website'} />
 
       {head.meta.map((m) => (
         <meta key={m.key} {...m} />
