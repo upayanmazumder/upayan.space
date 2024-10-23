@@ -15,10 +15,13 @@ html {
         "Segoe UI Emoji",
         "Segoe UI Symbol",
         "Noto Color Emoji";
+    scroll-behavior: smooth;
+    animation: scroll-animation 2s infinite alternate ease-in-out;
 }
 
 body {
     background-size: cover;
+    background-color: black !important;
     color: var(--qwik-dark-text);
     overflow-x: hidden;
     height: fit-content;
@@ -58,15 +61,15 @@ h3 {
 }
 
 @media screen and (max-width: 768px) {
-h1 {
-    font-size: 30px;
-}
-h2 {
-    font-size: 3.4rem;
-}
-h3 {
-    font-size: 3rem;
-}
+    h1 {
+        font-size: 30px;
+    }
+    h2 {
+        font-size: 3.4rem;
+    }
+    h3 {
+        font-size: 3rem;
+    }
 }
 
 /* TAGS ----------------------------------------- */

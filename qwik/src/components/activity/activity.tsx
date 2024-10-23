@@ -2,6 +2,7 @@
 import { component$ } from '@builder.io/qwik';
 import { routeLoader$ } from '@builder.io/qwik-city';
 import activityStyles from './activity.module.css';
+import { BsCircleFill, BsMoonFill, BsDashCircleFill, BsWifiOff } from "@qwikest/icons/bootstrap"
 
 interface Activity {
   name: string;
@@ -19,7 +20,7 @@ interface GuildStatistics {
   activities: Activity[];
 }
 
-const fetchGuildStatistics = async (): Promise<GuildStatistics[]> => {
+const fetchGuildStatistics = async (): Promise<GuildStatistics[] | null> => {
   try {
     const response = await fetch('https://upayan-statistics-api.upayan.space/', {
       headers: { Accept: 'application/json' },
@@ -36,7 +37,7 @@ const fetchGuildStatistics = async (): Promise<GuildStatistics[]> => {
     })) as GuildStatistics[];
   } catch (error) {
     console.error('Error fetching guild statistics:', error);
-    return [];
+    return null;
   }
 };
 
@@ -68,41 +69,68 @@ const calculateTimeElapsed = (timestamp: string): string => {
   }
 };
 
-const toTitleCase = (str: string): string => {
-  return str.replace(/\w\S*/g, (txt) => txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase());
+const getStatusIcon = (status: string) => {
+  const iconStyle = { color: '' };
+
+  switch (status.toLowerCase()) {
+    case 'online':
+      iconStyle.color = 'green';
+      return <BsCircleFill style={iconStyle} />;
+    case 'offline':
+      iconStyle.color = 'gray';
+      return <BsWifiOff style={iconStyle} />;
+    case 'dnd':
+      iconStyle.color = 'red';
+      return <BsDashCircleFill style={iconStyle} />;
+    case 'idle':
+      iconStyle.color = 'yellow';
+      return <BsMoonFill style={iconStyle} />;
+    default:
+      return null;
+  }
 };
 
 // eslint-disable-next-line qwik/loader-location
-export const useGuildStatistics = routeLoader$<GuildStatistics[]>(async () => {
+export const useGuildStatistics = routeLoader$<GuildStatistics[] | null>(async () => {
   return await fetchGuildStatistics();
 });
 
 export default component$(() => {
   const guildStatistics = useGuildStatistics();
 
+  if (!guildStatistics.value || guildStatistics.value.length === 0) {
+    return null; // Hide the component if the API is unreachable or returns no data
+  }
+
   return (
-    <div class={activityStyles.container}>
-      {guildStatistics.value.map((guild, guildIndex) => (
-        <div key={guildIndex}>
-          <p class={activityStyles.status}>{toTitleCase(guild.discordstatus)}</p>
-          <div class={activityStyles.activities}>
-            {guild.activities.map((activity, activityIndex) => (
-              <div key={activityIndex}>
-                <div class={activityStyles.activity}>
-                  <div class={activityStyles.imagecontainer}>
-                    <img width="128" height="128" src={activity.largeImageURL} alt={activity.largeText} class={activityStyles.largeImage}/>
-                    <img src={activity.smallImageURL} alt={activity.smallText} class={activityStyles.smallImage}/>
-                  </div>
-                  <h3 class={activityStyles.name}>{activity.name}</h3>
+    <>
+      {guildStatistics.value.length > 0 && guildStatistics.value[0].discordstatus.toLowerCase() !== 'offline' && (
+        <div class={activityStyles.container}>
+          {guildStatistics.value.map((guild, guildIndex) => (
+            <div key={guildIndex}>
+              {guild.discordstatus.toLowerCase() !== 'offline' && (
+                <div class={activityStyles.activities}>
+                  {guild.activities.map((activity, activityIndex) => (
+                    <div key={activityIndex}>
+                      <div class={activityStyles.activity}>
+                        <div class={activityStyles.imagecontainer}>
+                          <img width="128" height="128" src={activity.largeImageURL} alt={activity.largeText} class={activityStyles.largeImage}/>
+                          <img src={activity.smallImageURL} alt={activity.smallText} class={activityStyles.smallImage}/>
+                        </div>
+                        <h3 class={activityStyles.name}>{activity.name}</h3>
+                      </div>
+                      <p class={activityStyles.details}>{activity.details}</p>
+                      <p class={activityStyles.state}>{activity.state}</p>
+                      <p class={activityStyles.time}>{calculateTimeElapsed(activity.startTimestamp)}</p>
+                    </div>
+                  ))}
+                  <p class={activityStyles.status}>{getStatusIcon(guild.discordstatus)}</p>
                 </div>
-                <p class={activityStyles.details}>{activity.details}</p>
-                <p class={activityStyles.state}>{activity.state}</p>
-                <p class={activityStyles.time}>{calculateTimeElapsed(activity.startTimestamp)}</p>
-              </div>
-            ))}
-          </div>
+              )}
+            </div>
+          ))}
         </div>
-      ))}
-    </div>
+      )}
+    </>
   );
 });

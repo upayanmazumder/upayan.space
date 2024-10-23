@@ -16,10 +16,8 @@
   font-size: 1.7rem;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   transition: color 0.3s ease-in-out;
-}
-
-.status:hover {
-  color: #ff6347;
+  margin-left: 20px;
+  text-align: left;
 }
 
 .activities {

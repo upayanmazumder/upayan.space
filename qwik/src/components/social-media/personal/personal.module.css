@@ -6,12 +6,15 @@
     color: #c9d1d9;
     padding: 10px;
     border-radius: 35px;
+    flex-direction: column;
+    text-align: center;
 }
 
 .button-group {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
+    justify-content: center;
 }
 
 .button-group a {
@@ -34,4 +37,26 @@
 
 .button-group a:active {
     transform: scale(0.9);
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 20px;
+    }
+
+    .button-group a {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero {
+        padding: 15px;
+    }
+
+    .button-group a {
+        width: 30px;
+        height: 30px;
+    }
 }

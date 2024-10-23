@@ -9,6 +9,8 @@
 .header img {
     border-radius: 50%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100px;
+    height: 100px;
 }
 
 .header img:hover {
@@ -28,8 +30,52 @@ nav ul {
     justify-content: center;
     padding: 0;
     margin: 20px 0 0 0;
+    flex-wrap: wrap;
 }
 
 nav li {
     margin: 0 15px;
+}
+
+@media (max-width: 768px) {
+    .header {
+        padding: 15px;
+    }
+
+    .header img {
+        width: 80px;
+        height: 80px;
+    }
+
+    .title {
+        font-size: 2em;
+    }
+
+    nav li {
+        margin: 0 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .header {
+        padding: 10px;
+    }
+
+    .header img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .title {
+        font-size: 1.5em;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav li {
+        margin: 10px 0;
+    }
 }
