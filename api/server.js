@@ -2,12 +2,14 @@ const express = require('express');
 const { Client, GatewayIntentBits, Partials } = require('discord.js');
 const dotenv = require('dotenv');
 const winston = require('winston');
+const axios = require('axios');
 
 dotenv.config();
 
 const BOT_TOKEN = process.env.BOT_TOKEN || 3100;
 const API_PORT = process.env.API_PORT || 3110;
 const USER_ID = '1240025366853193758';
+const CONTACT_WEBHOOK_URL = process.env.CONTACT_WEBHOOK_URL;
 
 // Configure logging
 const logger = winston.createLogger({
@@ -35,6 +37,7 @@ client.once('ready', async () => {
     logger.info(`Logged in as ${client.user?.tag}`);
 
     const app = express();
+    app.use(express.json()); // Middleware to parse JSON bodies
 
     app.set('guildStatus', []);
 
@@ -92,6 +95,37 @@ client.once('ready', async () => {
         } catch (err) {
             logger.error(`Error handling request to '/': ${err.message}`);
             res.status(500).json({ error: 'Internal Server Error' });
+        }
+    });
+
+    app.post('/contact', async (req, res) => {
+        const { name, email, longtext } = req.body;
+
+        if (!name || !longtext) {
+            return res.status(400).json({ error: 'Name and longtext are required' });
+        }
+
+        logger.info(`Contact form submitted: Name: ${name}, Email: ${email || 'N/A'}, Message: ${longtext}`);
+
+        try {
+            await axios.post(CONTACT_WEBHOOK_URL, {
+                embeds: [
+                    {
+                        title: 'New Contact Form Submission',
+                        fields: [
+                            { name: 'Name', value: name, inline: true },
+                            { name: 'Email', value: email || 'N/A', inline: true },
+                            { name: 'Message', value: longtext, inline: false },
+                        ],
+                        timestamp: new Date(),
+                    },
+                ],
+            });
+
+            res.status(200).json({ message: 'Contact information received' });
+        } catch (err) {
+            logger.error(`Failed to send webhook: ${err.message}`);
+            res.status(500).json({ error: 'Failed to send contact information' });
         }
     });
 
