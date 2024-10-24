@@ -7,7 +7,7 @@ const axios = require('axios');
 dotenv.config();
 
 const BOT_TOKEN = process.env.BOT_TOKEN;
-const API_PORT = process.env.API_PORT || 3110;
+const API_PORT = 3000;
 const USER_ID = '1240025366853193758';
 const CONTACT_WEBHOOK_URL = process.env.CONTACT_WEBHOOK_URL;
 
