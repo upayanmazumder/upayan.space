@@ -3,6 +3,6 @@ services:
     image: ghcr.io/upayanmazumder/upayan.space
     build: .
     ports:
-      - 3000:3000
+      - 3110:3000
     env_file:
       - upayan.space.env
