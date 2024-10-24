@@ -1,6 +1,6 @@
 services:
   backend:
-    image: ghcr.io/upayanmazumder/upayan.space:latest
+    image: ghcr.io/upayanmazumder/upayan.space
     build: .
     ports:
       - 3100:3100
