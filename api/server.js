@@ -6,7 +6,7 @@ const axios = require('axios');
 
 dotenv.config();
 
-const BOT_TOKEN = process.env.BOT_TOKEN || 3100;
+const BOT_TOKEN = process.env.BOT_TOKEN;
 const API_PORT = process.env.API_PORT || 3110;
 const USER_ID = '1240025366853193758';
 const CONTACT_WEBHOOK_URL = process.env.CONTACT_WEBHOOK_URL;
@@ -20,7 +20,7 @@ const logger = winston.createLogger({
     ),
     transports: [
         new winston.transports.Console(),
-        new winston.transports.File({ filename: 'app.log' })
+        new winston.transports.File({ filename: 'app.log' }),
     ],
 });
 
@@ -37,11 +37,10 @@ client.once('ready', async () => {
     logger.info(`Logged in as ${client.user?.tag}`);
 
     const app = express();
-    app.use(express.json()); // Middleware to parse JSON bodies
+    app.use(express.json());
 
     app.set('guildStatus', []);
 
-    // Function to periodically update guildStatus
     const updateGuildStatus = async () => {
         try {
             const guildStatus = [];
@@ -98,6 +97,7 @@ client.once('ready', async () => {
         }
     });
 
+    // Fixed /contact endpoint
     app.post('/contact', async (req, res) => {
         const { name, email, longtext } = req.body;
 
@@ -109,14 +109,17 @@ client.once('ready', async () => {
 
         try {
             await axios.post(CONTACT_WEBHOOK_URL, {
+                content: `New Contact Form Submission`,
                 embeds: [
                     {
-                        title: 'New Contact Form Submission',
+                        title: name,
+                        color: 3447003,
                         fields: [
-                            { name: 'Name', value: name, inline: true },
-                            { name: 'Email', value: email || 'N/A', inline: true },
                             { name: 'Message', value: longtext, inline: false },
                         ],
+                        footer: {
+                            text: email || 'N/A',
+                        },
                         timestamp: new Date(),
                     },
                 ],
