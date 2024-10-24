@@ -11,6 +11,6 @@ COPY . .
 ARG NODE_ENV
 ENV NODE_ENV=${NODE_ENV}
 
-EXPOSE 3000
+EXPOSE 3110
 
 CMD ["npm", "run", "api"]
