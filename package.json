@@ -94,7 +94,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "cd qwik && npm run dev"
+    "dev": "cd qwik && npm run dev",
+    "api": "node api/server"
   },
   "repository": {
     "type": "git",
