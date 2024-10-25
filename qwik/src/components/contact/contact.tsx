@@ -1,6 +1,7 @@
 import { component$, useStore, $ } from "@builder.io/qwik";
 import contactStyles from './contact.module.css';
 import { BsInfoCircle } from "@qwikest/icons/bootstrap";
+
 interface ContactStore {
     name: string;
     email: string;
@@ -26,12 +27,23 @@ export default component$(() => {
             return;
         }
 
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(store.email)) {
+            store.error = 'Invalid email address';
+            return;
+        }
+
+        if (!store.name.trim()) {
+            store.error = 'Name is required';
+            return;
+        }
+
         store.loading = true;
         store.error = null;
         store.successMessage = null;
 
         try {
-            await fetch('https://upayan-statistics-api.upayan.space/contact', {
+            const response = await fetch('https://upayan-statistics-api.upayan.space/contact', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -43,9 +55,13 @@ export default component$(() => {
                 }),
             });
 
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+
             store.successMessage = 'Message sent successfully!';
         } catch (error) {
-            store.error = 'Failed to send message';
+            store.error = 'Failed to send message: ' + (error as Error).message;
         } finally {
             store.loading = false;
         }
@@ -55,32 +71,38 @@ export default component$(() => {
         <details class="container">
             <summary>Send me a message</summary>
             {store.loading && <p>Sending message...</p>}
-            {store.error && <p class="error">Error: {store.error}</p>}
-            {store.successMessage && <p class="success">{store.successMessage}</p>}
+            {store.error && <p class="error" aria-live="assertive">Error: {store.error}</p>}
+            {store.successMessage && <p class="success" aria-live="polite">{store.successMessage}</p>}
 
             <div class={contactStyles.formGroup}>
-                <label>Name:</label>
+                <label for="name">Name:</label>
                 <input
+                    id="name"
                     type="text"
                     value={store.name}
                     onInput$={(e) => (store.name = (e.target as HTMLInputElement).value)}
+                    aria-required="true"
                 />
             </div>
 
             <div class={contactStyles.formGroup}>
-                <label>Email:</label>
+                <label for="email">Email:</label>
                 <input
+                    id="email"
                     type="email"
                     value={store.email}
                     onInput$={(e) => (store.email = (e.target as HTMLInputElement).value)}
+                    aria-required="true"
                 />
             </div>
 
             <div class={contactStyles.formGroup}>
-                <label>Message:</label>
+                <label for="message">Message:</label>
                 <textarea
+                    id="message"
                     value={store.message}
                     onInput$={(e) => (store.message = (e.target as HTMLTextAreaElement).value)}
+                    aria-required="true"
                 />
                 <p title="Large messages may fail to transfer!"><BsInfoCircle /> {store.message.length} characters</p>
             </div>
