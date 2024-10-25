@@ -2,9 +2,6 @@ services:
   caddy:
     image: caddy
     command: caddy reverse-proxy --from https://upayan-statistics-api.upayan.space/ --to http://backend:3110
-    ports:
-     - 443:443
-     - 80:80
   backend:
     image: ghcr.io/upayanmazumder/upayan.space:latest
     build: .
