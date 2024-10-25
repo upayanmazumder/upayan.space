@@ -3,6 +3,7 @@ const { Client, GatewayIntentBits, Partials } = require('discord.js');
 const dotenv = require('dotenv');
 const winston = require('winston');
 const axios = require('axios');
+const morgan = require('morgan');
 
 dotenv.config();
 
@@ -38,6 +39,9 @@ client.once('ready', async () => {
 
     const app = express();
     app.use(express.json());
+
+    // Use morgan to log requests
+    app.use(morgan('combined', { stream: { write: message => logger.info(message.trim()) } }));
 
     app.set('guildStatus', []);
 
