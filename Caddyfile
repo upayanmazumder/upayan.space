@@ -1,3 +1,0 @@
-https://upayan-statistics-api.upayan.space/ {
-    reverse_proxy upayan.space:3110
-}
