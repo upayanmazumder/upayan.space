@@ -1,0 +1,88 @@
+.container {
+    background-color: #1a1a2e;
+    color: #e0e0e0;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease, transform 0.3s ease, max-height 0.3s ease;
+    overflow: hidden;
+    font-size: 0.8rem;
+}
+
+summary {
+    font-size: 1em;
+    cursor: pointer;
+    padding: 10px;
+    border-bottom: 2px solid #3a3a4d;
+    transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+summary:hover {
+    color: #1f8ef1;
+    border-bottom-color: #1f8ef1;
+}
+
+.formGroup {
+    margin: 15px 0;
+    transition: transform 0.2s ease;
+}
+
+.formGroup:hover {
+    transform: scale(1.02);
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #3a3a4d;
+    border-radius: 5px;
+    background-color: #2b2b3d;
+    color: #e0e0e0;
+    font-size: 1em;
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+textarea {
+    max-width: 100%;
+    max-height: 200px;
+    min-width: 100%;
+    min-height: 48px;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #1f8ef1;
+    background-color: #2b2b4d;
+    outline: none;
+}
+
+.button {
+    background-color: #1f8ef1;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+}
+
+.button:hover {
+    background-color: #17a2e0;
+    transform: scale(1.05);
+}
+
+.success {
+    color: #28a745;
+    margin-top: 10px;
+}
+
+.error {
+    color: #dc3545;
+    margin-top: 10px;
+}

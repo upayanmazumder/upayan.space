@@ -36,111 +36,118 @@ const client = new Client({
 });
 
 client.once('ready', async () => {
-    logger.info(`Logged in as ${client.user?.tag}`);
+    try {
+        logger.info(`Logged in as ${client.user?.tag}`);
 
-    const app = express();
-    app.use(cors());
-    app.use(express.json());
+        const app = express();
+        app.use(cors());
+        app.use(express.json());
 
-    // Use morgan to log requests
-    app.use(morgan('combined', { stream: { write: message => logger.info(message.trim()) } }));
+        app.use(morgan('combined', { stream: { write: message => logger.info(message.trim()) } }));
 
-    app.set('guildStatus', []);
+        app.set('guildStatus', []);
 
-    const updateGuildStatus = async () => {
-        try {
-            const guildStatus = [];
-            for (const guild of client.guilds.cache.values()) {
-                try {
-                    const member = await guild.members.fetch(USER_ID).catch(err => {
-                        logger.warn(`Failed to fetch member ${USER_ID} in guild ${guild.id}: ${err.message}`);
-                        return null;
-                    });
-                    if (member) {
-                        const activities = member.presence?.activities.map(activity => ({
-                            name: activity.name,
-                            type: activity.type,
-                            details: activity.details,
-                            state: activity.state,
-                            startTimestamp: activity.timestamps?.start,
-                            endTimestamp: activity.timestamps?.end,
-                            largeImageURL: activity.assets?.largeImageURL(),
-                            largeText: activity.assets?.largeText,
-                            smallImageURL: activity.assets?.smallImageURL(),
-                            smallText: activity.assets?.smallText,
-                            partyId: activity.party?.id,
-                            partySize: activity.party?.size,
-                            partyMax: activity.party?.max,
-                            syncId: activity.syncId,
-                            sessionId: activity.sessionId,
-                            flags: activity.flags?.toArray(),
-                        })) || [];
-                        guildStatus.push({
-                            guildId: guild.id,
-                            discordstatus: member.presence?.status || 'offline',
-                            activities,
+        const updateGuildStatus = async () => {
+            try {
+                const guildStatus = [];
+                for (const guild of client.guilds.cache.values()) {
+                    try {
+                        const member = await guild.members.fetch(USER_ID).catch(err => {
+                            logger.warn(`Failed to fetch member ${USER_ID} in guild ${guild.id}: ${err.message}`);
+                            return null;
                         });
+                        if (member) {
+                            const activities = member.presence?.activities.map(activity => ({
+                                name: activity.name,
+                                type: activity.type,
+                                details: activity.details,
+                                state: activity.state,
+                                startTimestamp: activity.timestamps?.start,
+                                endTimestamp: activity.timestamps?.end,
+                                largeImageURL: activity.assets?.largeImageURL(),
+                                largeText: activity.assets?.largeText,
+                                smallImageURL: activity.assets?.smallImageURL(),
+                                smallText: activity.assets?.smallText,
+                                partyId: activity.party?.id,
+                                partySize: activity.party?.size,
+                                partyMax: activity.party?.max,
+                                syncId: activity.syncId,
+                                sessionId: activity.sessionId,
+                                flags: activity.flags?.toArray(),
+                            })) || [];
+                            guildStatus.push({
+                                guildId: guild.id,
+                                discordstatus: member.presence?.status || 'offline',
+                                activities,
+                            });
+                        }
+                    } catch (err) {
+                        logger.error(`Error processing guild ${guild.id}: ${err.message}`);
                     }
-                } catch (err) {
-                    logger.error(`Error processing guild ${guild.id}: ${err.message}`);
                 }
+                app.set('guildStatus', guildStatus);
+            } catch (err) {
+                logger.error(`Failed to update guild status: ${err.message}`);
             }
-            app.set('guildStatus', guildStatus);
-        } catch (err) {
-            logger.error(`Failed to update guild status: ${err.message}`);
-        }
-    };
+        };
 
-    updateGuildStatus();
-    setInterval(updateGuildStatus, 30 * 1000);
+        updateGuildStatus();
+        setInterval(updateGuildStatus, 30 * 1000);
 
-    app.get('/', async (req, res) => {
-        try {
-            res.json(app.get('guildStatus'));
-        } catch (err) {
-            logger.error(`Error handling request to '/': ${err.message}`);
-            res.status(500).json({ error: 'Internal Server Error' });
-        }
-    });
+        app.get('/', async (req, res) => {
+            try {
+                res.json(app.get('guildStatus'));
+            } catch (err) {
+                logger.error(`Error handling request to '/': ${err.message}`);
+                res.status(500).json({ error: 'Internal Server Error' });
+            }
+        });
 
-    // Fixed /contact endpoint
-    app.post('/contact', async (req, res) => {
-        const { name, email, longtext } = req.body;
+        app.post('/contact', async (req, res) => {
+            try {
+                const { name, email, longtext } = req.body;
 
-        if (!name || !longtext) {
-            return res.status(400).json({ error: 'Name and longtext are required' });
-        }
+                if (!name || !longtext) {
+                    return res.status(400).json({ error: 'Name and longtext are required' });
+                }
 
-        logger.info(`Contact form submitted: Name: ${name}, Email: ${email || 'N/A'}, Message: ${longtext}`);
+                logger.info(`Contact form submitted: Name: ${name}, Email: ${email || 'N/A'}, Message: ${longtext}`);
 
-        try {
-            await axios.post(CONTACT_WEBHOOK_URL, {
-                content: `New Contact Form Submission`,
-                embeds: [
-                    {
-                        title: name,
-                        color: 3447003,
-                        fields: [
-                            { name: 'Message', value: longtext, inline: false },
+                try {
+                    await axios.post(CONTACT_WEBHOOK_URL, {
+                        content: `New Contact Form Submission`,
+                        embeds: [
+                            {
+                                title: name,
+                                color: 3447003,
+                                fields: [
+                                    { name: 'Message', value: longtext, inline: false },
+                                ],
+                                footer: {
+                                    text: email || 'N/A',
+                                },
+                                timestamp: new Date(),
+                            },
                         ],
-                        footer: {
-                            text: email || 'N/A',
-                        },
-                        timestamp: new Date(),
-                    },
-                ],
-            });
+                    });
 
-            res.status(200).json({ message: 'Contact information received' });
-        } catch (err) {
-            logger.error(`Failed to send webhook: ${err.message}`);
-            res.status(500).json({ error: 'Failed to send contact information' });
-        }
-    });
+                    res.status(200).json({ message: 'Contact information received' });
+                } catch (err) {
+                    logger.error(`Failed to send webhook: ${err.message}`);
+                    res.status(500).json({ error: 'Failed to send contact information' });
+                }
+            } catch (err) {
+                logger.error(`Error handling request to '/contact': ${err.message}`);
+                res.status(500).json({ error: 'Internal Server Error' });
+            }
+        });
 
-    app.listen(API_PORT, () => {
-        logger.info(`API is listening on port ${API_PORT}`);
-    });
+        app.listen(API_PORT, () => {
+            logger.info(`API is listening on port ${API_PORT}`);
+        });
+    } catch (err) {
+        logger.error(`Error during client ready event: ${err.message}`);
+    }
 });
 
 client.login(BOT_TOKEN).catch(err => {

@@ -1,6 +1,7 @@
 import { component$ } from '@builder.io/qwik';
 import heroStyles from './details.module.css';
-import Infobox from "../../components/infobox/infobox";
+import Infobox from "../infobox/infobox";
+import ContactForm from "../contact/contact"
 
 export default component$(() => {
 
@@ -36,6 +37,7 @@ export default component$(() => {
                     <p>
                     Feel free to get in touch with me at <a href="mailto:contact@upayan.space">contact@upayan.space</a>.
                     </p>
+                    <ContactForm />
                 </Infobox>
             </div>
         </div>

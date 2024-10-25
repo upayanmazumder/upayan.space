@@ -133,11 +133,9 @@ button {
 
 a.button,
 button:hover::after {
-    content: "⤤";
     margin-left: 5px;
     position: absolute;
-    left: 90%;
-    transition: left 0.3s ease;
+
 }
 
 a.button:hover::after,
