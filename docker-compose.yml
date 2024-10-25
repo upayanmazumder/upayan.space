@@ -1,19 +1,4 @@
 services:
-  caddy:
-    image: caddy
-    command: caddy reverse-proxy --from https://upayan-statistics-api.upayan.space --to http://backend:3110
-    volumes:
-      - ./Caddyfile:/etc/caddy/Caddyfile
-    ports:
-      - "80:80"  # Expose port 80 for HTTP
-      - "443:443"  # Expose port 443 for HTTPS
-    depends_on:
-      - backend  # Ensure backend starts before caddy
-
   backend:
     image: ghcr.io/upayanmazumder/upayan.space:latest
     build: .
-    ports:
-      - "3110:3000"  # Map external port 3110 to internal port 3000
-    env_file:
-      - .env
