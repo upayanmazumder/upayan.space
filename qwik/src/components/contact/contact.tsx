@@ -2,7 +2,7 @@ import { component$, useStore, $ } from "@builder.io/qwik";
 import contactStyles from './contact.module.css';
 import { BsInfoCircle } from "@qwikest/icons/bootstrap";
 
-interface ContactStore {
+interface ContactForm {
     name: string;
     email: string;
     message: string;
@@ -12,7 +12,7 @@ interface ContactStore {
 }
 
 export default component$(() => {
-    const store = useStore<ContactStore>({
+    const form = useStore<ContactForm>({
         name: '',
         email: '',
         message: 'Hey there! Just wanted to say that...',
@@ -22,25 +22,25 @@ export default component$(() => {
     });
 
     const submitForm = $(async () => {
-        if (store.message.length > 200) {
-            store.error = 'Message exceeds the 200 character limit';
+        if (form.message.length > 200) {
+            form.error = 'Message exceeds the 200 character limit';
             return;
         }
 
         const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(store.email)) {
-            store.error = 'Invalid email address';
+        if (!emailRegex.test(form.email)) {
+            form.error = 'Invalid email address';
             return;
         }
 
-        if (!store.name.trim()) {
-            store.error = 'Name is required';
+        if (!form.name.trim()) {
+            form.error = 'Name is required';
             return;
         }
 
-        store.loading = true;
-        store.error = null;
-        store.successMessage = null;
+        form.loading = true;
+        form.error = null;
+        form.successMessage = null;
 
         try {
             const response = await fetch('https://upayan-statistics-api.upayan.space/contact', {
@@ -49,9 +49,9 @@ export default component$(() => {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({
-                    name: store.name,
-                    email: store.email,
-                    longtext: store.message,
+                    name: form.name,
+                    email: form.email,
+                    longtext: form.message,
                 }),
             });
 
@@ -59,28 +59,28 @@ export default component$(() => {
                 throw new Error('Network response was not ok');
             }
 
-            store.successMessage = 'Message sent successfully!';
+            form.successMessage = 'Message sent successfully!';
         } catch (error) {
-            store.error = 'Failed to send message: ' + (error as Error).message;
+            form.error = 'Failed to send message: ' + (error as Error).message;
         } finally {
-            store.loading = false;
+            form.loading = false;
         }
     });
 
     return (
         <details class="container">
             <summary>Send me a message</summary>
-            {store.loading && <p>Sending message...</p>}
-            {store.error && <p class="error" aria-live="assertive">Error: {store.error}</p>}
-            {store.successMessage && <p class="success" aria-live="polite">{store.successMessage}</p>}
+            {form.loading && <p>Sending message...</p>}
+            {form.error && <p class="error" aria-live="assertive">Error: {form.error}</p>}
+            {form.successMessage && <p class="success" aria-live="polite">{form.successMessage}</p>}
 
             <div class={contactStyles.formGroup}>
                 <label for="name">Name:</label>
                 <input
                     id="name"
                     type="text"
-                    value={store.name}
-                    onInput$={(e) => (store.name = (e.target as HTMLInputElement).value)}
+                    value={form.name}
+                    onInput$={(e) => (form.name = (e.target as HTMLInputElement).value)}
                     aria-required="true"
                 />
             </div>
@@ -90,8 +90,8 @@ export default component$(() => {
                 <input
                     id="email"
                     type="email"
-                    value={store.email}
-                    onInput$={(e) => (store.email = (e.target as HTMLInputElement).value)}
+                    value={form.email}
+                    onInput$={(e) => (form.email = (e.target as HTMLInputElement).value)}
                     aria-required="true"
                 />
             </div>
@@ -100,14 +100,14 @@ export default component$(() => {
                 <label for="message">Message:</label>
                 <textarea
                     id="message"
-                    value={store.message}
-                    onInput$={(e) => (store.message = (e.target as HTMLTextAreaElement).value)}
+                    value={form.message}
+                    onInput$={(e) => (form.message = (e.target as HTMLTextAreaElement).value)}
                     aria-required="true"
                 />
-                <p title="Large messages may fail to transfer!"><BsInfoCircle /> {store.message.length} characters</p>
+                <p title="Large messages may fail to transfer!"><BsInfoCircle /> {form.message.length} characters</p>
             </div>
 
-            <button onClick$={submitForm} disabled={store.loading} class={contactStyles.button}>
+            <button onClick$={submitForm} disabled={form.loading} class={contactStyles.button}>
                 Send Message
             </button>
         </details>
