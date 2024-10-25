@@ -6,6 +6,7 @@
     padding: 20px;
     color: #f0f0f0;
     cursor: default;
+    margin: 50px;
 }
 
 .certificateCard {
@@ -48,6 +49,16 @@
     font-size: 0.9rem;
     margin-top: 10px;
     text-align: center;
+}
+
+.certificateTag {
+    display: inline-block;
+    background-color: #2a2a2a;
+    color: #f0f0f0;
+    padding: 5px 10px;
+    margin: 5px;
+    border-radius: 8px;
+    font-size: 0.8rem;
 }
 
 @media (max-width: 768px) {
