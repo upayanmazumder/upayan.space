@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const { Client, GatewayIntentBits, Partials } = require('discord.js');
 const dotenv = require('dotenv');
 const winston = require('winston');
@@ -38,6 +39,7 @@ client.once('ready', async () => {
     logger.info(`Logged in as ${client.user?.tag}`);
 
     const app = express();
+    app.use(cors());
     app.use(express.json());
 
     // Use morgan to log requests
