@@ -1,7 +1,6 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead, RequestHandler } from "@builder.io/qwik-city";
 import { useSignOut, useSession } from '~/routes/plugin@auth';
-import sessionStyles from "../../components/auth/session/session.module.css";
 import { Form } from '@builder.io/qwik-city';
 import Infobox from "../../components/infobox/infobox";
 import profileStyles from "./profile.module.css";
@@ -31,15 +30,15 @@ export default component$(() => {
           <br />
           
           <Infobox>
-            <div class={sessionStyles.userInfo}>
+            <div class={profileStyles.userInfo}>
               <p id="p1" class={profileStyles.p}>{session.value.user?.name}</p>
               <p id="p2" class={profileStyles.p}>{session.value.user?.email}</p>
             </div>
           </Infobox>
 
-          <Form action={signOut} class={sessionStyles.form}>
+          <Form action={signOut} class={profileStyles.form}>
             <input type="hidden" name="redirectTo" value="/a/signedout" />
-            <button class={sessionStyles.button}>Sign Out</button>
+            <button class={profileStyles.button}>Sign Out</button>
           </Form>
         </div>
       ) : (
