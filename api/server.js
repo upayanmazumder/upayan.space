@@ -105,14 +105,14 @@ client.once('ready', async () => {
 
         app.post('/contact', async (req, res) => {
             try {
-                const { name, email, longtext } = req.body;
-
+                const { name, email, longtext, imageUrl } = req.body;
+        
                 if (!name || !longtext) {
                     return res.status(400).json({ error: 'Name and longtext are required' });
                 }
-
-                logger.info(`Contact form submitted: Name: ${name}, Email: ${email || 'N/A'}, Message: ${longtext}`);
-
+        
+                logger.info(`Contact form submitted: Name: ${name}, Email: ${email || 'N/A'}, Message: ${longtext}, Image URL: ${imageUrl || 'N/A'}`);
+        
                 try {
                     await axios.post(CONTACT_WEBHOOK_URL, {
                         content: `New Contact Form Submission`,
@@ -126,11 +126,14 @@ client.once('ready', async () => {
                                 footer: {
                                     text: email || 'N/A',
                                 },
+                                image: {
+                                    url: imageUrl || '',
+                                },
                                 timestamp: new Date(),
                             },
                         ],
                     });
-
+        
                     res.status(200).json({ message: 'Contact information received' });
                 } catch (err) {
                     logger.error(`Failed to send webhook: ${err.message}`);
@@ -141,6 +144,7 @@ client.once('ready', async () => {
                 res.status(500).json({ error: 'Internal Server Error' });
             }
         });
+        
 
         app.listen(API_PORT, () => {
             logger.info(`API is listening on port ${API_PORT}`);
