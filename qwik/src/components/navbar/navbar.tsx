@@ -1,6 +1,7 @@
 import { component$ } from '@builder.io/qwik';
 import styles from './navbar.module.css';
 import { BsHouse, BsPersonBadge, BsPatchCheck, BsBasket, BsPersonRolodex } from '@qwikest/icons/bootstrap';
+import Session from "../auth/session/session";
 
 export default component$(() => {
     const navItems = [
@@ -22,6 +23,10 @@ export default component$(() => {
                         </a>
                     </li>
                 ))}
+                {/* Add Session component as a nav item */}
+                <li class={styles.navItem}>
+                    <Session />
+                </li>
             </ul>
         </nav>
     );
