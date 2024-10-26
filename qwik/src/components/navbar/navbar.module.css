@@ -23,6 +23,7 @@
 
 .navItem {
     position: relative;
+    margin: auto;
 }
 
 .navLink {
