@@ -1,5 +1,5 @@
 .container {
-    background-color: #1a1a2e;
+    background-color: #2d2d2d8e;
     color: #e0e0e0;
     border-radius: 10px;
     padding: 20px;
@@ -16,7 +16,7 @@ summary {
     font-size: 1em;
     cursor: pointer;
     padding: 10px;
-    border-bottom: 2px solid #3a3a4d;
+    border-bottom: 2px solid #444444;
     transition: color 0.3s ease, border-bottom-color 0.3s ease;
 }
 
@@ -40,23 +40,24 @@ textarea {
     padding: 10px;
     border: 1px solid #3a3a4d;
     border-radius: 5px;
-    background-color: #2b2b3d;
+    background-color: #353535;
     color: #e0e0e0;
     font-size: 1em;
     transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 textarea {
-    max-width: 100%;
-    max-height: 200px;
-    min-width: 100%;
+    margin-top: 15px;
+    max-width: 90%;
+    max-height: 60px;
+    min-width: 90%;
     min-height: 48px;
 }
 
 input:focus,
 textarea:focus {
     border-color: #1f8ef1;
-    background-color: #2b2b4d;
+    background-color: #62626275;
     outline: none;
 }
 
@@ -85,4 +86,8 @@ textarea:focus {
 .error {
     color: #dc3545;
     margin-top: 10px;
+}
+
+.characterCountExceeded {
+    color: red;
 }
