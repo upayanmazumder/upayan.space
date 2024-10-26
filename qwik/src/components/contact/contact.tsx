@@ -8,6 +8,7 @@ import { useSession, useSignIn } from '~/routes/plugin@auth';
 interface ContactForm {
     name: string;
     email: string;
+    imageUrl: string;
     message: string;
     loading: boolean;
     successMessage: string | null;
@@ -22,7 +23,8 @@ export default component$(() => {
     const form = useStore<ContactForm>({
         name: session.value?.user?.name || '',
         email: session.value?.user?.email || '',
-        message: 'Hey there! Just wanted to say that...',
+        imageUrl : session.value?.user?.image || '',
+        message: 'Hi Upayan, I wanted to say... ',
         loading: false,
         successMessage: null,
         error: null,
@@ -37,17 +39,6 @@ export default component$(() => {
             return;
         }
 
-        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRegex.test(form.email)) {
-            form.error = 'Invalid email address';
-            return;
-        }
-
-        if (!form.name.trim()) {
-            form.error = 'Name is required';
-            return;
-        }
-
         form.loading = true;
 
         try {
@@ -58,6 +49,7 @@ export default component$(() => {
                     name: form.name,
                     email: form.email,
                     longtext: form.message,
+                    imageUrl: form.imageUrl,
                 }),
             });
 

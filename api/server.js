@@ -116,6 +116,7 @@ client.once('ready', async () => {
                 try {
                     await axios.post(CONTACT_WEBHOOK_URL, {
                         content: `New Contact Form Submission`,
+                        avatar_url: imageUrl || '',
                         embeds: [
                             {
                                 title: name,
@@ -125,9 +126,6 @@ client.once('ready', async () => {
                                 ],
                                 footer: {
                                     text: email || 'N/A',
-                                },
-                                image: {
-                                    url: imageUrl || '',
                                 },
                                 timestamp: new Date(),
                             },
@@ -144,6 +142,7 @@ client.once('ready', async () => {
                 res.status(500).json({ error: 'Internal Server Error' });
             }
         });
+        
         
 
         app.listen(API_PORT, () => {
