@@ -21,6 +21,7 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 export default component$(() => {
   useStyles$(styles);
 
+  // eslint-disable-next-line qwik/no-use-visible-task
   useVisibleTask$(() => {
     const handleScroll = () => {
       const scrollPosition = window.pageYOffset;
