@@ -12,14 +12,14 @@ export default component$(() => {
         <p>Please read our terms of service carefully before using our website!</p>
       </div>
 
-      <div class="container container-flex">
+      <div class="container container-flex" style="background-color: #000000b8">
         <Infobox>
           <div q:slot="title" class="icon icon-terms">
             Acceptance of Terms
           </div>
           <>
             <p>
-              By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement. In addition, when using this website's particular services, you shall be subject to any posted guidelines or rules applicable to such services, which may be posted and modified from time to time. All such guidelines or rules are hereby incorporated by reference into the Terms of Service.
+              By using this website, you agree to these terms. Additional guidelines may apply to specific services.
             </p>
           </>
         </Infobox>
@@ -30,7 +30,7 @@ export default component$(() => {
           </div>
           <>
             <p>
-              You are responsible for any activity that occurs under your screen name. You are responsible for keeping your password secure. You must not abuse, harass, threaten, impersonate, or intimidate other users of the Site. You may not use the Site for any illegal or unauthorized purpose. You agree to comply with all local laws regarding online conduct and acceptable content.
+              You are responsible for your actions on the site. Do not misuse the site or engage in illegal activities.
             </p>
           </>
         </Infobox>
@@ -41,50 +41,50 @@ export default component$(() => {
           </div>
           <>
             <p>
-              We may modify the Terms from time to time. You understand and agree that your access to or use of the Site is governed by the Terms effective at the time of your access to or use of the Site. If we make material changes to these Terms, we will notify you by email or by posting a notice on the Site prior to the effective date of the changes. You should revisit these Terms on a regular basis as revised versions will be binding on you.
+              We may update these terms. Changes will be posted on this page.
             </p>
           </>
         </Infobox>
       </div>
 
-      <div class="container container-flex">
+      <div class="container container-flex" style="background-color: #000000b8">
         <Infobox>
           <div q:slot="title" class="icon icon-access">
             Termination
           </div>
           <>
             <p>
-              We may terminate or suspend access to our Service immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms. Upon termination of your account, your right to use the Service will immediately cease. If you wish to terminate your account, you may simply discontinue using the Service.
+              We may suspend or terminate access to the site if you violate these terms.
             </p>
           </>
         </Infobox>
 
         <Infobox>
           <div q:slot="title" class="icon icon-questions">
-            Contact Us
+            Contact Me
           </div>
           <>
             <p>
-              If you have any questions about these Terms, please contact us at <a href="mailto:support@upayan.space">support@upayan.space</a>
+              Questions? Contact me at <a href="mailto:support@upayan.space">support@upayan.space</a>
             </p>
           </>
         </Infobox>
 
         <Infobox>
           <div q:slot="title" class="icon icon-policy">
-            Changes to This Privacy Policy
+            Privacy Policy Changes
           </div>
           <>
             <p>
-              We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page.
-            </p>
-            <p>
-              You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.
+              We may update our Privacy Policy. Changes will be posted on this page.
             </p>
           </>
         </Infobox>
       </div>
 
+      <div class="container container-center container-spacing-xl">
+        <p style="color: white"><strong>Note:</strong> This Terms of service is not legally binding.</p>
+      </div>
     </>
   );
 });
