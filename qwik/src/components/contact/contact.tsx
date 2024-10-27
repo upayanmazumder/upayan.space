@@ -106,8 +106,8 @@ export default component$(() => {
                 <Form action={signIn} class={sessionStyles.form}>
                     <input type="hidden" name="providerId" value="google" />
                     <input type="hidden" name="options.redirectTo" value="/#certificates" />
-                    <button class={sessionStyles.iconButton} aria-label="Sign in with Google">
-                        <BsGoogle />
+                    <button aria-label="Sign in with Google">
+                        Log in using Google
                     </button>
                 </Form>
             )}
