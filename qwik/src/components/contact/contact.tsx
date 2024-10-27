@@ -1,7 +1,7 @@
 import { component$, useStore, $ } from "@builder.io/qwik";
 import contactStyles from './contact.module.css';
 import sessionStyles from "../auth/session/session.module.css";
-import { BsInfoCircle, BsGoogle } from "@qwikest/icons/bootstrap";
+import { BsInfoCircle } from "@qwikest/icons/bootstrap";
 import { Form } from '@builder.io/qwik-city';
 import { useSession, useSignIn } from '~/routes/plugin@auth';
 
