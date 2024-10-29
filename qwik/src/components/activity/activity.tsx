@@ -22,7 +22,7 @@ interface GuildStatistics {
 
 const fetchGuildStatistics = async (): Promise<GuildStatistics[] | null> => {
   try {
-    const response = await fetch('https://upayan-statistics-api.upayan.space/', {
+    const response = await fetch('https://api.upayan.space/', {
       headers: { Accept: 'application/json' },
     });
 
