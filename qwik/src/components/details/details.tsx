@@ -19,9 +19,9 @@ export default component$(() => {
                 </Infobox>
             </div>
 
-            <div id="services" class={heroStyles.card}>
+            <div id="interests" class={heroStyles.card}>
                 <Infobox>
-                    <span q:slot="title">Services</span>
+                    <span q:slot="title">Interests</span>
                     <p>
                     I primarily focus on web development, but I also have experience in Discord bot development. 
                     Recently, I've been diving into Data Structures and Algorithms (DSA) and AI/ML projects. 
