@@ -1,14 +1,15 @@
 import { component$ } from '@builder.io/qwik';
 import styles from './navbar.module.css';
-import { BsHouse, BsPersonBadge, BsPatchCheck, BsBasket, BsPersonRolodex } from '@qwikest/icons/bootstrap';
+import { BsHouse, BsCompass ,BsPersonBadge, BsPatchCheck, BsBasket, BsPersonRolodex } from '@qwikest/icons/bootstrap';
 import Session from "../auth/session/session";
 
 export default component$(() => {
     const navItems = [
         { name: 'Home', href: '/', icon: BsHouse },
+        { name: 'Services', href: '/#services', icon: BsBasket },
         { name: 'About', href: '/#about', icon: BsPersonBadge },
         { name: 'Certificates', href: '/certificates', icon: BsPatchCheck },
-        { name: 'Services', href: '/#services', icon: BsBasket },
+        { name: 'Interests', href: '/#interests', icon: BsCompass },
         { name: 'Contact', href: '/#contact', icon: BsPersonRolodex }
     ];
 
@@ -23,7 +24,6 @@ export default component$(() => {
                         </a>
                     </li>
                 ))}
-                {/* Add Session component as a nav item */}
                 <li class={styles.navItem}>
                     <Session />
                 </li>
