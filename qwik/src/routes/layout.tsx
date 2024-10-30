@@ -3,7 +3,6 @@ import type { RequestHandler } from "@builder.io/qwik-city";
 
 import Header from "../components/header/header";
 import NavBar from "../components/navbar/navbar"
-import CookieConsent from "~/components/cookies/cookie";
 import Footer from "../components/footer/footer";
 
 import styles from "./styles.css?inline";
@@ -42,7 +41,6 @@ export default component$(() => {
       <Header />
       <NavBar />
       <Slot />
-      <CookieConsent />
       <Footer />
     </>
   );
