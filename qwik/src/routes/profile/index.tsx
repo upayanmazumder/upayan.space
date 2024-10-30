@@ -20,7 +20,7 @@ export default component$(() => {
 
   return (
     <>
-      <div role="presentation" class="ellipsis"></div>
+      <div role="presentation"></div>
 
       {isSignedIn ? (
         <div class="container container-center">
