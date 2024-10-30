@@ -33,14 +33,14 @@ export default component$(() => {
     const submitForm = $(async () => {
         form.error = null;
         form.successMessage = null;
-
+    
         if (form.message.length > 200) {
             form.error = 'Message exceeds the 200-character limit';
             return;
         }
-
+    
         form.loading = true;
-
+    
         try {
             const response = await fetch('https://api.upayan.space/contact', {
                 method: 'POST',
@@ -52,12 +52,19 @@ export default component$(() => {
                     imageUrl: form.imageUrl,
                 }),
             });
-
-            if (!response.ok) throw new Error('Network response was not ok');
-
+    
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Server responded with an error');
+            }
+    
             form.successMessage = 'Message sent successfully!';
         } catch (error) {
-            form.error = `Failed to send message: ${(error as Error).message}`;
+            if (error instanceof TypeError) {
+                form.error = 'Network error: Failed to send message. Please check your connection.';
+            } else {
+                form.error = `Failed to send message: ${(error as Error).message}`;
+            }
         } finally {
             form.loading = false;
         }
