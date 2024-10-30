@@ -4,7 +4,6 @@ const logger = require('winston');
 module.exports = (client, app, USER_ID) => {
     const router = express.Router();
 
-    // Update guild status function
     const updateGuildStatus = async () => {
         try {
             const guildStatus = [];
@@ -52,7 +51,6 @@ module.exports = (client, app, USER_ID) => {
     updateGuildStatus();
     setInterval(updateGuildStatus, 15 * 1000);
 
-    // Root route
     router.get('/', async (req, res) => {
         try {
             res.json(app.get('guildStatus'));
