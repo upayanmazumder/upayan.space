@@ -1,13 +1,10 @@
 import { component$ } from '@builder.io/qwik';
-import { useSession, useSignIn } from '~/routes/plugin@auth';
+import { useSession } from '~/routes/plugin@auth';
 import sessionStyles from "./session.module.css";
-import { Form } from '@builder.io/qwik-city';
-import { BsGoogle } from "@qwikest/icons/bootstrap";
 import unknownPerson from "../../../media/authentication/unknown-person.png";
 
 export default component$(() => {
   const session = useSession();
-  const signIn = useSignIn();
   const isSignedIn = session.value?.user;
 
   return (
@@ -31,13 +28,9 @@ export default component$(() => {
           </div>
         </div>
       ) : (
-        <Form action={signIn} class={sessionStyles.form}>
-          <input type="hidden" name="providerId" value="google" />
-          <input type="hidden" name="options.redirectTo" value="/a/signedin" />
-          <button class={sessionStyles.iconButton}>
-            <BsGoogle />
-          </button>
-        </Form>
+        <div class={sessionStyles.loginContainer}>
+            <button onClick$={() => window.location.href = '/a/signin'} class={sessionStyles.loginButton}>Login</button>
+        </div>
       )}
     </>
   );

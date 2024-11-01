@@ -19,9 +19,13 @@
   top: 60px;
 }
 
-.loginContainer {
-  background-color: #0a539b;
-  border-radius: 10px;
+.authenticateContainer {
+  display: flex;
+  flex-direction: row;
+  width: fit-content;
+  margin: auto;
+  gap: 15px;
+  margin-top: 25px;
 }
 
 .imgContainer {
@@ -81,12 +85,6 @@
   align-items: center;
   justify-content: center;
   margin: auto;
-}
-
-.loginButton {
-  size: 0.5rem;
-  margin: 0;
-  padding: 15px !important;
 }
 
 .button {
