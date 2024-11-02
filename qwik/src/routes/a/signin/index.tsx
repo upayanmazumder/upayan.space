@@ -6,8 +6,6 @@ export default component$(() => {
   return (
     <>
       <div class="container container-center container-spacing-xl">
-        <h3>Sign in!</h3> <br/>
-        <p style="color: white">Use any of the methods below to sign in!</p>
         <AuthenticateForm />
       </div>
     </>

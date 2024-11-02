@@ -1,0 +1,67 @@
+.authenticateContainer {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    border-radius: 8px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.form {
+    display: inline-block;
+}
+
+.iconButton {
+    background-color: #b8b8b81d;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    padding: 10px;
+    width: 60px;
+    height: 60px;
+}
+
+.iconButton:hover {
+    background-color: #dedede3c;
+}
+
+.iconButton svg {
+    width: 34px;
+    height: 34px;
+    fill: #f7f4f4;
+}
+
+@media (max-width: 600px) {
+    .authenticateContainer {
+        padding: 1rem;
+    }
+
+    .button {
+        font-size: 1rem;
+        padding: 8px 16px;
+    }
+
+    .iconButton {
+        width: 50px;
+        height: 50px;
+    }
+
+    .iconButton svg {
+        width: 28px;
+        height: 28px;
+    }
+}
