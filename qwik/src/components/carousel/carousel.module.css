@@ -3,25 +3,28 @@
     flex-direction: column;
     align-items: center;
     padding: 20px;
-    color: #f0f0f0;
-    border-radius: 8px;
+    color: #e0e0e0;
+    background-color: #1a1a1a6d;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
 .card {
     display: flex;
     align-items: center;
-    background-color: #2c2c2c;
-    border-radius: 8px;
+    background-color: #2b2b2b;
+    border-radius: 10px;
     padding: 20px;
     margin: 20px 0;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-    animation: slideIn 0.5s ease;
-    margin-bottom: 0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    animation: slideIn 0.6s ease;
 }
 
 .card img {
     border-radius: 50%;
     margin-right: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 15px;
 }
 
 .cardContent {
@@ -31,52 +34,58 @@
 
 .cardContent h3 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    color: #61dafb;
     transition: color 0.3s ease;
 }
 
 .cardContent p {
     margin: 5px 0;
-    font-size: 1rem;
+    font-size: 1.1rem;
+    color: #b0b0b0;
 }
 
 .cardContent a {
-    color: #1263c7 !important;
+    color: #61dafb;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .cardContent a:hover {
-    color: rgb(54, 116, 186) !important;
+    color: #1e90ff;
 }
 
 .buttonContainer {
     display: flex;
     justify-content: center;
-    margin-top: 0px;
+    margin-top: 20px;
 }
 
 .button {
-    color: #2aa1cc;
-    border: none;
-    padding: 10px 15px;
-    margin: 0 5px;
+    color: #61dafb;
+    background-color: #1a1a1a;
+    border: 1px solid #61dafb;
+    padding: 10px 20px;
+    margin: 0 10px;
     border-radius: 5px;
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .button:hover {
-    color: #61caf0;
+    background-color: #61dafb;
+    color: #1a1a1a;
 }
 
 .button:active {
-    color: #1263c7;
+    background-color: #1e90ff;
+    color: #1a1a1a;
 }
 
 @keyframes slideIn {
     from {
         opacity: 0;
-        transform: translateY(-20px);
+        transform: translateY(-30px);
     }
     to {
         opacity: 1;
