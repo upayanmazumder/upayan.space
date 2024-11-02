@@ -1,13 +1,40 @@
 .card {
-    background-color: rgba(70, 70, 70, 0.435);
-    max-width: 80;
+    background-color: rgba(0, 0, 0, 0.8);
+    max-width: 80%;
     width: fit-content;
-    border-radius: 50px;
-    margin-top: 50px !important;
-    color: white;
+    border-radius: 20px;
+    margin: 50px auto;
+    color: #ffffff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
 .icon {
-    margin-top: 50px;
+    margin-top: 20px;
     font-size: 50px;
+    color: #1e90ff;
+    transition: color 0.3s ease;
+}
+
+.icon:hover {
+    color: #00bfff;
+}
+
+@media (max-width: 768px) {
+    .card {
+        max-width: 90%;
+        margin: 20px auto;
+        padding: 15px;
+    }
+
+    .icon {
+        font-size: 40px;
+        margin-top: 15px;
+    }
 }
