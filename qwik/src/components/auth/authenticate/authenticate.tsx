@@ -2,7 +2,7 @@ import { component$ } from '@builder.io/qwik';
 import { useSession, useSignIn } from '~/routes/plugin@auth';
 import sessionStyles from "./authenticate.module.css";
 import { Form } from '@builder.io/qwik-city';
-import { BsDiscord, BsGoogle } from "@qwikest/icons/bootstrap";
+import { BsDiscord, BsGithub, BsGoogle } from "@qwikest/icons/bootstrap";
 
 export default component$(() => {
   const session = useSession();
@@ -31,6 +31,14 @@ export default component$(() => {
           <button class={sessionStyles.iconButton}>
             <BsDiscord />
           </button>
+          </Form>
+
+          <Form action={signIn} class={sessionStyles.form}>
+            <input type="hidden" name="providerId" value="github" />
+            <input type="hidden" name="options.redirectTo" value="/a/signedin" />
+            <button class={sessionStyles.iconButton}>
+              <BsGithub />
+            </button>
           </Form>
         </div>
       )}
