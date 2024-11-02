@@ -1,25 +1,40 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Roboto:wght@400;700&display=swap');
 
+:root {
+  --primary-bg: #1a1a2e;
+  --secondary-bg: #16213e;
+  --accent-color: #0f3460;
+  --text-color: #e0e0e0;
+  --hover-scale: 1.05;
+  --transition-duration: 0.3s;
+}
+
+body {
+  background-color: var(--primary-bg);
+  color: var(--text-color);
+  font-family: 'Red Hat Roboto', sans-serif;
+}
+
 .container {
-  background-color: #5662f6;
+  background-color: var(--secondary-bg);
   padding: 20px 30px;
   margin: 60px auto;
   width: fit-content;
   border-radius: 10px;
-  transition: all 0.3s ease-in-out;
-  color: white !important;
+  transition: all var(--transition-duration) ease-in-out;
+  color: var(--text-color) !important;
   font-family: 'Red Hat Roboto', sans-serif;
   cursor: default;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .container:hover {
-  transform: scale(1.05);
+  transform: scale(var(--hover-scale));
 }
 
 .status {
   font-size: 1rem;
-  font-family: 'Red Hat Roboto', sans-serif;
-  transition: color 0.3s ease-in-out;
+  transition: color var(--transition-duration) ease-in-out;
   margin-left: 20px;
   text-align: left;
 }
@@ -27,7 +42,7 @@
 .activity {
   display: flex;
   flex-direction: row;
-  transition: transform 0.3s ease-in-out;
+  transition: transform var(--transition-duration) ease-in-out;
 }
 
 .activity:hover {
@@ -44,7 +59,7 @@
   max-height: 50px;
   height: auto;
   width: auto;
-  transition: transform 0.3s ease-in-out;
+  transition: transform var(--transition-duration) ease-in-out;
 }
 
 .largeImage:hover {
@@ -56,7 +71,7 @@
   max-width: 20px;
   max-height: 20px;
   height: 20px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform var(--transition-duration) ease-in-out;
 }
 
 .smallImage:hover {
@@ -69,18 +84,15 @@ p {
 
 .name {
   margin-left: 25px;
-  transition: font-size 0.3s ease-in-out;
-  font-family: 'Red Hat Roboto', sans-serif;
+  transition: font-size var(--transition-duration) ease-in-out;
 }
 
 .details {
-  font-family: 'Red Hat Roboto', sans-serif;
-  transition: font-size 0.3s ease-in-out;
+  transition: font-size var(--transition-duration) ease-in-out;
 }
 
 .state {
-  font-family: 'Red Hat Roboto', sans-serif;
-  transition: font-size 0.3s ease-in-out;
+  transition: font-size var(--transition-duration) ease-in-out;
 }
 
 .time {
@@ -104,7 +116,6 @@ p {
 
   .state {
     font-size: 0.9rem;
-    font-family: 'Red Hat Roboto', sans-serif;
   }
 }
 
