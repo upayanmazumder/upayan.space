@@ -61,7 +61,7 @@ export default component$(() => {
   );
 
   const filteredButtonDetails = buttonDetails.filter(button =>
-    ["IIT-Madras", "Leetcode", "Microsoft Learn", "Gravatar"].includes(button.name)
+    ["IIT-Madras", "Leetcode", "Microsoft Learn", "Gravatar", "Devfolio"].includes(button.name)
   );
 
   return (

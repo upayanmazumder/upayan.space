@@ -69,6 +69,11 @@ button.gravatar-button {
     font-family: 'Red Hat Display';
 }
 
+button.devfolio-button {
+    background-color: #3670ff;
+    font-family: 'Red Hat Display';
+}
+
 @media (max-width: 1200px) {
     .button-group a {
         width: 45px;

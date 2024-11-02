@@ -48,5 +48,10 @@
         "class": "pinterest-button",
         "name": "Pinterest",
         "link": "https://in.pinterest.com/upayanmazumder/"
+    },
+    {
+        "class": "devfolio-button",
+        "name": "Devfolio",
+        "link": "https://devfolio.co/@Upayan"
     }
 ]
