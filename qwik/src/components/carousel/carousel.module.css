@@ -5,7 +5,7 @@
     padding: 20px;
     color: #e0e0e0;
     background-color: #1a1a1a6d;
-    border-radius: 10px;
+    border-radius: var(--border-radius-large);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
 }
 
@@ -13,7 +13,7 @@
     display: flex;
     align-items: center;
     background-color: #2b2b2b;
-    border-radius: 10px;
+    border-radius: var(--border-radius-medium);
     padding: 20px;
     margin: 20px 0;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
@@ -67,7 +67,7 @@
     border: 1px solid #61dafb;
     padding: 10px 20px;
     margin: 0 10px;
-    border-radius: 5px;
+    border-radius: var(--border-radius-small);
     cursor: pointer;
     transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -80,6 +80,12 @@
 .button:active {
     background-color: #1e90ff;
     color: #1a1a1a;
+}
+
+.button svg {
+    margin: auto;
+    padding: auto;
+    vertical-align: middle;
 }
 
 @keyframes slideIn {

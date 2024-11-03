@@ -1,5 +1,18 @@
 :root {
     --header-background-color: rgba(0, 0, 0, 0.7);
+    --footer-background-color: transparent;
+
+    --border-radius-small: 15px;
+    --border-radius-medium: 25px;
+    --border-radius-large: 30px;
+
+    --padding-small: 15px;
+    --padding-medium: 25px;
+    --padding-large: 40px;
+
+    --margin-small: 15px;
+    --margin-medium: 25px;
+    --margin-large: 40px;
 }
 
 body {
@@ -12,7 +25,7 @@ body {
     position: relative;
     z-index: 0;
     background-position: center center;
-
+    font-size: 16px;
     height: 100vh;
 }
 

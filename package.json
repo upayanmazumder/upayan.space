@@ -1,6 +1,6 @@
 {
   "name": "upayan.space",
-  "version": "2.1.2",
+  "version": "2.2.0",
   "description": "My Portfolio Site",
   "main": "api/server.js",
   "dependencies": {

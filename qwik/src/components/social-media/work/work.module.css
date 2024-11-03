@@ -50,28 +50,25 @@
 
 button.microsoftlearn-button {
     background-color: #f25022;
-    font-family: 'Red Hat Display';
+    color: #171717;
 }
 
 button.leetcode-button {
     background-color: #ffab1d;
-    font-family: 'Red Hat Display';
+    color: #000;
 }
 
 button.IIT-M-button {
     background-color: #2a0908;
     color: #d6a64f;
-    font-family: 'Red Hat Display';
 }
 
 button.gravatar-button {
     background-color: #4578ea;
-    font-family: 'Red Hat Display';
 }
 
 button.devfolio-button {
     background-color: #3670ff;
-    font-family: 'Red Hat Display';
 }
 
 @media (max-width: 1200px) {

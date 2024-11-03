@@ -17,10 +17,10 @@ body {
 
 .container {
   background-color: var(--secondary-bg);
-  padding: 20px 30px;
-  margin: 60px auto;
+  padding: var(--padding-medium);
+  margin: var(--margin-large) auto;
   width: fit-content;
-  border-radius: 10px;
+  border-radius: var(--border-radius-large);
   transition: all var(--transition-duration) ease-in-out;
   color: var(--text-color) !important;
   font-family: 'Red Hat Roboto', sans-serif;
@@ -33,9 +33,9 @@ body {
 }
 
 .status {
-  font-size: 1rem;
+  font-size: 12px;
   transition: color var(--transition-duration) ease-in-out;
-  margin-left: 20px;
+  margin-left: var(--margin-medium);
   text-align: left;
 }
 
@@ -85,18 +85,22 @@ p {
 .name {
   margin-left: 25px;
   transition: font-size var(--transition-duration) ease-in-out;
+  font-size: 20px;
 }
 
 .details {
   transition: font-size var(--transition-duration) ease-in-out;
+  font-size: 14px;
 }
 
 .state {
   transition: font-size var(--transition-duration) ease-in-out;
+  font-size: 14px;
 }
 
 .time {
   font-size: 0.7rem;
+  font-size: 12px;
 }
 
 @media screen and (max-width: 768px) {

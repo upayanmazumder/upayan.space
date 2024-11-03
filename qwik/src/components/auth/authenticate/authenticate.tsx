@@ -22,31 +22,33 @@ export default component$(() => {
         </div>
       ) : (
         <div class={signInStyles.authenticateContainer}>
-          <h3>Sign in!</h3> <br/>
+          <h3>Sign in!</h3>
           <p style="color: white">Use any of the methods below to sign in!</p>
-          <Form action={signIn} class={signInStyles.form}>
-            <input type="hidden" name="providerId" value="google" />
-            <input type="hidden" name="options.redirectTo" value="/a/signedin" />
-            <button class={signInStyles.iconButton}>
-              <BsGoogle />
-            </button>
-          </Form>
+          <div class={signInStyles.authenticateContainerForm}>
+            <Form action={signIn} class={signInStyles.form}>
+              <input type="hidden" name="providerId" value="google" />
+              <input type="hidden" name="options.redirectTo" value="/a/signedin" />
+              <button class={signInStyles.iconButton}>
+                <BsGoogle />
+              </button>
+            </Form>
 
-          <Form action={signIn} class={signInStyles.form}>
-            <input type="hidden" name="providerId" value="discord" />
-            <input type="hidden" name="options.redirectTo" value="/a/signedin" />
-            <button class={signInStyles.iconButton}>
-              <BsDiscord />
-            </button>
-          </Form>
+            <Form action={signIn} class={signInStyles.form}>
+              <input type="hidden" name="providerId" value="discord" />
+              <input type="hidden" name="options.redirectTo" value="/a/signedin" />
+              <button class={signInStyles.iconButton}>
+                <BsDiscord />
+              </button>
+            </Form>
 
-          <Form action={signIn} class={signInStyles.form}>
-            <input type="hidden" name="providerId" value="github" />
-            <input type="hidden" name="options.redirectTo" value="/a/signedin" />
-            <button class={signInStyles.iconButton}>
-              <BsGithub />
-            </button>
-          </Form>
+            <Form action={signIn} class={signInStyles.form}>
+              <input type="hidden" name="providerId" value="github" />
+              <input type="hidden" name="options.redirectTo" value="/a/signedin" />
+              <button class={signInStyles.iconButton}>
+                <BsGithub />
+              </button>
+            </Form>
+          </div>
         </div>
       )}
     </div>

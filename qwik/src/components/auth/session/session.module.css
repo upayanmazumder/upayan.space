@@ -4,7 +4,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  border-radius: 15px;
+  border-radius: var(--border-radius-medium);
   padding: 10px;
   backdrop-filter: blur(10px);
   box-shadow: #FFF8E1;
@@ -48,7 +48,6 @@
 
 .img:hover {
   border: #0a539b 3px solid;
-  box-shadow: 0 0 10px #0a539b, 0 0 20px #0a539b;
 }
 
 .userInfo {

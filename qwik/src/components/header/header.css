@@ -5,13 +5,19 @@
     background-color: var(--header-background-color);
     backdrop-filter: blur(10px);
     cursor: default;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-content: center;
 }
 
 .header img {
     border-radius: 50%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    margin-right: 15px;
 }
 
 .header img:hover {
@@ -21,8 +27,9 @@
 
 .title {
     font-size: 2.5em;
-    margin: 10px 0;
+    margin: auto;
     color: #3877b4;
+    margin-left: 15px;
 }
 
 nav ul {

@@ -1,8 +1,8 @@
 .card {
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgb(43 43 43 / 42%);
     max-width: 80%;
     width: fit-content;
-    border-radius: 20px;
+    border-radius: var(--border-radius-large);
     margin: 50px auto;
     color: #ffffff;
     padding: 20px;

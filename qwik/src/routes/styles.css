@@ -121,10 +121,9 @@ a.button,
 button {
     background: var(--qwik-light-blue);
     border: none;
-    border-radius: 8px;
+    border-radius: var(--border-radius-small);
     color: white;
     cursor: pointer;
-    font-size: 0.8rem;
     padding: 10px 14px;
     text-align: center;
     position: relative;
@@ -157,7 +156,6 @@ button.button-small {
 @media screen and (min-width: 768px) {
     a.button,
     button {
-        font-size: 1rem;
         padding: 23px 35px;
     }
 }

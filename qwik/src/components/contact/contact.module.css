@@ -1,7 +1,7 @@
 .container {
     background-color: #2d2d2d8e;
     color: #e0e0e0;
-    border-radius: 10px;
+    border-radius: var(--border-radius-medium);
     padding: 20px;
     margin: 20px auto;
     width: 90%;
@@ -39,7 +39,7 @@ textarea {
     width: 100%;
     padding: 10px;
     border: 1px solid #3a3a4d;
-    border-radius: 5px;
+    border-radius: var(--border-radius-small);
     background-color: #353535;
     color: #e0e0e0;
     font-size: 1em;
@@ -65,7 +65,7 @@ textarea:focus {
     background-color: #1f8ef1;
     color: #ffffff;
     border: none;
-    border-radius: 5px;
+    border-radius: var(--border-radius-small);
     padding: 10px 20px;
     font-size: 1em;
     cursor: pointer;

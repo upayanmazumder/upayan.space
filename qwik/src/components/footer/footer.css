@@ -9,6 +9,7 @@
     align-items: center;
     font-family: 'Red Hat Display', sans-serif;
     cursor: default;
+    background-color: var(--footer-background-color);
 }
 
 .footer-copy {

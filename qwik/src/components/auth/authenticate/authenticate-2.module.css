@@ -1,11 +1,13 @@
 .authenticateContainer {
     display: flex;
+    flex-direction: column;
     gap: 1rem;
     justify-content: center;
     align-items: center;
     padding: 2rem;
-    border-radius: 8px;
+    border-radius: var(--border-radius-large);
     animation: fadeIn 0.5s ease-in-out;
+    background-color: #2a2a2a;
 }
 
 @keyframes fadeIn {
@@ -17,12 +19,18 @@
     }
 }
 
+.authenticateContainerForm {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
 .form {
     display: inline-block;
 }
 
 .iconButton {
-    background-color: #b8b8b81d;
+    background-color: transparent;
     border-radius: 50%;
     border: none;
     cursor: pointer;
