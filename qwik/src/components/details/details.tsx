@@ -1,7 +1,11 @@
 import { component$ } from '@builder.io/qwik';
 import heroStyles from './details.module.css';
 import Infobox from "../infobox/infobox";
-import ContactForm from "../contact/contact"
+import ContactForm from "../contact/contact";
+import { getUserAge } from '../../shared/age';
+
+const birthDate = new Date(2005, 9, 9);
+const age = getUserAge(birthDate);
 
 export default component$(() => {
 
@@ -11,7 +15,7 @@ export default component$(() => {
                 <Infobox>
                     <span q:slot="title">About Me</span>
                     <p>
-                    I'm Upayan, a 19-year-old student currently pursuing a BTech in Computer Science 
+                    I'm Upayan, a {age}-year-old student currently pursuing a BTech in Computer Science 
                     with a specialization in Data Science at VIT Vellore. I have a deep passion for programming 
                     and love exploring various technologies. My areas of interest range from web development to 
                     data science, and I'm always excited to work on new projects and expand my skillset.
