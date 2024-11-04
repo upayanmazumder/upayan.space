@@ -110,13 +110,15 @@ export default component$(() => {
                     </button>
                 </>
             ) : (
-                <Form action={signIn} class={sessionStyles.form}>
-                    <input type="hidden" name="providerId" value="google" />
-                    <input type="hidden" name="options.redirectTo" value="/#certificates" />
-                    <button aria-label="Sign in with Google">
-                        Log in using Google
-                    </button>
-                </Form>
+                <>  <p>You need to be logged in for this!</p>
+                    <Form action={signIn} class={sessionStyles.form}>
+                        <input type="hidden" name="providerId" value="google" />
+                        <input type="hidden" name="options.redirectTo" value="/#certificates" />
+                        <button aria-label="Sign in with Google">
+                            Log in
+                        </button>
+                    </Form>
+                </>
             )}
         </details>
     );
