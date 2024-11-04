@@ -1,9 +1,11 @@
+// contact.tsx
 import { component$, useStore, $ } from "@builder.io/qwik";
 import contactStyles from './contact.module.css';
 import sessionStyles from "../auth/session/session.module.css";
 import { BsInfoCircle } from "@qwikest/icons/bootstrap";
 import { Form } from '@builder.io/qwik-city';
 import { useSession, useSignIn } from '~/routes/plugin@auth';
+import { apiRequest } from '~/shared/api';
 
 interface ContactForm {
     name: string;
@@ -42,29 +44,15 @@ export default component$(() => {
         form.loading = true;
     
         try {
-            const response = await fetch('https://api.upayan.space/contact', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    name: form.name,
-                    email: form.email,
-                    longtext: form.message,
-                    imageUrl: form.imageUrl,
-                }),
+            await apiRequest('/contact', 'POST', {
+                name: form.name,
+                email: form.email,
+                longtext: form.message,
+                imageUrl: form.imageUrl,
             });
-    
-            if (!response.ok) {
-                const errorData = await response.json();
-                throw new Error(errorData.message || 'Server responded with an error');
-            }
-    
             form.successMessage = 'Message sent successfully!';
         } catch (error) {
-            if (error instanceof TypeError) {
-                form.error = 'Network error: Failed to send message. Please check your connection.';
-            } else {
-                form.error = `Failed to send message: ${(error as Error).message}`;
-            }
+            form.error = `Failed to send message: ${error instanceof Error ? error.message : 'Unknown error'}`;
         } finally {
             form.loading = false;
         }
@@ -73,15 +61,13 @@ export default component$(() => {
     return (
         <details class={contactStyles.container}>
             <summary>Send me a message</summary>
-
             {form.loading && <p class={contactStyles.loading}>Sending message...</p>}
             {form.error && (
-                <p class={contactStyles.error} aria-live="assertive">An error occured! <br /> {form.error}</p>
+                <p class={contactStyles.error} aria-live="assertive">An error occurred! <br /> {form.error}</p>
             )}
             {form.successMessage && (
                 <p class={contactStyles.success} aria-live="polite">{form.successMessage}</p>
             )}
-
             {isSignedIn ? (
                 <>
                     <div class={contactStyles.formGroup}>
@@ -110,7 +96,8 @@ export default component$(() => {
                     </button>
                 </>
             ) : (
-                <>  <p>You need to be logged in for this!</p>
+                <>
+                    <p>You need to be logged in for this!</p>
                     <Form action={signIn} class={sessionStyles.form}>
                         <input type="hidden" name="providerId" value="google" />
                         <input type="hidden" name="options.redirectTo" value="/#certificates" />

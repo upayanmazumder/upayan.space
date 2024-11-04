@@ -1,8 +1,10 @@
 /* eslint-disable qwik/jsx-img */
+// activity.tsx
 import { component$ } from '@builder.io/qwik';
 import { routeLoader$ } from '@builder.io/qwik-city';
 import activityStyles from './activity.module.css';
-import { BsCircleFill, BsMoonFill, BsDashCircleFill, BsWifiOff } from "@qwikest/icons/bootstrap"
+import { BsCircleFill, BsMoonFill, BsDashCircleFill, BsWifiOff } from "@qwikest/icons/bootstrap";
+import { apiRequest } from '~/shared/api';
 
 interface Activity {
   name: string;
@@ -20,73 +22,59 @@ interface GuildStatistics {
   activities: Activity[];
 }
 
+// Helper function to calculate time elapsed from a timestamp
+const calculateTimeElapsed = (startTimestamp: string): string => {
+  const start = new Date(startTimestamp);
+  const now = new Date();
+  const seconds = Math.floor((now.getTime() - start.getTime()) / 1000);
+  const minutes = Math.floor(seconds / 60);
+  const hours = Math.floor(minutes / 60);
+
+  if (hours > 0) return `${hours}h ${minutes % 60}m ago`;
+  if (minutes > 0) return `${minutes}m ${seconds % 60}s ago`;
+  return `${seconds}s ago`;
+};
+
+// Helper function to get the icon based on the discord status
+const getStatusIcon = (status: string) => {
+  switch (status.toLowerCase()) {
+    case 'online':
+      return ( 
+        <>
+          <BsCircleFill color="green"/>
+          Online
+        </>
+      );
+    case 'idle':
+      return (
+        <>
+          <BsMoonFill color="yellow"/>
+          Idle
+        </>
+      );
+    case 'dnd':
+      return (
+        <>
+          <BsDashCircleFill color="red"/>
+          Do Not Disturb
+        </>
+      );
+    default:
+      return (
+        <>
+          <BsWifiOff color="gray"/>
+          Offline
+        </>
+      );
+  }
+};
+
 const fetchGuildStatistics = async (): Promise<GuildStatistics[] | null> => {
   try {
-    const response = await fetch('https://api.upayan.space/', {
-      headers: { Accept: 'application/json' },
-    });
-
-    if (!response.ok) {
-      throw new Error(`Failed to fetch data. HTTP error: ${response.status}`);
-    }
-
-    const responseData = await response.json();
-    return responseData.map((guildData: any) => ({
-      discordstatus: guildData.discordstatus,
-      activities: guildData.activities,
-    })) as GuildStatistics[];
+    return await apiRequest<GuildStatistics[]>('/');
   } catch (error) {
     console.error('Error fetching guild statistics:', error);
     return null;
-  }
-};
-
-const calculateTimeElapsed = (timestamp: string): string => {
-  if (!timestamp) {
-    return '';
-  }
-
-  const start = new Date(timestamp);
-  if (isNaN(start.getTime())) {
-    return '';
-  }
-
-  const now = new Date();
-  const elapsedMilliseconds = now.getTime() - start.getTime();
-  const seconds = Math.floor(elapsedMilliseconds / 1000);
-  const minutes = Math.floor(seconds / 60);
-  const hours = Math.floor(minutes / 60);
-  const days = Math.floor(hours / 24);
-
-  if (days > 0) {
-    return days === 1 ? `For ${days} day` : `For ${days} days`;
-  } else if (hours > 0) {
-    return hours === 1 ? `For ${hours} hour` : `For ${hours} hours`;
-  } else if (minutes > 0) {
-    return minutes === 1 ? `For ${minutes} minute` : `For ${minutes} minutes`;
-  } else {
-    return seconds === 1 ? `For ${seconds} second` : `For ${seconds} seconds`;
-  }
-};
-
-const getStatusIcon = (status: string) => {
-  const iconStyle = { color: '' };
-
-  switch (status.toLowerCase()) {
-    case 'online':
-      iconStyle.color = 'green';
-      return <><BsCircleFill style={iconStyle} /> Online </>;
-    case 'offline':
-      iconStyle.color = 'gray';
-      return <><BsWifiOff style={iconStyle} /> Offline </>;
-    case 'dnd':
-      iconStyle.color = 'red';
-      return <><BsDashCircleFill style={iconStyle} /> DND</>;
-    case 'idle':
-      iconStyle.color = 'yellow';
-      return <><BsMoonFill style={iconStyle} /> Idle</>;
-    default:
-      return null;
   }
 };
 
@@ -99,7 +87,7 @@ export default component$(() => {
   const guildStatistics = useGuildStatistics();
 
   if (!guildStatistics.value || guildStatistics.value.length === 0) {
-    return null;
+    return <p>No guild statistics available.</p>;
   }
 
   return (
