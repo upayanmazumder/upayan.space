@@ -76,7 +76,7 @@ export default component$(() => {
 
             {form.loading && <p class={contactStyles.loading}>Sending message...</p>}
             {form.error && (
-                <p class={contactStyles.error} aria-live="assertive">Error: {form.error}</p>
+                <p class={contactStyles.error} aria-live="assertive">An error occured! <br /> {form.error}</p>
             )}
             {form.successMessage && (
                 <p class={contactStyles.success} aria-live="polite">{form.successMessage}</p>

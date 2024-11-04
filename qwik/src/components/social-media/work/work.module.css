@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@400;700&display=swap');
 
-.hero {
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -89,7 +89,7 @@ button.devfolio-button {
 }
 
 @media (max-width: 768px) {
-    .hero {
+    .container {
         flex-direction: column;
         padding: 20px;
     }
@@ -105,7 +105,7 @@ button.devfolio-button {
 }
 
 @media (max-width: 576px) {
-    .hero {
+    .container {
         padding: 15px;
     }
 

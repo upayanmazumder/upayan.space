@@ -65,7 +65,7 @@ export default component$(() => {
   );
 
   return (
-    <div class={[socialMediaWorkStyles.hero]}>
+    <div class={[socialMediaWorkStyles.container]}>
       <div class={socialMediaWorkStyles["button-group"]}></div>
         {filteredButtonDetails.map((button, index) => (
           <button

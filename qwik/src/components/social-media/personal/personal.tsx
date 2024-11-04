@@ -16,7 +16,7 @@ const permittedLinks = {
 export default component$(() => {
 
   return (
-    <div class={[socialMediaPersonalStyles.hero]}>
+    <div class={[socialMediaPersonalStyles.container]}>
       <div class={socialMediaPersonalStyles["button-group"]}>
         {buttonDetails
           .filter((button) => Object.prototype.hasOwnProperty.call(permittedLinks, button.name))

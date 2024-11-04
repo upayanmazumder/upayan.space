@@ -1,4 +1,4 @@
-.hero {
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -38,7 +38,7 @@
 }
 
 @media (max-width: 768px) {
-    .hero {
+    .container {
         padding: 20px;
     }
 
@@ -49,7 +49,7 @@
 }
 
 @media (max-width: 480px) {
-    .hero {
+    .container {
         padding: 15px;
     }
 
