@@ -1,10 +1,8 @@
 // contact.tsx
 import { component$, useStore, $ } from "@builder.io/qwik";
 import contactStyles from './contact.module.css';
-import sessionStyles from "../auth/session/session.module.css";
 import { BsInfoCircle } from "@qwikest/icons/bootstrap";
-import { Form } from '@builder.io/qwik-city';
-import { useSession, useSignIn } from '~/routes/plugin@auth';
+import { useSession } from '~/routes/plugin@auth';
 import { apiRequest } from '~/shared/api';
 
 interface ContactForm {
@@ -19,8 +17,11 @@ interface ContactForm {
 
 export default component$(() => {
     const session = useSession();
-    const signIn = useSignIn();
     const isSignedIn = !!session.value?.user;
+
+    const signIn = $(() => {
+        window.location.href = '/a/signin';
+    });
 
     const form = useStore<ContactForm>({
         name: session.value?.user?.name || '',
@@ -98,13 +99,9 @@ export default component$(() => {
             ) : (
                 <>
                     <p>You need to be logged in for this!</p>
-                    <Form action={signIn} class={sessionStyles.form}>
-                        <input type="hidden" name="providerId" value="google" />
-                        <input type="hidden" name="options.redirectTo" value="/#certificates" />
-                        <button aria-label="Sign in with Google">
-                            Log in
-                        </button>
-                    </Form>
+                    <button onClick$={signIn}>
+                        Sign In
+                    </button>
                 </>
             )}
         </details>

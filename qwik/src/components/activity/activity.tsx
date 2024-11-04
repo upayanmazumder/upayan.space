@@ -1,3 +1,4 @@
+/* eslint-disable qwik/no-use-visible-task */
 /* eslint-disable qwik/jsx-img */
 // activity.tsx
 import { component$, useVisibleTask$, useStore } from '@builder.io/qwik';
