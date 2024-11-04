@@ -1,6 +1,6 @@
 /* eslint-disable qwik/jsx-img */
 // activity.tsx
-import { component$ } from '@builder.io/qwik';
+import { component$, useVisibleTask$, useStore } from '@builder.io/qwik';
 import { routeLoader$ } from '@builder.io/qwik-city';
 import activityStyles from './activity.module.css';
 import { BsCircleFill, BsMoonFill, BsDashCircleFill, BsWifiOff } from "@qwikest/icons/bootstrap";
@@ -23,10 +23,9 @@ interface GuildStatistics {
 }
 
 // Helper function to calculate time elapsed from a timestamp
-const calculateTimeElapsed = (startTimestamp: string): string => {
+const calculateTimeElapsed = (startTimestamp: string, currentTime: Date): string => {
   const start = new Date(startTimestamp);
-  const now = new Date();
-  const seconds = Math.floor((now.getTime() - start.getTime()) / 1000);
+  const seconds = Math.floor((currentTime.getTime() - start.getTime()) / 1000);
   const minutes = Math.floor(seconds / 60);
   const hours = Math.floor(minutes / 60);
 
@@ -85,6 +84,15 @@ export const useGuildStatistics = routeLoader$<GuildStatistics[] | null>(async (
 
 export default component$(() => {
   const guildStatistics = useGuildStatistics();
+  const state = useStore({ currentTime: new Date() });
+
+  useVisibleTask$(() => {
+    const interval = setInterval(() => {
+      state.currentTime = new Date();
+    }, 1000);
+
+    return () => clearInterval(interval);
+  });
 
   if (!guildStatistics.value || guildStatistics.value.length === 0) {
     return <p>No guild statistics available.</p>;
@@ -109,7 +117,7 @@ export default component$(() => {
                       </div>
                       <p class={activityStyles.details}>{activity.details}</p>
                       <p class={activityStyles.state}>{activity.state}</p>
-                      <p class={activityStyles.time}>{calculateTimeElapsed(activity.startTimestamp)}</p>
+                      <p class={activityStyles.time}>{calculateTimeElapsed(activity.startTimestamp, state.currentTime)}</p>
                     </div>
                   ))}
                   <p class={activityStyles.status}>{getStatusIcon(guild.discordstatus)}</p>
