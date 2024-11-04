@@ -3,8 +3,12 @@ name: Build api.upayan.space Docker Image
 on:
   push:
     branches: ["master"]
+    paths-ignore:
+      - "qwik/**"
   pull_request:
     branches: ["master"]
+    paths-ignore:
+      - "qwik/**"
 
 permissions:
   contents: read
