@@ -1,6 +1,7 @@
+/* eslint-disable qwik/no-use-visible-task */
 /* eslint-disable qwik/jsx-img */
 // activity.tsx
-import { component$, useTask$, useStore } from '@builder.io/qwik';
+import { component$, useVisibleTask$, useStore } from '@builder.io/qwik';
 import { routeLoader$ } from '@builder.io/qwik-city';
 import activityStyles from './activity.module.css';
 import { BsCircleFill, BsMoonFill, BsDashCircleFill, BsWifiOff } from "@qwikest/icons/bootstrap";
@@ -86,7 +87,7 @@ export default component$(() => {
   const guildStatistics = useGuildStatistics();
   const state = useStore({ currentTime: new Date() });
 
-  useTask$(() => {
+  useVisibleTask$(() => {
     const interval = setInterval(() => {
       state.currentTime = new Date();
     }, 1000);
