@@ -1,5 +1,5 @@
 import { component$ } from '@builder.io/qwik';
-import { useSession } from '~/routes/plugin@auth';
+import { useSession } from '../../../routes/plugin@auth';
 import sessionStyles from "./session.module.css";
 import unknownPerson from "../../../media/authentication/unknown-person.png";
 
