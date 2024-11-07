@@ -71,6 +71,11 @@ button.devfolio-button {
     background-color: #3670ff;
 }
 
+button.amazonmusic-button {
+    background-color: #23d1da;
+    color: black;
+}
+
 @media (max-width: 1200px) {
     .button-group a {
         width: 45px;
