@@ -1,9 +1,7 @@
-// contact.tsx
 import { component$, useStore, $ } from "@builder.io/qwik";
 import contactStyles from './contact.module.css';
 import { BsInfoCircle } from "@qwikest/icons/bootstrap";
 import { useSession } from '~/routes/plugin@auth';
-import { apiRequest } from '~/shared/api';
 
 interface ContactForm {
     name: string;
@@ -45,15 +43,26 @@ export default component$(() => {
         form.loading = true;
     
         try {
-            await apiRequest('/contact', 'POST', {
-                name: form.name,
-                email: form.email,
-                longtext: form.message,
-                imageUrl: form.imageUrl,
+            const response = await fetch('https://api.upayan.space/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: form.name,
+                    email: form.email,
+                    longtext: form.message,
+                    imageUrl: form.imageUrl,
+                }),
             });
+    
+            if (!response.ok) {
+                const errorData = await response.json();
+                throw new Error(errorData.message || 'Server responded with an error');
+            }
+    
             form.successMessage = 'Message sent successfully!';
         } catch (error) {
-            form.error = `Failed to send message: ${error instanceof Error ? error.message : 'Unknown error'}`;
+            console.error(`API request failed: ${error}`);
+            form.error = (error as Error).message;
         } finally {
             form.loading = false;
         }
