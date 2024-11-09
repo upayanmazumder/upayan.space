@@ -1,7 +1,7 @@
-# upayan.space
+# upayan.dev
 
-![GitHub stars](https://img.shields.io/github/stars/upayanmazumder/upayan.space?style=social)
-![GitHub forks](https://img.shields.io/github/forks/upayanmazumder/upayan.space?style=social)
+![GitHub stars](https://img.shields.io/github/stars/upayanmazumder/upayan.dev?style=social)
+![GitHub forks](https://img.shields.io/github/forks/upayanmazumder/upayan.dev?style=social)
 ![License](https://img.shields.io/badge/license-MIT-green)
 
 Welcome to the source code repository for my personal website. This project showcases my portfolio, skills, and various projects.
@@ -42,8 +42,8 @@ Make sure you have the following installed:
 ### Cloning the Repository
 
 ```bash
-git clone https://github.com/upayanmazumder/upayan.space.git
-cd upayan.space
+git clone https://github.com/upayanmazumder/upayan.dev.git
+cd upayan.dev
 ```
 
 ### Running the Backend
@@ -107,8 +107,8 @@ Contributions are welcome! Please follow these steps:
 
 ## Code of Conduct
 
-Please read our [Code of Conduct](https://github.com/upayanmazumder/upayan.space/blob/main/CODE_OF_CONDUCT.md) to ensure a welcoming environment for all contributors.
+Please read our [Code of Conduct](https://github.com/upayanmazumder/upayan.dev/blob/main/CODE_OF_CONDUCT.md) to ensure a welcoming environment for all contributors.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/upayanmazumder/upayan.space/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/upayanmazumder/upayan.dev/blob/main/LICENSE) file for details.
