@@ -78,7 +78,10 @@ export default component$(() => {
   });
 
   if (!guildStatistics.value || guildStatistics.value.length === 0) {
-    return <p>No guild statistics available.</p>;
+    return (
+      <>
+      </>
+    );
   }
 
   return (
