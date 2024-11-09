@@ -1,7 +1,7 @@
 // activity.tsx
 /* eslint-disable qwik/no-use-visible-task */
 /* eslint-disable qwik/jsx-img */
-import { component$, useVisibleTask$, useStore } from '@builder.io/qwik';
+import { component$ } from '@builder.io/qwik';
 import { routeLoader$ } from '@builder.io/qwik-city';
 import activityStyles from './activity.module.css';
 import { BsCircleFill, BsMoonFill, BsDashCircleFill, BsWifiOff } from "@qwikest/icons/bootstrap";
@@ -24,7 +24,7 @@ interface GuildStatistics {
 
 const fetchGuildStatistics = async (): Promise<GuildStatistics[] | null> => {
   try {
-    const response = await fetch('https://api.upayan.dev/');
+    const response = await fetch('https://api.upayan.dev');
     if (!response.ok) {
       const errorData = await response.json();
       throw new Error(errorData.message || 'Server responded with an error');
@@ -54,8 +54,9 @@ const getStatusIcon = (status: string) => {
   }
 };
 
-const getTimeElapsed = (startTimestamp: string, currentTime: Date) => {
+const getTimeElapsed = (startTimestamp: string) => {
   const startTime = new Date(startTimestamp);
+  const currentTime = new Date();
   const elapsedTime = currentTime.getTime() - startTime.getTime();
   const seconds = Math.floor((elapsedTime / 1000) % 60);
   const minutes = Math.floor((elapsedTime / (1000 * 60)) % 60);
@@ -67,17 +68,9 @@ const getTimeElapsed = (startTimestamp: string, currentTime: Date) => {
 
 export default component$(() => {
   const guildStatistics = useGuildStatistics();
-  const state = useStore({ currentTime: new Date() });
-
-  useVisibleTask$(() => {
-    const interval = setInterval(() => {
-      state.currentTime = new Date();
-    }, 1000);
-
-    return () => clearInterval(interval);
-  });
 
   if (!guildStatistics.value || guildStatistics.value.length === 0) {
+    console.log('No guild statistics available');
     return (
       <>
       </>
@@ -103,7 +96,7 @@ export default component$(() => {
                       </div>
                       <p class={activityStyles.details}>{activity.details}</p>
                       <p class={activityStyles.state}>{activity.state}</p>
-                      <p class={activityStyles.time}>{getTimeElapsed(activity.startTimestamp, state.currentTime)}</p>
+                      <p class={activityStyles.time}>{getTimeElapsed(activity.startTimestamp)}</p>
                     </div>
                   ))}
                   <div class={activityStyles.status}>

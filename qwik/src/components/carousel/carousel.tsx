@@ -1,8 +1,9 @@
-import { $, component$, useStore } from '@builder.io/qwik';
+import { $, component$, useSignal } from '@builder.io/qwik';
 import BbnImage from '../../media/services/bbn.png';
 import EranodesImage from '../../media/services/eranodes.png';
 import carouselStyles from "./carousel.module.css";
 import { BsCaretLeft, BsCaretRight } from '@qwikest/icons/bootstrap';
+
 interface CarouselItem {
   color: string;
   imagePath: string;
@@ -29,34 +30,32 @@ const carouselData: CarouselItem[] = [
 ];
 
 export default component$(() => {
-  const state = useStore<{ items: CarouselItem[]; currentIndex: number }>({
-    items: carouselData,
-    currentIndex: 0,
-  });
+  const currentIndex = useSignal(0);
 
   const nextSlide = $(() => {
-    state.currentIndex = (state.currentIndex + 1) % state.items.length;
+    currentIndex.value = (currentIndex.value + 1) % carouselData.length;
   });
 
   const prevSlide = $(() => {
-    state.currentIndex = (state.currentIndex - 1 + state.items.length) % state.items.length;
+    currentIndex.value = (currentIndex.value - 1 + carouselData.length) % carouselData.length;
   });
 
   return (
     <div id="services" class={carouselStyles.carouselContainer}>
       <h3>Services</h3>
-      {state.items.length > 0 && (
+      {carouselData.length > 0 && (
         <div class={carouselStyles.card}>
           <img 
-            src={state.items[state.currentIndex].imagePath} 
-            alt={state.items[state.currentIndex].name} 
+            src={carouselData[currentIndex.value].imagePath} 
+            alt={carouselData[currentIndex.value].name} 
             width="60"
-            height="60" 
+            height="60"
+            loading="lazy"
           />
           <div class={carouselStyles.cardContent}>
-            <h3 style={{ color: state.items[state.currentIndex].color }}>{state.items[state.currentIndex].name}</h3>
-            <p>{state.items[state.currentIndex].description}</p>
-            <a href={state.items[state.currentIndex].link} target='_blank'>Learn More</a>
+            <h3 style={{ color: carouselData[currentIndex.value].color }}>{carouselData[currentIndex.value].name}</h3>
+            <p>{carouselData[currentIndex.value].description}</p>
+            <a href={carouselData[currentIndex.value].link} target='_blank'>Learn More</a>
           </div>
         </div>
       )}
