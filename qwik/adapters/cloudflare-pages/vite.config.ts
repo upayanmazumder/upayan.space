@@ -13,7 +13,7 @@ export default extendConfig(baseConfig, () => {
     plugins: [cloudflarePagesAdapter({
       ssg: {
         include: ['/*'],
-        origin: 'https://upayan.space',
+        origin: 'https://upayan.dev',
         sitemapOutFile: 'public/sitemap.xml',
       },
     }),],
