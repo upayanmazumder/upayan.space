@@ -43,7 +43,7 @@ export default component$(() => {
         form.loading = true;
     
         try {
-            const response = await fetch('https://api.upayan.space/contact', {
+            const response = await fetch('https://api.upayan.dev/contact', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({

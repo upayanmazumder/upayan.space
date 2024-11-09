@@ -24,7 +24,7 @@ interface GuildStatistics {
 
 const fetchGuildStatistics = async (): Promise<GuildStatistics[] | null> => {
   try {
-    const response = await fetch('https://api.upayan.space/');
+    const response = await fetch('https://api.upayan.dev/');
     if (!response.ok) {
       const errorData = await response.json();
       throw new Error(errorData.message || 'Server responded with an error');
