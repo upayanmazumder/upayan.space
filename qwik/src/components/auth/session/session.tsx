@@ -1,22 +1,13 @@
-import { component$, useStore, useVisibleTask$ } from '@builder.io/qwik';
+import { component$ } from '@builder.io/qwik';
 import { useSession } from '../../../routes/plugin@auth';
 import sessionStyles from "./session.module.css";
 import unknownPerson from "../../../media/authentication/unknown-person.png";
 
 export default component$(() => {
   const session = useSession();
-  const state = useStore({ isLoading: true });
-
-  // eslint-disable-next-line qwik/no-use-visible-task
-  useVisibleTask$(() => {
-    state.isLoading = false;
-  });
 
   const isSignedIn = session.value?.user;
 
-  if (state.isLoading) {
-    return <div>Loading...</div>;
-  }
 
   return (
     <>
