@@ -9,15 +9,7 @@ export default component$(() => {
 
   // eslint-disable-next-line qwik/no-use-visible-task
   useVisibleTask$(() => {
-    if (session.value) {
-      state.isLoading = false;
-    } else {
-      const timer = setTimeout(() => {
-        state.isLoading = false;
-      }, 3000);
-
-      return () => clearTimeout(timer);
-    }
+    state.isLoading = false;
   });
 
   const isSignedIn = session.value?.user;
