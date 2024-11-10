@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /a/
+Allow: /
+
+Sitemap: https://upayan.dev/sitemap.xml
