@@ -29,9 +29,9 @@
     "qwik": "qwik"
   },
   "devDependencies": {
-    "@auth/qwik": "^0.5.2",
-    "@builder.io/qwik": "^1.9.1",
-    "@builder.io/qwik-city": "^1.9.1",
+    "@auth/qwik": "^0.5.3",
+    "@builder.io/qwik": "^1.10.0",
+    "@builder.io/qwik-city": "^1.10.0",
     "@modular-forms/qwik": "^0.28.2",
     "@qwikest/icons": "^0.0.13",
     "@types/eslint": "8.56.10",
@@ -39,14 +39,14 @@
     "@typescript-eslint/eslint-plugin": "7.16.1",
     "@typescript-eslint/parser": "7.16.1",
     "eslint": "8.57.0",
-    "eslint-plugin-qwik": "^1.9.1",
+    "eslint-plugin-qwik": "^1.10.0",
+    "flowbite-qwik": "^0.37.9",
     "prettier": "3.3.3",
     "typescript": "5.4.5",
-    "undici": "*",
-    "vite": "^5.4.10",
-    "vite-tsconfig-paths": "^4.2.1",
-    "wrangler": "^3.0.0",
-    "flowbite-qwik": "^0.37.6"
+    "undici": "^6.20.1",
+    "vite": "^5.4.11",
+    "vite-tsconfig-paths": "^4.3.2",
+    "wrangler": "^3.86.1"
   },
   "dependencies": {
     "cors": "^2.8.5"
