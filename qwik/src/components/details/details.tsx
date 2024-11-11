@@ -2,7 +2,16 @@ import { component$ } from '@builder.io/qwik';
 import heroStyles from './details.module.css';
 import Infobox from "../infobox/infobox";
 import ContactForm from "../contact/contact";
-import { getUserAge } from '../../shared/age';
+
+const getUserAge = (birthDate: Date) => {
+    const today = new Date();
+    let age = today.getFullYear() - birthDate.getFullYear();
+    const monthDifference = today.getMonth() - birthDate.getMonth();
+    if (monthDifference < 0 || (monthDifference === 0 && today.getDate() < birthDate.getDate())) {
+        age--;
+    }
+    return age;
+};
 
 const birthDate = new Date(2005, 9, 9);
 const age = getUserAge(birthDate);
