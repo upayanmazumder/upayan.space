@@ -48,7 +48,7 @@ export default component$(() => {
                 <Infobox>
                     <span q:slot="title">Contact</span>
                     <p>
-                    Feel free to get in touch with me at <a href="mailto:contact@upayan.space">contact@upayan.space</a>.
+                    Feel free to get in touch with me at <a href="mailto:contact@upayan.dev">contact@upayan.dev</a>.
                     </p>
                     <ContactForm />
                 </Infobox>

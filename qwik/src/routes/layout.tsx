@@ -1,4 +1,4 @@
-import { component$, Slot, useStyles$ } from "@builder.io/qwik";
+import { component$, Slot, useStyles$, useVisibleTask$ } from "@builder.io/qwik";
 import type { RequestHandler } from "@builder.io/qwik-city";
 
 import Header from "../components/header/header";
@@ -20,6 +20,21 @@ export const onGet: RequestHandler = async ({ cacheControl }) => {
 
 export default component$(() => {
   useStyles$(styles);
+
+  // eslint-disable-next-line qwik/no-use-visible-task
+  useVisibleTask$(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.pageYOffset;
+      document.body.style.backgroundPositionY = `${scrollPosition * -0.05}px`;
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  });
 
   return (
     <>
