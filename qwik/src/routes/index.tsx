@@ -7,9 +7,9 @@ import Carousel from "../components/carousel/carousel";
 export default component$(() => {
   return (
     <div class="container container-center">
-      <Hero />
+      {/*<Hero />
       <Carousel />
-      <Details />
+      <Details />*/}
     </div>
   );
 });
