@@ -1,4 +1,4 @@
-import { component$ } from '@builder.io/qwik';
+import { component$, useTask$ } from '@builder.io/qwik';
 import { useSession } from '../../../routes/plugin@auth';
 import sessionStyles from "./session.module.css";
 import unknownPerson from "../../../media/authentication/unknown-person.png";
@@ -6,8 +6,11 @@ import unknownPerson from "../../../media/authentication/unknown-person.png";
 export default component$(() => {
   const session = useSession();
 
-  const isSignedIn = session.value?.user;
+  useTask$(({ track }) => {
+    track(() => session.value);
+  });
 
+  const isSignedIn = session.value?.user;
 
   return (
     <>
@@ -31,7 +34,12 @@ export default component$(() => {
         </div>
       ) : (
         <div class={sessionStyles.loginContainer}>
-            <button onClick$={() => window.location.href = '/a/signin'} class={sessionStyles.loginButton}>Login</button>
+          <button
+            onClick$={() => (window.location.href = '/a/signin')}
+            class={sessionStyles.loginButton}
+          >
+            Login
+          </button>
         </div>
       )}
     </>
