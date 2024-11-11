@@ -1,13 +1,18 @@
-import { component$, useTask$ } from '@builder.io/qwik';
+import { component$, useTask$, useStore } from '@builder.io/qwik';
 import { useSession } from '../../../routes/plugin@auth';
 import sessionStyles from "./session.module.css";
 import unknownPerson from "../../../media/authentication/unknown-person.png";
 
 export default component$(() => {
   const session = useSession();
+  const state = useStore({ tick: 0 });
 
   useTask$(({ track }) => {
     track(() => session.value);
+    const interval = setInterval(() => {
+      state.tick++;
+    }, 5000);
+    return () => clearInterval(interval);
   });
 
   const isSignedIn = session.value?.user;
