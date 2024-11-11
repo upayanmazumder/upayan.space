@@ -1,15 +1,15 @@
 import { component$ } from "@builder.io/qwik";
 import type { DocumentHead } from "@builder.io/qwik-city";
-// import Hero, { useGuildStatistics } from "../components/hero/hero"
-// import Details from "../components/details/details";
-// import Carousel from "../components/carousel/carousel";
+import Hero, { useGuildStatistics } from "../components/hero/hero"
+import Details from "../components/details/details";
+import Carousel from "../components/carousel/carousel";
 
 export default component$(() => {
   return (
     <div class="container container-center">
-      {/*<Hero />
+      <Hero />
       <Carousel />
-      <Details />*/}
+      <Details />
     </div>
   );
 });
