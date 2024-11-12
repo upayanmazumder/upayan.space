@@ -9,6 +9,8 @@ const Footer = () => {
   return (
     <div className={styles.footer}>
       <SocialMediaPersonal />
+      <a href="/p/terms-of-service" className={styles.link}>Terms of Service</a>
+      <a href="/p/privacy-policy" className={styles.link}>Privacy Policy</a>
     </div>
   );
 };
