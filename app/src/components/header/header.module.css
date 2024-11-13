@@ -8,7 +8,6 @@
     align-content: center;
     justify-content: center;
     gap: 100px;
-    font-size: larger;
     position: sticky;
     top: 0;
 }
@@ -17,8 +16,8 @@
     margin-right: 0;
 }
 
-.text {
+.text h1 {
     margin-left: 0;
     color: white;
-    font-size: large;
+    font-size: 1.8rem;
 }
