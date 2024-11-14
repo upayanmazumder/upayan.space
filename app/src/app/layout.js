@@ -1,5 +1,6 @@
 import localFont from "next/font/local";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react"
 import Header from "../components/header/header";
 import Navbar from "../components/navbar/navbar";
 import Footer from "../components/footer/footer";
@@ -27,6 +28,7 @@ export default function RootLayout({ children }) {
         <Header />
         <Navbar />
         {children}
+        <Analytics />
         <Footer />
       </body>
     </html>
