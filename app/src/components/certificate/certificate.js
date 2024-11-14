@@ -1,12 +1,11 @@
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useRouter } from 'next/router';
 import certificateStyles from './certificate.module.css';
-import { createSlug, certificates } from '../../shared/certificateData';
+import { createSlug, certificates } from '../../shared/certificatesData';
 import Four04 from "../../components/404/404";
 
-const CertificateDetail = () => {
-  const { certificate: certificateSlug } = useParams();
-  const certificate = certificates.find(cert => createSlug(cert.title) === certificateSlug);
+const CertificateDetail = ({ slug }) => {
+  const certificate = certificates.find(cert => createSlug(cert.title) === slug);
 
   // Unavailable certificate
   if (!certificate) {
