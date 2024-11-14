@@ -1,4 +1,4 @@
 services:
   backend:
-    image: ghcr.io/upayanmazumder/upayan.space:latest
+    image: ghcr.io/upayanmazumder/upayan.dev:latest
     build: .
