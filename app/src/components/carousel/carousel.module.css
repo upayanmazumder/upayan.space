@@ -4,16 +4,20 @@
     align-items: center;
     padding: 20px;
     color: #e0e0e0;
-    background-color: #1a1a1a6d;
+
     border-radius: var(--border-radius-large);
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     margin-top: 20px;
 }
 
+.carouselContainer h3 {
+    font-size: 1.6em;
+}
+
 .card {
     display: flex;
     align-items: center;
-    background-color: #2b2b2b;
+    background-color: #1f1f2b;
     border-radius: var(--border-radius-medium);
     padding: 20px;
     margin: 20px 0;
@@ -35,7 +39,7 @@
 
 .cardContent h3 {
     margin: 0;
-    font-size: 1.6rem;
+    font-size: 1em;
     color: #61dafb;
     transition: color 0.3s ease;
 }
@@ -47,13 +51,13 @@
 }
 
 .cardContent a {
-    color: #61dafb;
+    color: #61dafb !important;
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .cardContent a:hover {
-    color: #1e90ff;
+    color: #1e90ff !important;
 }
 
 .buttonContainer {

@@ -39,11 +39,18 @@ const getTimeElapsed = (startTimestamp) => {
   const hours = Math.floor((elapsedTime / (1000 * 60 * 60)) % 24);
   const days = Math.floor(elapsedTime / (1000 * 60 * 60 * 24));
 
-  return `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  const timeComponents = [];
+  if (days > 0) timeComponents.push(`${days}d`);
+  if (hours > 0) timeComponents.push(`${hours}h`);
+  if (minutes > 0) timeComponents.push(`${minutes}m`);
+  if (seconds > 0) timeComponents.push(`${seconds}s`);
+
+  return timeComponents.join(' ');
 };
 
 const Activity = () => {
   const [guildStatistics, setGuildStatistics] = useState(null);
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
     const loadGuildStatistics = async () => {
@@ -52,6 +59,12 @@ const Activity = () => {
     };
     
     loadGuildStatistics();
+
+    const intervalId = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    return () => clearInterval(intervalId);
   }, []);
 
   if (!guildStatistics || guildStatistics.length === 0) {
