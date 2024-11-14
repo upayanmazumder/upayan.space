@@ -18,15 +18,15 @@ Welcome to the source code repository for my personal website. This project show
 
 ## Technologies Used
 
-- **Frontend**: [Qwik](https://qwik.builder.io/)
+- **Frontend**: [Next.js](https://nextjs.org/)
 - **Backend**: [Express.js](https://expressjs.com/)
 - **Containerization**: Docker
-- **Hosting**: Cloudflare Pages (for the frontend)
+- **Hosting**: Vercel (for the frontend)
 
 ## Features
 
 - Responsive design
-- Fast loading times with Qwik's optimization
+- Fast loading times with Next.js optimization
 - RESTful API built with Express.js
 - Dockerized setup for easy deployment
 
@@ -77,7 +77,7 @@ cd upayan.dev
 
 ## Deployment
 
-- **Frontend**: Deployed on [Cloudflare Pages](https://pages.cloudflare.com/)
+- **Frontend**: Deployed on [Vercel](https://vercel.com/)
 - **Backend**: Dockerized and can be deployed using Docker.
 
 ## Contributing
