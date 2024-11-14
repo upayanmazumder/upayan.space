@@ -1,0 +1,101 @@
+.personal {
+  padding: var(--padding-medium);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.personal ul {
+  list-style-type: none;
+  display: flex;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
+}
+
+.personal li {
+  display: inline-block;
+}
+
+.personal a {
+  color: #b0b0b0;
+
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 50%;
+  background-color: #333;
+  transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.personal a:hover {
+  background-color: #63b1ff40;
+  color: #fff;
+  border: 2px solid #1e90ff;
+  box-shadow: 0 0 10px rgba(30, 144, 255, 0.6);
+}
+
+.personal .linkedin:hover {
+  background-color: #0077b5;
+  border: 2px solid #0077b5;
+  box-shadow: 0 0 10px rgba(0, 119, 181, 0.6);
+}
+
+.personal .github:hover {
+  background-color: #333;
+  border: 2px solid #333;
+  box-shadow: 0 0 10px rgba(51, 51, 51, 0.6);
+}
+
+.personal .discord:hover {
+  background-color: #7289da;
+  border: 2px solid #7289da;
+  box-shadow: 0 0 10px rgba(114, 137, 218, 0.6);
+}
+
+.personal .instagram:hover {
+  background-color: #e4405f;
+  border: 2px solid #e4405f;
+  box-shadow: 0 0 10px rgba(228, 64, 95, 0.6);
+}
+
+.personal .facebook:hover {
+  background-color: #3b5998;
+  border: 2px solid #3b5998;
+  box-shadow: 0 0 10px rgba(59, 89, 152, 0.6);
+}
+
+.personal .pinterest:hover {
+  background-color: #e60023;
+  border: 2px solid #e60023;
+  box-shadow: 0 0 10px rgba(230, 0, 35, 0.6);
+}
+
+@media (max-width: 768px) {
+  .personal ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .personal a {
+    font-size: 30px;
+  }
+}
+
+.personal a:active {
+  color: #fff;
+  background-color: #1e90ff;
+  border: 2px solid #1e90ff;
+  box-shadow: 0 0 8px rgba(30, 144, 255, 0.6);
+}
+
+.personal a:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.6);
+}

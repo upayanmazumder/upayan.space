@@ -1,0 +1,27 @@
+.header {
+    background-color: var(--header-background-color);
+    display: flex;
+    padding: var(--padding-medium);
+    height: fit-content;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    gap: 100px;
+    top: 0;
+    z-index: 1000;
+}
+
+.icon {
+    margin-right: 0;
+}
+
+.icon img {
+    border-radius: 50%;
+}
+
+.text h1 {
+    margin-left: 0;
+    color: white;
+    font-size: 1.8em;
+}

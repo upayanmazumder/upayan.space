@@ -1,0 +1,48 @@
+.socialmediawork {
+    background-color: #1a1a1a;
+    padding: 20px;
+    text-align: center;
+    color: #f8f9fa;
+    border-radius: 15px;
+}
+
+.socialmediawork ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.socialmediawork li {
+    margin: 10px 0;
+}
+
+.socialmediawork .IITM-button {
+    color: #d6a64f;
+    background-color: #2a0908;
+}
+
+.socialmediawork .microsoftlearn-button {
+    color: #171717;
+    background-color: #f25022;
+}
+
+.socialmediawork .leetcode-button {
+    color: black;
+    background-color: #ffab1d;
+}
+
+.socialmediawork .gravatar-button {
+    background-color: #4578ea;
+}
+
+.socialmediawork .devfolio-button {
+    background-color: #3670ff;
+}
+
+.socialmediawork .amazonmusic-button {
+    color: black;
+    background-color: #23d1da;
+}
