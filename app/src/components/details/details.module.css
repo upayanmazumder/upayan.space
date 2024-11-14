@@ -9,6 +9,10 @@
     cursor: default;
 }
 
+.hero h3 {
+    font-size: large;
+}
+
 .card {
     font-family: 'Roboto Mono', monospace;
     background-color: #0f0f0fdc;

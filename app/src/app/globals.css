@@ -6,8 +6,7 @@
 }
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: url('/background/bg8.svg') no-repeat center center fixed;
 
   --header-background-color: rgba(0, 0, 0, 0.7);
   --footer-background-color: transparent;
@@ -23,13 +22,6 @@
   --margin-small: 15px;
   --margin-medium: 25px;
   --margin-large: 40px;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 html,
@@ -51,7 +43,6 @@ body {
   z-index: 0;
   background-position: center center;
   font-size: 16px;
-  height: 100vh;
   font-family: 'RedHatDisplay', sans-serif;
 }
 
@@ -62,7 +53,7 @@ body::before {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.1);
+  background: var(--background);
   z-index: -1;
 }
 
@@ -212,4 +203,9 @@ button:active {
 button:focus {
   outline: none;
   box-shadow: 0 0 5px 2px rgba(37, 117, 252, 0.5);
+}
+
+/* SCROLLBAR STYLES ----------------------------- */
+::-webkit-scrollbar {
+  display: none;
 }

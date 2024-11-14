@@ -1,7 +1,6 @@
-// Activity.js
 import React, { useEffect, useState } from 'react';
-import activityStyles from './activity.module.css';
 import { BsCircleFill, BsMoonFill, BsDashCircleFill, BsWifiOff } from 'react-icons/bs';
+import activityStyles from './activity.module.css'; // Importing CSS Module
 
 const fetchGuildStatistics = async () => {
   try {
@@ -20,13 +19,13 @@ const fetchGuildStatistics = async () => {
 const getStatusIcon = (status) => {
   switch (status.toLowerCase()) {
     case 'online':
-      return <BsCircleFill color="green" />;
+      return <BsCircleFill color="#00FF00" />;
     case 'idle':
-      return <BsMoonFill color="yellow" />;
+      return <BsMoonFill color="#F1C40F" />;
     case 'dnd':
-      return <BsDashCircleFill color="red" />;
+      return <BsDashCircleFill color="#E74C3C" />;
     default:
-      return <BsWifiOff color="gray" />;
+      return <BsWifiOff color="#7F8C8D" />;
   }
 };
 
@@ -61,33 +60,31 @@ const Activity = () => {
   }
 
   return (
-    <>
+    <div className={activityStyles.activityContainer}>
       {guildStatistics[0]?.discordstatus.toLowerCase() !== 'offline' && (
-        <div className={activityStyles.container}>
+        <div className={activityStyles.activityCardWrapper}>
           {guildStatistics.map((guild, guildIndex) => (
-            <div key={guildIndex}>
+            <div key={guildIndex} className={activityStyles.activityCard}>
               {guild.discordstatus.toLowerCase() !== 'offline' && (
-                <div className={activityStyles.activities}>
+                <div className={activityStyles.activityCardInner}>
                   {guild.activities.map((activity, activityIndex) => (
-                    <div key={activityIndex} className={activityStyles.activity}>
-                      <div className={activityStyles.imagecontainer}>
+                    <div key={activityIndex} className={activityStyles.activityItem}>
+                      <div className={activityStyles.imageContainer}>
                         <img
-                          width="128"
-                          height="128"
                           src={activity.largeImageURL}
                           alt={activity.largeText}
-                          className={activityStyles.largeImage}
+                          className={activityStyles.activityLargeImage}
                         />
                         <img
                           src={activity.smallImageURL}
                           alt={activity.smallText}
-                          className={activityStyles.smallImage}
+                          className={activityStyles.activitySmallImage}
                         />
                       </div>
-                      <h3 className={activityStyles.name}>{activity.name}</h3>
-                      <p className={activityStyles.details}>{activity.details}</p>
-                      <p className={activityStyles.state}>{activity.state}</p>
-                      <p className={activityStyles.time}>{getTimeElapsed(activity.startTimestamp)}</p>
+                      <h3 className={activityStyles.activityName}>{activity.name}</h3>
+                      <p className={activityStyles.activityDetails}>{activity.details}</p>
+                      <p className={activityStyles.activityState}>{activity.state}</p>
+                      <p className={activityStyles.activityTime}>{getTimeElapsed(activity.startTimestamp)}</p>
                     </div>
                   ))}
                   <div className={activityStyles.status}>
@@ -99,7 +96,7 @@ const Activity = () => {
           ))}
         </div>
       )}
-    </>
+    </div>
   );
 };
 
