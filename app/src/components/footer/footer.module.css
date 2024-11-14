@@ -1,7 +1,25 @@
 .footer {
-    background-color: #1a1a1a;
+    background-color: var(--footer-background-color);
     color: #e0e0e0;
     padding: 20px;
     text-align: center;
     transition: background-color 0.3s ease-in-out;
+}
+
+.footer .link {
+    color: rgb(44, 135, 245) !important;
+}
+
+.footer .link:hover {
+    color: rgb(69, 148, 245) !important;
+}
+
+.footer span:hover {
+    cursor: default;
+}
+
+.footer .version {
+    font-size: 0.8em;
+    margin-top: 5px;
+    cursor: default;
 }

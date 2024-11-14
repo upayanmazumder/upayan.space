@@ -1,20 +1,23 @@
 .header {
-    background-color: #427ab8;
+    background-color: var(--header-background-color);
     display: flex;
-    padding: 15px;
+    padding: var(--padding-medium);
     height: fit-content;
     text-align: center;
     align-items: center;
     align-content: center;
     justify-content: center;
     gap: 100px;
-    position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 .icon {
     margin-right: 0;
+}
+
+.icon img {
+    border-radius: 50%;
 }
 
 .text h1 {

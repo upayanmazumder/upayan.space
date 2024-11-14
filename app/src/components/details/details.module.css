@@ -13,7 +13,7 @@
     font-family: 'Roboto Mono', monospace;
     background-color: #0f0f0fdc;
     border: 1px solid #333;
-    border-radius: var(--border-radius-medium);
+    border-radius: var(--border-radius-large);
     padding: 20px;
     width: 100%;
     max-width: 600px;

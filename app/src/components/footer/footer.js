@@ -9,9 +9,11 @@ const Footer = () => {
   return (
     <div className={styles.footer}>
       <SocialMediaPersonal />
-      <a href="/p/terms-of-service" className={styles.link}>Terms of Service</a> <span>  |  </span>
+      <br />
+      <a href="/p/terms-of-service" className={styles.link}>Terms of Service</a>
+      <span>  |  </span>
       <a href="/p/privacy-policy" className={styles.link}>Privacy Policy</a>
-      <div className={styles.version}>Version: {packageJson.version}</div>
+      <div className={styles.version}>&copy; 2024 Upayan v{packageJson.version}</div>
     </div>
   );
 };
