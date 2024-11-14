@@ -10,6 +10,10 @@
     display: flex;
     flex-direction: row;
     gap: 15px;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
 }
 
 .socialmediawork li {
