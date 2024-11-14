@@ -1,0 +1,151 @@
+/* activity.module.css */
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 2rem;
+    background-color: #0d0d0d; /* Sleek dark background */
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 90%;
+    margin: auto;
+  }
+  
+  .container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5);
+  }
+  
+  .activities {
+    background-color: #1a1a2e; /* Elegant dark blue background */
+    padding: 1.5rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 340px;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    box-shadow: 0 5px 25px rgba(24, 48, 87, 0.3);
+  }
+  
+  .activities:hover {
+    box-shadow: 0 7px 30px rgba(24, 48, 87, 0.5);
+    transform: translateY(-3px);
+  }
+  
+  .activity {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1rem;
+    color: #d3d3d3; /* Light, neutral text color */
+  }
+  
+  .imagecontainer {
+    position: relative;
+  }
+  
+  .largeImage {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    transition: transform 0.4s ease;
+  }
+  
+  .largeImage:hover {
+    transform: rotate(10deg) scale(1.1);
+  }
+  
+  .smallImage {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    position: absolute;
+    top: 60px;
+    right: 60px;
+    border: 2px solid #0d0d0d; /* Dark border for contrast */
+    transition: transform 0.3s ease;
+  }
+  
+  .smallImage:hover {
+    transform: scale(1.1);
+  }
+  
+  .name {
+    margin-top: 1rem;
+    font-size: 1.3rem;
+    color: #34699a; /* Elegant accent blue */
+    text-align: center;
+    font-weight: 600;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .name:hover {
+    color: #d3d3d3; /* Lighter color on hover */
+  }
+  
+  .details,
+  .state,
+  .time {
+    font-size: 0.95rem;
+    color: #c0c0c0;
+    opacity: 0.85;
+    text-align: center;
+    transition: color 0.3s ease;
+  }
+  
+  .time {
+    font-weight: bold;
+    color: #1c4870; /* Darker blue color for time */
+  }
+  
+  .status {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    color: #d3d3d3; /* Lighter text color */
+    position: absolute;
+    top: 12px;
+    right: 12px;
+  }
+  
+  .status span {
+    color: #d3d3d3; /* Lighter text color */
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 1rem;
+    }
+  
+    .activities {
+      max-width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 0.5rem;
+    }
+  
+    .largeImage {
+      width: 75px;
+      height: 75px;
+    }
+  
+    .name {
+      font-size: 1.2rem;
+    }
+  
+    .details,
+    .state,
+    .time {
+      font-size: 0.85rem;
+    }
+  }
+  
