@@ -24,6 +24,7 @@
 
     --button-primary-hover: #ccc;
     --button-secondary-hover: #1a1a1a;
+
   }
 }
 
@@ -123,6 +124,13 @@ a.secondary {
   .footer a:hover {
     text-decoration: underline;
     text-underline-offset: 4px;
+  }
+}
+
+@media (max-width: 900px) {
+  .page {
+    padding: 30px;
+    padding-bottom: 80px;
   }
 }
 

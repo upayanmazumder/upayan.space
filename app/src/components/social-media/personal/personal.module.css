@@ -77,7 +77,7 @@
 
 @media (max-width: 768px) {
   .personal ul {
-    flex-direction: column;
+    flex-direction: row;
     gap: 20px;
   }
 }

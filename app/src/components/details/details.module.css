@@ -10,7 +10,7 @@
 }
 
 .hero h3 {
-    font-size: large;
+    font-size: 1.5rem;
 }
 
 .card {
@@ -50,7 +50,7 @@
 @media (max-width: 768px) {
     .hero {
         padding: 20px 10px;
-        font-size: smaller;
+        font-size: 0.875rem;
     }
 
     .card {
@@ -59,7 +59,13 @@
 }
 
 @media (max-width: 480px) {
+    .hero {
+        padding: 15px 5px;
+        font-size: 0.75rem;
+    }
+
     .card {
         padding: 15px;
+        width: 100%;
     }
 }

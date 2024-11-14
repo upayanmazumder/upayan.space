@@ -115,6 +115,18 @@
   .activityCard {
     width: 100%;
   }
+
+  .activityLargeImage {
+    width: 80px;
+    height: 80px;
+  }
+
+  .activitySmallImage {
+    width: 30px;
+    height: 30px;
+    top: 55px;
+    left: 55px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -126,5 +138,17 @@
   .activityState,
   .activityTime {
     font-size: 0.9rem;
+  }
+
+  .activityLargeImage {
+    width: 60px;
+    height: 60px;
+  }
+
+  .activitySmallImage {
+    width: 20px;
+    height: 20px;
+    top: 40px;
+    left: 40px;
   }
 }
