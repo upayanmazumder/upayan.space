@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaCaretLeft, FaCaretRight } from 'react-icons/fa';
 import styles from './carousel.module.css';
-import Image from "next/image";
+import Image from 'next/image';
 
 const carouselData = [
     {
@@ -36,11 +36,11 @@ const Carousel = () => {
             <h3>Services</h3>
             {carouselData.length > 0 && (
                 <div className={styles.card}>
-                    <img 
+                    <Image 
                         src={carouselData[currentIndex].imagePath} 
                         alt={carouselData[currentIndex].name} 
-                        width="60"
-                        height="60"
+                        width={60}
+                        height={60}
                         loading="lazy"
                     />
                     <div className={styles.cardContent}>
