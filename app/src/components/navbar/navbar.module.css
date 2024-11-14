@@ -11,6 +11,7 @@
     background-color: var(--header-background-color);
     backdrop-filter: blur(10px);
     border-bottom: solid 2px #3877b4;
+    transition: padding 0.3s ease, background-color 0.3s ease;
 }
 
 .navList {
@@ -19,6 +20,7 @@
     gap: 2rem;
     margin: 0;
     padding: 0;
+    transition: gap 0.3s ease;
 }
 
 .navItem {
@@ -33,7 +35,7 @@
     font-weight: 500;
     padding: var(--padding-small) var(--padding-medium);
     border-radius: var(--border-radius-small);
-    transition: color 0.3s ease, background-color 0.2s ease-in-out;
+    transition: color 0.3s ease, background-color 0.2s ease-in-out, transform 0.2s ease;
     border: 1px solid transparent;
 }
 
@@ -90,7 +92,18 @@
     }
 
     .navLink {
-        font-size: 1rem;
+        font-size: 1em;
         padding: 0.5rem 1rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .nav {
+        padding: 0.3rem;
+    }
+
+    .navLink {
+        font-size: 0.9em;
+        padding: 0.4rem 0.8rem;
     }
 }
