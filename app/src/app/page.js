@@ -5,8 +5,7 @@ import styles from "./page.module.css";
 import SocialMediaWork from "../components/social-media/work/work";
 import Activity from "../components/activity/activity";
 import Carousel from "../components/carousel/carousel";
-import ContactForm from "../components/contact/contact";
-
+import Details from "../components/details/details";
 
 export default function Home() {
   return (
@@ -15,7 +14,7 @@ export default function Home() {
         <SocialMediaWork />
         <Activity />
         <Carousel />
-        <ContactForm />
+        <Details />
       </main>
     </div>
   );
