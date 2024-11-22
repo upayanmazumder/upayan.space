@@ -133,7 +133,7 @@ const Repository = () => {
 
     return (
       <div className={styles.fileViewer}>
-        <h2 className={styles.fileName}>Viewing: {fileContent.name}</h2>
+        <h2 className={styles.fileName}>{fileContent.name}</h2>
         <pre className={styles.fileContent}>{fileContent.content}</pre>
       </div>
     );
@@ -151,11 +151,37 @@ const Repository = () => {
     return null;
   };
 
+  const renderBreadcrumb = () => {
+    const pathSegments = pathname.replace("/devjourney", "").split("/").filter(Boolean);
+    const breadcrumbItems = pathSegments.map((segment, index) => {
+      const path = `/devjourney/${pathSegments.slice(0, index + 1).join("/")}`;
+      return (
+        <span key={path}>
+          <button className={styles.breadcrumbLink} onClick={() => router.push(path)}>
+            {segment}
+          </button>
+          {index < pathSegments.length - 1 && " / "}
+        </span>
+      );
+    });
+
+    return (
+      <div className={styles.breadcrumb}>
+        <button className={styles.breadcrumbLink} onClick={() => router.push("/devjourney")}>
+          Home
+        </button>
+        {breadcrumbItems.length > 0 && " / "}
+        {breadcrumbItems}
+      </div>
+    );
+  };
+
   return (
     <div className={styles.container}>
-      {renderReadme()}
-      {renderContents()}
+      {renderBreadcrumb()}
       {renderFileContent()}
+      {renderContents()}
+      {renderReadme()}
     </div>
   );
 };
