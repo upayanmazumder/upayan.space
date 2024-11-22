@@ -1,107 +1,112 @@
 .container {
-    background-color: #121212;
-    color: #f0f0f0;
-    font-family: Arial, sans-serif;
-    padding: var(--padding-large);
-    max-width: 1200px;
-    margin: auto;
-    border-radius: 8px;
-  }
-  
-  .repoTitle {
-    color: #1e90ff;
-    text-align: center;
-    font-size: 1rem;
-    margin-bottom: 20px;
-    animation: fadeIn 1s ease-in-out;
-  }
-  
-  .fileList {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .fileItem {
-    background-color: #2c2c2c;
-    margin: 10px 0;
-    padding: var(--padding-small);
-    border-radius: 8px;
-    transition: transform 0.3s ease, background-color 0.3s ease;
-  }
-  
-  .fileItem:hover {
-    transform: translateY(-5px);
-    background-color: #333;
-  }
-  
-  .fileLink,
-  .folderItem {
-    color: #1e90ff;
-    text-decoration: none;
-  }
-  
-  .folderItem {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .folderName {
-    font-weight: bold;
-  }
-  
-  .viewFolderBtn {
-    background-color: #1e90ff;
-    color: white;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-  }
-  
-  .viewFolderBtn:hover {
-    background-color: #4c8aff;
-  }
-  
-  .loading,
-  .error {
-    color: #ff6347;
-    text-align: center;
-    font-size: 1.5rem;
-  }
-  
-  @keyframes fadeIn {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  
-  @media (max-width: 768px) {
-    .container {
-      padding: 15px;
-    }
-  
-    .repoTitle {
-      font-size: 2rem;
-    }
-  
-    .fileItem {
-      padding: 12px;
-    }
-  
-    .fileLink,
-    .folderName {
-      font-size: 1rem;
-    }
-  
-    .viewFolderBtn {
-      padding: 4px 8px;
-      font-size: 0.9rem;
-    }
-  }
-  
+  --background-dark: #0b0f19;
+  --background-light: #1c2431;
+  --primary-blue: #4e88ff;
+  --accent-blue: #3d6fce;
+  --text-light: #e1e8f0;
+  --text-muted: #8b95a5;
+  --error-red: #ff6b6b;
+
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  gap: 16px;
+  text-transform: inherit !important;
+}
+
+.repoTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+  margin-bottom: 16px;
+  border-bottom: 2px solid var(--background-light);
+  padding-bottom: 8px;
+}
+
+.loading,
+.error {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.loading {
+  color: var(--primary-blue);
+}
+
+.error {
+  color: var(--error-red);
+}
+
+.fileList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fileItem {
+  background-color: var(--background-light);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.fileItem:hover {
+  transform: scale(1.02);
+  background-color: var(--accent-blue);
+}
+
+.fileLink {
+  display: block;
+  padding: 14px 20px;
+  font-size: 1em;
+  font-weight: 500;
+  color: var(--text-light);
+  text-align: left;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.fileLink:hover {
+  color: var(--background-dark);
+}
+
+.fileViewer {
+  margin-top: 20px;
+  padding: 24px;
+  background-color: var(--background-light);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.fileName {
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-bottom: 12px;
+  font-size: 1em;
+}
+
+.fileContent {
+  font-size: 0.8em;
+  line-height: 1.6;
+  color: var(--text-light);
+  background-color: var(--background-dark);
+  padding: 16px;
+  border-radius: 10px;
+  overflow-x: auto;
+  border: 1px solid var(--background-light);
+  white-space: pre-wrap;
+}
