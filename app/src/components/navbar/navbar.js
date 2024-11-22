@@ -1,5 +1,5 @@
 import React from 'react';
-import { BsHouse, BsBasket, BsPersonBadge, BsPatchCheck, BsCompass, BsPersonRolodex } from 'react-icons/bs';
+import { BsHouse, BsBasket, BsPersonBadge, BsPatchCheck, BsCompass, BsPersonRolodex, BsCodeSlash } from 'react-icons/bs';
 import navbarStyles from './navbar.module.css';
 
 const Navbar = () => {
@@ -9,6 +9,7 @@ const Navbar = () => {
         { name: 'About', href: '/#about', icon: BsPersonBadge },
         { name: 'Certificates', href: '/certificates', icon: BsPatchCheck },
         { name: 'Interests', href: '/#interests', icon: BsCompass },
+        { name: 'DevJourney', href: '/devjourney', icon: BsCodeSlash },
         { name: 'Contact', href: '/#contact', icon: BsPersonRolodex }
     ];
 
