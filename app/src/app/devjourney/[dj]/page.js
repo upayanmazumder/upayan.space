@@ -1,15 +1,13 @@
-"use client"
+import React from 'react';
 
-import React from "react";
-import Certificate from "@/components/certificate/certificate";
-import { useParams } from "next/navigation";
+import DevJourney from '../../components/devjourney/devjourney';
 
-const CertificatePage = () => {
-    const { certificate: slug } = useParams();
-
-    return (
-        <Certificate slug={slug} />
-    );
+const DevJourneyPage = () => {
+  return (
+    <>
+        <DevJourney />
+    </>
+  );
 };
 
-export default CertificatePage;
+export default DevJourneyPage;
