@@ -16,15 +16,8 @@
   min-height: 100vh;
   gap: 16px;
   text-transform: inherit !important;
-}
-
-.repoTitle {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--primary-blue);
-  margin-bottom: 16px;
-  border-bottom: 2px solid var(--background-light);
-  padding-bottom: 8px;
+  margin: 50px 150px;
+  border-radius: var(--border-radius-medium);
 }
 
 .loading,
@@ -54,14 +47,13 @@
 
 .fileItem {
   background-color: var(--background-light);
-  border-radius: 12px;
+  border-radius: var(--border-radius-small);
   overflow: hidden;
-  transition: transform 0.2s ease, background-color 0.3s ease;
+  transition: background-color 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .fileItem:hover {
-  transform: scale(1.02);
   background-color: var(--accent-blue);
 }
 
@@ -74,7 +66,6 @@
   text-align: left;
   text-decoration: none;
   background-color: transparent;
-  border: none;
   width: 100%;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -88,7 +79,7 @@
   margin-top: 20px;
   padding: 24px;
   background-color: var(--background-light);
-  border-radius: 16px;
+  border-radius: var(--border-radius-small);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
@@ -105,7 +96,7 @@
   color: var(--text-light);
   background-color: var(--background-dark);
   padding: 16px;
-  border-radius: 10px;
+  border-radius: var(--border-radius-small);
   overflow-x: auto;
   border: 1px solid var(--background-light);
   white-space: pre-wrap;

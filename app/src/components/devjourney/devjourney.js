@@ -9,14 +9,15 @@ const Repository = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [fileContent, setFileContent] = useState(null);
-  const [readmeContent, setReadmeContent] = useState(null);  // Added state for README content
+  const [readmeContent, setReadmeContent] = useState(null); // Added state for README content
   const pathname = usePathname();
   const router = useRouter();
   const repoOwner = "upayanmazumder";
   const repoName = "DevJourney";
 
+  // Function to fetch repo contents with authentication token
   const fetchRepoContents = async (path = "") => {
-    const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
+    const token = process.env.GITHUB_TOKEN || process.env.GITHUB_TOKEN; // Prioritize a server-side token if available
     const headers = token ? { Authorization: `token ${token}` } : {};
 
     try {
@@ -30,13 +31,14 @@ const Repository = () => {
       const result = await response.json();
       return result;
     } catch (err) {
-      setError(err.message);
+      setError(`Error fetching repository contents: ${err.message}`);
       return null;
     }
   };
 
+  // Function to fetch file content with authentication token
   const fetchFileContent = async (path) => {
-    const token = process.env.NEXT_PUBLIC_GITHUB_TOKEN;
+    const token = process.env.GITHUB_TOKEN;
     const headers = token ? { Authorization: `token ${token}` } : {};
 
     try {
@@ -57,7 +59,7 @@ const Repository = () => {
         throw new Error("Path is not a file");
       }
     } catch (err) {
-      setError(err.message);
+      setError(`Error fetching file content: ${err.message}`);
     }
   };
 
@@ -91,7 +93,7 @@ const Repository = () => {
           await fetchFileContent(repoPath);
         }
       } catch (err) {
-        setError(err.message);
+        setError(`Error during data fetching: ${err.message}`);
       } finally {
         setLoading(false);
       }
@@ -151,10 +153,9 @@ const Repository = () => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.repoTitle}>Repository: {repoName}</h1>
+      {renderReadme()}
       {renderContents()}
       {renderFileContent()}
-      {renderReadme()} {/* Display README if available */}
     </div>
   );
 };
