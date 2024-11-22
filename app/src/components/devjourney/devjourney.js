@@ -152,19 +152,25 @@ const Repository = () => {
   };
 
   const renderBreadcrumb = () => {
-    const pathSegments = pathname.replace("/devjourney", "").split("/").filter(Boolean);
+    const pathSegments = pathname
+      .replace("/devjourney", "")
+      .split("/")
+      .filter(Boolean);
+    
     const breadcrumbItems = pathSegments.map((segment, index) => {
       const path = `/devjourney/${pathSegments.slice(0, index + 1).join("/")}`;
+      const decodedSegment = decodeURIComponent(segment); // Decode the segment for display
+      
       return (
         <span key={path}>
           <button className={styles.breadcrumbLink} onClick={() => router.push(path)}>
-            {segment}
+            {decodedSegment}
           </button>
           {index < pathSegments.length - 1 && " / "}
         </span>
       );
     });
-
+  
     return (
       <div className={styles.breadcrumb}>
         <button className={styles.breadcrumbLink} onClick={() => router.push("/devjourney")}>
@@ -175,6 +181,7 @@ const Repository = () => {
       </div>
     );
   };
+  
 
   return (
     <div className={styles.container}>
