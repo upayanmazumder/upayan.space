@@ -3,13 +3,13 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 1rem;
-  padding: 1rem;
+  gap: 1em;
+  padding: 1em;
 }
 
 .activityCardWrapper {
   display: flex;
-  gap: 1rem;
+  gap: 1em;
   flex-wrap: wrap;
   justify-content: center;
 }
@@ -17,7 +17,7 @@
 .activityCard {
   background-color: #1f1f2b;
   border-radius: 12px;
-  padding: 1rem;
+  padding: 1em;
   width: fit-content;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
   transform: scale(0.98);
@@ -37,12 +37,12 @@
 }
 
 .activityItem {
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5em;
 }
 
 .imageContainer {
   position: relative;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.5em;
 }
 
 .activityLargeImage {
@@ -72,9 +72,9 @@
 }
 
 .activityName {
-  font-size: 1.4rem;
+  font-size: 1.4em;
   color: #3498db;
-  margin: 0.5rem 0;
+  margin: 0.5em 0;
   font-weight: 600;
 }
 
@@ -82,7 +82,7 @@
 .activityState,
 .activityTime {
   color: #95a5a6;
-  margin: 0.2rem 0;
+  margin: 0.2em 0;
   opacity: 0.85;
 }
 
@@ -94,9 +94,10 @@
 .status {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-top: 0.5rem;
+  gap: 0.5em;
+  margin-top: 0.5em;
   color: #d3d3d3;
+  text-transform: uppercase;
 }
 
 .status span {
@@ -105,11 +106,11 @@
 
 @media (max-width: 768px) {
   .activityContainer {
-    padding: 0.5rem;
+    padding: 0.5em;
   }
 
   .activityCardWrapper {
-    gap: 0.5rem;
+    gap: 0.5em;
   }
 
   .activityCard {
@@ -131,13 +132,13 @@
 
 @media (max-width: 480px) {
   .activityName {
-    font-size: 1.2rem;
+    font-size: 1.2em;
   }
 
   .activityDetails,
   .activityState,
   .activityTime {
-    font-size: 0.9rem;
+    font-size: 0.9em;
   }
 
   .activityLargeImage {
