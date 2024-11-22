@@ -9,6 +9,7 @@ const Repository = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [fileContent, setFileContent] = useState(null);
+  const [readmeContent, setReadmeContent] = useState(null);  // Added state for README content
   const pathname = usePathname();
   const router = useRouter();
   const repoOwner = "upayanmazumder";
@@ -60,6 +61,19 @@ const Repository = () => {
     }
   };
 
+  // Function to fetch README.md if exists
+  const fetchReadme = async (path) => {
+    const contents = await fetchRepoContents(path);
+    const readmeFile = contents?.find((item) => item.name.toLowerCase() === "readme.md");
+
+    if (readmeFile) {
+      await fetchFileContent(readmeFile.path);
+      setReadmeContent(fileContent?.content);  // Set README content
+    } else {
+      setReadmeContent(null); // No README.md found
+    }
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
@@ -72,6 +86,7 @@ const Repository = () => {
         if (Array.isArray(contents)) {
           setData(contents);
           setFileContent(null);
+          fetchReadme(repoPath);  // Fetch README if available
         } else {
           await fetchFileContent(repoPath);
         }
@@ -122,11 +137,24 @@ const Repository = () => {
     );
   };
 
+  const renderReadme = () => {
+    if (readmeContent) {
+      return (
+        <div className={styles.fileViewer}>
+          <h2 className={styles.fileName}>README</h2>
+          <div className={styles.fileContent} dangerouslySetInnerHTML={{ __html: readmeContent }} />
+        </div>
+      );
+    }
+    return null;
+  };
+
   return (
     <div className={styles.container}>
       <h1 className={styles.repoTitle}>Repository: {repoName}</h1>
       {renderContents()}
       {renderFileContent()}
+      {renderReadme()} {/* Display README if available */}
     </div>
   );
 };
