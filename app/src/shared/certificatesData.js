@@ -6,6 +6,11 @@ export const createSlug = (title) => title.toLowerCase().replace(/\s+/g, '-');
 // Array of certificate objects
 export const certificates = [
     { 
+        title: "Cookoff 9", 
+        path: "/certificates/COOKOFF9_CODECHEF_22-11-2024.png", 
+        tags: ["codechef", "cookoff", "competitive programming"] 
+    },
+    { 
         title: "Fundamentals", 
         path: "/certificates/FUNDAMENTALS_PROGRAMMINGHUB_05-08-2024.jpg", 
         tags: ["fundamentals", "programminghub"] 
