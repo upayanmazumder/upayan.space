@@ -1,9 +1,5 @@
-import Image from 'next/image';
-
-// Function to create slugs from titles
 export const createSlug = (title) => title.toLowerCase().replace(/\s+/g, '-');
 
-// Array of certificate objects
 export const certificates = [
     { 
         title: "Cookoff 9", 

@@ -1,15 +1,15 @@
+"use client"
+
 import React from "react";
 import Certificate from "@/components/certificate/certificate";
-import { useRouter } from 'next/router';
+import { useParams } from "next/navigation";
 
 const CertificatePage = () => {
-    const { query: { certificate: slug } } = useRouter();
+    const { certificate: slug } = useParams();
 
     return (
-        <>
-            <Certificate slug={slug} />
-        </>
+        <Certificate slug={slug} />
     );
-}
+};
 
 export default CertificatePage;
