@@ -1,0 +1,107 @@
+.container {
+    background-color: #121212;
+    color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    padding: var(--padding-large);
+    max-width: 1200px;
+    margin: auto;
+    border-radius: 8px;
+  }
+  
+  .repoTitle {
+    color: #1e90ff;
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .fileList {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .fileItem {
+    background-color: #2c2c2c;
+    margin: 10px 0;
+    padding: var(--padding-small);
+    border-radius: 8px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+  }
+  
+  .fileItem:hover {
+    transform: translateY(-5px);
+    background-color: #333;
+  }
+  
+  .fileLink,
+  .folderItem {
+    color: #1e90ff;
+    text-decoration: none;
+  }
+  
+  .folderItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .folderName {
+    font-weight: bold;
+  }
+  
+  .viewFolderBtn {
+    background-color: #1e90ff;
+    color: white;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .viewFolderBtn:hover {
+    background-color: #4c8aff;
+  }
+  
+  .loading,
+  .error {
+    color: #ff6347;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .container {
+      padding: 15px;
+    }
+  
+    .repoTitle {
+      font-size: 2rem;
+    }
+  
+    .fileItem {
+      padding: 12px;
+    }
+  
+    .fileLink,
+    .folderName {
+      font-size: 1rem;
+    }
+  
+    .viewFolderBtn {
+      padding: 4px 8px;
+      font-size: 0.9rem;
+    }
+  }
+  
