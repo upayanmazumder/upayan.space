@@ -9,15 +9,14 @@ const Repository = () => {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [fileContent, setFileContent] = useState(null);
-  const [readmeContent, setReadmeContent] = useState(null); // Added state for README content
+  const [readmeContent, setReadmeContent] = useState(null);
   const pathname = usePathname();
   const router = useRouter();
   const repoOwner = "upayanmazumder";
   const repoName = "DevJourney";
 
-  // Function to fetch repo contents with authentication token
   const fetchRepoContents = async (path = "") => {
-    const token = process.env.GITHUB_TOKEN || process.env.GITHUB_TOKEN; // Prioritize a server-side token if available
+    const token = process.env.GITHUB_TOKEN || process.env.GITHUB_TOKEN;
     const headers = token ? { Authorization: `token ${token}` } : {};
 
     try {
@@ -36,7 +35,6 @@ const Repository = () => {
     }
   };
 
-  // Function to fetch file content with authentication token
   const fetchFileContent = async (path) => {
     const token = process.env.GITHUB_TOKEN;
     const headers = token ? { Authorization: `token ${token}` } : {};
@@ -63,16 +61,15 @@ const Repository = () => {
     }
   };
 
-  // Function to fetch README.md if exists
   const fetchReadme = async (path) => {
     const contents = await fetchRepoContents(path);
     const readmeFile = contents?.find((item) => item.name.toLowerCase() === "readme.md");
 
     if (readmeFile) {
       await fetchFileContent(readmeFile.path);
-      setReadmeContent(fileContent?.content);  // Set README content
+      setReadmeContent(fileContent?.content);
     } else {
-      setReadmeContent(null); // No README.md found
+      setReadmeContent(null);
     }
   };
 
@@ -88,7 +85,7 @@ const Repository = () => {
         if (Array.isArray(contents)) {
           setData(contents);
           setFileContent(null);
-          fetchReadme(repoPath);  // Fetch README if available
+          fetchReadme(repoPath);
         } else {
           await fetchFileContent(repoPath);
         }
@@ -159,7 +156,7 @@ const Repository = () => {
     
     const breadcrumbItems = pathSegments.map((segment, index) => {
       const path = `/devjourney/${pathSegments.slice(0, index + 1).join("/")}`;
-      const decodedSegment = decodeURIComponent(segment); // Decode the segment for display
+      const decodedSegment = decodeURIComponent(segment);
       
       return (
         <span key={path}>
@@ -181,7 +178,6 @@ const Repository = () => {
       </div>
     );
   };
-  
 
   return (
     <div className={styles.container}>
