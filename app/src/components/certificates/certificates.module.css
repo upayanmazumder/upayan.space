@@ -25,9 +25,9 @@
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
 }
 
-.certificateCard h3 {
+.certificateCard h2 {
     color: #a0cfff;
-    font-size: 1.5rem;
+    font-size: 1.5em;
     margin-bottom: 10px;
     text-align: center;
 }
@@ -58,7 +58,7 @@
     padding: 5px 10px;
     margin: 5px;
     border-radius: var(--border-radius-small);
-    font-size: 0.8rem;
+    font-size: 0.8em;
 }
 
 @media (max-width: 768px) {

@@ -7,7 +7,7 @@ const Certificates = () => {
         <div className={certificateStyles.certificatesContainer}>
             {certificates.map((certificate, index) => (
                 <div key={index} className={certificateStyles.certificateCard}>
-                    <h3>{certificate.title}</h3>
+                    <h2>{certificate.title}</h2>
                     <a href={`/certificates/${createSlug(certificate.title)}#image`}>
                         <img src={certificate.path} alt={`${certificate.title} certificate`} />
                     </a>
