@@ -53,10 +53,5 @@
         "classname": "devfolio-button",
         "name": "Devfolio",
         "link": "https://devfolio.co/@Upayan"
-    },
-    {
-        "classname": "amazonmusic-button",
-        "name": "Amazon Music",
-        "link": "https://music.amazon.in/profiles/@upayanmazumder"
     }
 ]

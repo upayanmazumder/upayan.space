@@ -10,7 +10,7 @@ const SocialMediaWork = () => {
   useEffect(() => {
     if (typeof window !== 'undefined') {
       const filteredLinks = linksData.filter(link =>
-        ['IIT-Madras', 'Microsoft Learn', 'Leetcode', 'Gravatar', 'Devfolio', 'Amazon Music'].includes(link.name)
+        ['IIT-Madras', 'Microsoft Learn', 'Leetcode', 'Gravatar', 'Devfolio'].includes(link.name)
       );
       setLinks(filteredLinks);
     }
