@@ -1,6 +1,6 @@
 import React from 'react';
 
-import DevJourney from '../../components/devjourney/devjourney';
+import DevJourney from '../../../components/devjourney/devjourney';
 
 const DevJourneyPage = () => {
   return (
