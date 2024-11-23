@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import styles from "./devjourney.module.css";
 import { BsFileEarmark, BsFolder } from "react-icons/bs";
+import { marked } from "marked";
 
 const Repository = () => {
   const [data, setData] = useState([]);
@@ -68,7 +69,8 @@ const Repository = () => {
 
     if (readmeFile) {
       await fetchFileContent(readmeFile.path);
-      setReadmeContent(fileContent?.content);
+      const parsedMarkdown = marked(fileContent?.content || ""); // Parse the markdown
+      setReadmeContent(parsedMarkdown);
     } else {
       setReadmeContent(null);
     }
@@ -108,7 +110,7 @@ const Repository = () => {
   const renderContents = () => {
     if (loading) return <p className={styles.loading}>Loading...</p>;
     if (error) return <p className={styles.error}>Error: {error}</p>;
-  
+
     return (
       <ul className={styles.fileList}>
         {data.map((item) => (
@@ -129,7 +131,6 @@ const Repository = () => {
       </ul>
     );
   };
-  
 
   const renderFileContent = () => {
     if (!fileContent) return null;
@@ -137,7 +138,14 @@ const Repository = () => {
     return (
       <div className={styles.fileViewer}>
         <h2 className={styles.fileName}>{fileContent.name}</h2>
-        <pre className={styles.fileContent}>{fileContent.content}</pre>
+        {fileContent.name.endsWith(".md") ? (
+          <div
+            className={styles.fileContent}
+            dangerouslySetInnerHTML={{ __html: marked(fileContent.content) }}
+          />
+        ) : (
+          <pre className={styles.fileContent}>{fileContent.content}</pre>
+        )}
       </div>
     );
   };
@@ -145,38 +153,45 @@ const Repository = () => {
   const renderReadme = () => {
     if (readmeContent) {
       return (
-        <div className={styles.fileViewer}>
-          <h2 className={styles.fileName}>README</h2>
-          <div className={styles.fileContent} dangerouslySetInnerHTML={{ __html: readmeContent }} />
+        <div>
+          <div
+            dangerouslySetInnerHTML={{ __html: readmeContent }}
+          />
         </div>
       );
     }
     return null;
-  };
+  };  
 
   const renderBreadcrumb = () => {
     const pathSegments = pathname
       .replace("/devjourney", "")
       .split("/")
       .filter(Boolean);
-    
+
     const breadcrumbItems = pathSegments.map((segment, index) => {
       const path = `/devjourney/${pathSegments.slice(0, index + 1).join("/")}`;
       const decodedSegment = decodeURIComponent(segment);
-      
+
       return (
         <span key={path}>
-          <button className={styles.breadcrumbLink} onClick={() => router.push(path)}>
+          <button
+            className={styles.breadcrumbLink}
+            onClick={() => router.push(path)}
+          >
             {decodedSegment}
           </button>
           {index < pathSegments.length - 1 && " / "}
         </span>
       );
     });
-  
+
     return (
       <div className={styles.breadcrumb}>
-        <button className={styles.breadcrumbLink} onClick={() => router.push("/devjourney")}>
+        <button
+          className={styles.breadcrumbLink}
+          onClick={() => router.push("/devjourney")}
+        >
           Home
         </button>
         {breadcrumbItems.length > 0 && " / "}
