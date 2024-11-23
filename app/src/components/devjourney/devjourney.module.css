@@ -107,6 +107,16 @@
   white-space: pre-wrap;
 }
 
+.fileContent h1,
+.fileContent h2,
+.fileContent h3,
+.fileContent h4,
+.fileContent h5,
+.fileContent h6 {
+  font-size: 1rem;
+}
+
+
 .breadcrumbLink {
   color: var(--text-muted);
   text-decoration: none;
