@@ -83,16 +83,20 @@ const Activity = () => {
                   {guild.activities.map((activity, activityIndex) => (
                     <div key={activityIndex} className={activityStyles.activityItem}>
                       <div className={activityStyles.imageContainer}>
-                        <img
-                          src={activity.largeImageURL}
-                          alt={activity.largeText}
-                          className={activityStyles.activityLargeImage}
-                        />
-                        <img
-                          src={activity.smallImageURL}
-                          alt={activity.smallText}
-                          className={activityStyles.activitySmallImage}
-                        />
+                        {activity.largeImageURL && (
+                          <img
+                            src={activity.largeImageURL}
+                            alt={activity.largeText}
+                            className={activityStyles.activityLargeImage}
+                          />
+                        )}
+                        {activity.smallImageURL && (
+                          <img
+                            src={activity.smallImageURL}
+                            alt={activity.smallText}
+                            className={activityStyles.activitySmallImage}
+                          />
+                        )}
                       </div>
                       <h3 className={activityStyles.activityName}>{activity.name}</h3>
                       <p className={activityStyles.activityDetails}>{activity.details}</p>

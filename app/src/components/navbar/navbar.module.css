@@ -33,7 +33,7 @@
     color: #b0bec5;
     font-size: 1.1em;
     font-weight: 500;
-    padding: var(--padding-small) var(--padding-medium);
+    padding: var(--padding-small) var(--padding-small);
     border-radius: var(--border-radius-small);
     transition: color 0.3s ease, background-color 0.2s ease-in-out, transform 0.2s ease;
     border: 1px solid transparent;

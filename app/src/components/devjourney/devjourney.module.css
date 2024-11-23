@@ -1,0 +1,116 @@
+.container {
+  --background-dark: #0b0f19;
+  --background-light: #1c2431;
+  --primary-blue: #4e88ff;
+  --accent-blue: #3d6fce;
+  --text-light: #e1e8f0;
+  --text-muted: #8b95a5;
+  --error-red: #ff6b6b;
+
+  display: flex;
+  flex-direction: column;
+  padding: 24px;
+  background-color: var(--background-dark);
+  color: var(--text-light);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  gap: 16px;
+  text-transform: inherit !important;
+  margin: 50px 150px;
+  border-radius: var(--border-radius-medium);
+}
+
+.loading,
+.error {
+  font-size: 1rem;
+  font-weight: 500;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.loading {
+  color: var(--primary-blue);
+}
+
+.error {
+  color: var(--error-red);
+}
+
+.fileList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fileItem {
+  background-color: var(--background-light);
+  border-radius: var(--border-radius-small);
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.fileItem:hover {
+  background-color: var(--accent-blue);
+}
+
+.fileLink {
+  display: block;
+  padding: 14px 20px;
+  font-size: 1em;
+  font-weight: 500;
+  color: var(--text-light);
+  text-align: left;
+  text-decoration: none;
+  background-color: transparent;
+  width: 100%;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.fileLink:hover {
+  color: var(--background-dark);
+}
+
+.fileViewer {
+  margin-top: 20px;
+  padding: 24px;
+  background-color: var(--background-light);
+  border-radius: var(--border-radius-small);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.fileName {
+  font-weight: 600;
+  color: var(--primary-blue);
+  margin-bottom: 12px;
+  font-size: 1em;
+}
+
+.fileContent {
+  font-size: 0.8em;
+  line-height: 1.6;
+  color: var(--text-light);
+  background-color: var(--background-dark);
+  padding: 16px;
+  border-radius: var(--border-radius-small);
+  overflow-x: auto;
+  border: 1px solid var(--background-light);
+  white-space: pre-wrap;
+}
+
+.breadcrumbLink {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.9em;
+  transition: color 0.3s ease;
+  background-color: transparent;
+}
+
+.breadcrumbLink:hover {
+  box-shadow: none;
+  color: var(--accent-blue);
+}
