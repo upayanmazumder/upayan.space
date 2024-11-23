@@ -4,36 +4,36 @@ export const certificates = [
     { 
         title: "Cookoff 9", 
         path: "/certificates/COOKOFF9_CODECHEF_22-11-2024.webp", 
-        tags: ["codechef", "cookoff", "competitive programming"] 
+        tags: ["codechef", "cookoff 9", "competitive programming", "coding contest", "gravitas","vit"] 
     },
     { 
         title: "Fundamentals", 
         path: "/certificates/FUNDAMENTALS_PROGRAMMINGHUB_05-08-2024.webp", 
-        tags: ["fundamentals", "programminghub"] 
+        tags: ["fundamentals", "programminghub", "basics"] 
     },
     { 
         title: "C & PLT", 
-        path: "/certificates/C&PLT_SOFTECH_20-06-2024.webp", 
-        tags: ["softech", "c", "plt"] 
+        path: "/certificates/C&PROGRAMMINGINLOGICTECHNIC_SOFTECH_20-06-2024.webp", 
+        tags: ["softech", "c", "logic techniques", "programming basics"] 
     },
     { 
         title: "NodeJS", 
         path: "/certificates/NODEJS_PROGRAMMINGHUB_05-08-2024.webp", 
-        tags: ["nodejs", "programminghub"] 
+        tags: ["node.js", "javascript backend", "programminghub", "server-side development"] 
     },
     { 
         title: "Python 3", 
         path: "/certificates/PYTHON3_25-10-2024.webp", 
-        tags: ["python3", "programminghub"] 
+        tags: ["python 3", "programminghub", "python programming", "general-purpose language"] 
     },
     { 
         title: "Docker", 
         path: "/certificates/DOCKER_PROGRAMMINGHUB_25-10-2024.webp", 
-        tags: ["docker", "programminghub", "ci/cd pipelines"] 
+        tags: ["docker", "containerization", "ci/cd pipelines", "devops tools", "programminghub"] 
     },    
     { 
         title: "IT Basics", 
         path: "/certificates/ITBASICS_PROGRAMMINGHUB_27-10-2024.webp", 
-        tags: ["it", "programminghub", "basics"] 
+        tags: ["it fundamentals", "information technology", "programminghub", "basics"] 
     },
 ];
