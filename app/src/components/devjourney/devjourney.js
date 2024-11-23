@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import styles from "./devjourney.module.css";
+import { BsFileEarmark, BsFolder } from "react-icons/bs";
 
 const Repository = () => {
   const [data, setData] = useState([]);
@@ -107,23 +108,28 @@ const Repository = () => {
   const renderContents = () => {
     if (loading) return <p className={styles.loading}>Loading...</p>;
     if (error) return <p className={styles.error}>Error: {error}</p>;
-
-    const items = [];
-    for (let i = 0; i < data.length; i++) {
-      const item = data[i];
-      items.push(
-        <li key={item.sha} className={styles.fileItem}>
-          <button
-            className={styles.fileLink}
-            onClick={() => handleItemClick(item)}
-          >
-            {item.name}
-          </button>
-        </li>
-      );
-    }
-    return <ul className={styles.fileList}>{items}</ul>;
+  
+    return (
+      <ul className={styles.fileList}>
+        {data.map((item) => (
+          <li key={item.sha} className={styles.fileItem}>
+            <button
+              className={styles.fileLink}
+              onClick={() => handleItemClick(item)}
+            >
+              {item.type === "dir" ? (
+                <BsFolder className={styles.icon} />
+              ) : (
+                <BsFileEarmark className={styles.icon} />
+              )}
+              {item.name}
+            </button>
+          </li>
+        ))}
+      </ul>
+    );
   };
+  
 
   const renderFileContent = () => {
     if (!fileContent) return null;

@@ -45,16 +45,20 @@
   gap: 8px;
 }
 
-.fileItem {
+.fileItem button{
   background-color: var(--background-light);
-  border-radius: var(--border-radius-small);
+  border-radius: calc(var(--border-radius-small)*1.7);
   overflow: hidden;
   transition: background-color 0.3s ease;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
-.fileItem:hover {
+.fileItem button:hover {
   background-color: var(--accent-blue);
+}
+
+.fileItem button .icon {
+  margin-right: 15px;
 }
 
 .fileLink {
