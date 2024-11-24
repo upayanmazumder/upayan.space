@@ -8,7 +8,11 @@ const CertificatePage = () => {
     const { certificate: slug } = useParams();
 
     return (
-        <Certificate slug={slug} />
+        <div className={styles.page}>
+            <main className={styles.main}>
+                <Certificate slug={slug} />
+            </main>
+        </div>
     );
 };
 

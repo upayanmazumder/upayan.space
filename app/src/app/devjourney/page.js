@@ -2,11 +2,13 @@ import React from 'react';
 
 import DevJourney from '../../components/devjourney/devjourney';
 
+import styles from "../page.module.css";
+
 const DevJourneyPage = () => {
   return (
-    <>
-        <DevJourney />
-    </>
+    <main className={styles.main}>
+      <DevJourney />
+    </main>
   );
 };
 
