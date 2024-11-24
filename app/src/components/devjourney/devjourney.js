@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import styles from "./devjourney.module.css";
-import { BsFileEarmark, BsFolder } from "react-icons/bs";
+import { BsFileEarmark, BsFolder, BsGithub } from "react-icons/bs";
 import { marked } from "marked";
 
 const Repository = () => {
@@ -161,7 +161,7 @@ const Repository = () => {
       );
     }
     return null;
-  };  
+  };
 
   const renderBreadcrumb = () => {
     const pathSegments = pathname
@@ -200,9 +200,27 @@ const Repository = () => {
     );
   };
 
+  const renderGitHubButton = () => {
+    const repoPath = pathname.replace("/devjourney", "").replace(/^\//, "");
+    const githubUrl = `https://github.com/${repoOwner}/${repoName}/tree/main/${repoPath}`;
+    return (
+      <div className={styles.githubButtonContainer}>
+        <a
+          href={githubUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.githubButton}
+        >
+          <BsGithub /> View this page on GitHub
+        </a>
+      </div>
+    );
+  };
+
   return (
     <div className={styles.container}>
       {renderBreadcrumb()}
+      {renderGitHubButton()}
       {renderFileContent()}
       {renderContents()}
       {renderReadme()}
