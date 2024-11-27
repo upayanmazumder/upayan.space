@@ -17,7 +17,7 @@
 .navList {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    gap: 2em;
     margin: 0;
     padding: 0;
     transition: gap 0.3s ease;
@@ -53,34 +53,34 @@
 
 @media (max-width: 1024px) {
     .nav {
-        padding: 1rem;
+        padding: 1em;
     }
 
     .navList {
-        gap: 1.5rem;
+        gap: 1.5em;
     }
 
     .navLink {
-        font-size: 1rem;
-        padding: 0.6rem 1rem;
+        font-size: 1em;
+        padding: 0.6em 1em;
     }
 }
 
 @media (max-width: 768px) {
     .nav {
         flex-direction: column;
-        padding: 1rem;
+        padding: 1em;
         position: inherit;
     }
 
     .navList {
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 1.5em;
     }
 
     .navLink {
-        font-size: 1.2rem;
-        padding: 0.8rem 1.2rem;
+        font-size: 1.2em;
+        padding: 0.8em 1.2em;
         width: 100%;
         text-align: center;
     }
@@ -88,22 +88,22 @@
 
 @media (max-width: 480px) {
     .nav {
-        padding: 0.5rem;
+        padding: 0.5em;
     }
 
     .navLink {
         font-size: 1em;
-        padding: 0.5rem 1rem;
+        padding: 0.5em 1em;
     }
 }
 
 @media (max-width: 320px) {
     .nav {
-        padding: 0.3rem;
+        padding: 0.3em;
     }
 
     .navLink {
         font-size: 0.9em;
-        padding: 0.4rem 0.8rem;
+        padding: 0.4em 0.8em;
     }
 }

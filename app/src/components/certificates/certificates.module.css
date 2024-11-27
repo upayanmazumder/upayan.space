@@ -29,7 +29,7 @@
 
 .certificateCard h2 {
     color: #a0cfff;
-    font-size: 1.1rem; 
+    font-size: 1.1em; 
     margin-bottom: 8px;
     font-weight: 600;
     letter-spacing: 0.5px;
@@ -69,7 +69,7 @@
 }
 
 .filterSummary {
-    font-size: 1rem; 
+    font-size: 1em; 
     padding: 10px 15px;
     text-align: center; 
     color: #f0f0f0;
