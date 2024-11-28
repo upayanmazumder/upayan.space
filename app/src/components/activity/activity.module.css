@@ -16,7 +16,7 @@
 
 .activityCard {
   background-color: #1f1f2b;
-  border-radius: 12px;
+  border-radius: var(--border-radius-large);
   padding: 1em;
   width: fit-content;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
