@@ -13,3 +13,9 @@ const DevJourneyPage = () => {
 };
 
 export default DevJourneyPage;
+
+
+export const metadata = {
+  title: "Upayan - Devjourney",
+  description: "View my coding journey",
+};

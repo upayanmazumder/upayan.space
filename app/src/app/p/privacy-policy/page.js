@@ -41,3 +41,8 @@ const PrivacyPolicy = () => {
 };
 
 export default PrivacyPolicy;
+
+export const metadata = {
+  title: "Upayan - Privacy Policy",
+  description: "View my privacy policy",
+};

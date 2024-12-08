@@ -41,3 +41,9 @@ const TermsOfService = () => {
 };
 
 export default TermsOfService;
+
+
+export const metadata = {
+  title: "Upayan - Terms of Service",
+  description: "View my terms of service",
+};

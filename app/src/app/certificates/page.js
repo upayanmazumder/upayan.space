@@ -15,3 +15,8 @@ const CertificatesPage = () => {
 };
 
 export default CertificatesPage;
+
+export const metadata = {
+  title: "Upayan - Certificates",
+  description: "View my certificates",
+};
