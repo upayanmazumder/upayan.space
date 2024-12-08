@@ -61,7 +61,6 @@ const Activity = () => {
               {getStatusIcon(guild.discordstatus)}
               <span>{guild.discordstatus}</span>
             </div>
-            <br />
             <div className={styles.activities}>
               {guild.activities.map((activity, activityIndex) => (
                 <div key={activityIndex} className={styles.activity}>
