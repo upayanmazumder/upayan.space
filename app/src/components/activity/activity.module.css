@@ -1,155 +1,101 @@
-.activityContainer {
+.container {
+  --primary-bg: #0f172a;
+  --card-bg: #1e293b;
+  --text-primary: #94a3b8;
+  --text-highlight: #38bdf8;
+  --text-secondary: #64748b;
+  --status-online: #22c55e;
+  --status-idle: #facc15;
+  --status-dnd: #ef4444;
+
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-direction: column;
-  gap: 1em;
-  padding: 1em;
+  align-items: center;
+  padding: 1.5rem;
+  color: var(--text-primary);
+  min-height: 100vh;
 }
 
-.activityCardWrapper {
+.cardWrapper {
   display: flex;
-  gap: 1em;
   flex-wrap: wrap;
+  gap: 1.5rem;
   justify-content: center;
+  width: 100%;
 }
 
-.activityCard {
-  background-color: #1f1f2b;
-  border-radius: var(--border-radius-large);
-  padding: 1em;
-  width: fit-content;
+.card {
+  background-color: var(--card-bg);
+  border-radius: 12px;
+  padding: 1rem;
+  width: 300px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transform: scale(0.98);
+  animation: fadeIn 0.8s ease-in-out;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  vertical-align: center;
 }
 
-.activityCard:hover {
-  transform: scale(1.02);
-  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.5);
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
 }
 
-.activityCardInner {
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-highlight);
+  text-transform: uppercase;
+}
+
+.activities {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 1rem;
+}
+
+.activity {
   text-align: center;
+  background: radial-gradient(circle at center, rgba(0, 0, 0, 0.3) 10%, transparent 100%);
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+  border-radius: var(--border-radius-small);
+  padding: 1rem;
 }
 
-.activityItem {
-  margin-bottom: 0.5em;
-}
-
-.imageContainer {
-  position: relative;
-  margin-bottom: 0.5em;
-}
-
-.activityLargeImage {
-  width: 100px;
-  height: 100px;
+.largeImage {
+  width: 80px;
+  height: 80px;
   border-radius: 50%;
-  transition: transform 0.4s ease-in-out;
-}
-
-.activityLargeImage:hover {
-  transform: scale(1.1);
-}
-
-.activitySmallImage {
-  width: 40px;
-  height: 40px;
-  position: absolute;
-  top: 70px;
-  left: 70px;
-  border-radius: 50%;
-  border: 3px solid #121212;
-  transition: transform 0.3s ease;
-}
-
-.activitySmallImage:hover {
-  transform: scale(1.1);
+  margin-bottom: 0.5rem;
 }
 
 .activityName {
-  font-size: 1.4em;
-  color: #3498db;
-  margin: 0.5em 0;
-  font-weight: 600;
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--text-highlight);
+  margin-bottom: 0.25rem;
 }
 
 .activityDetails,
 .activityState,
 .activityTime {
-  color: #95a5a6;
-  margin: 0.2em 0;
-  opacity: 0.85;
+  font-size: 0.6rem;
+  color: var(--text-secondary);
 }
 
-.activityTime {
-  font-weight: 600;
-  color: #16a085;
+.noDataMessage {
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  margin-top: 2rem;
 }
 
-.status {
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-  margin-top: 0.5em;
-  color: #d3d3d3;
-  text-transform: uppercase;
-}
-
-.status span {
-  color: #d3d3d3;
-}
-
-@media (max-width: 768px) {
-  .activityContainer {
-    padding: 0.5em;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-
-  .activityCardWrapper {
-    gap: 0.5em;
-  }
-
-  .activityCard {
-    width: 100%;
-  }
-
-  .activityLargeImage {
-    width: 80px;
-    height: 80px;
-  }
-
-  .activitySmallImage {
-    width: 30px;
-    height: 30px;
-    top: 55px;
-    left: 55px;
-  }
-}
-
-@media (max-width: 480px) {
-  .activityName {
-    font-size: 1.2em;
-  }
-
-  .activityDetails,
-  .activityState,
-  .activityTime {
-    font-size: 0.9em;
-  }
-
-  .activityLargeImage {
-    width: 60px;
-    height: 60px;
-  }
-
-  .activitySmallImage {
-    width: 20px;
-    height: 20px;
-    top: 40px;
-    left: 40px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
