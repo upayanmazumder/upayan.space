@@ -1,5 +1,5 @@
 {
-  "name": "upayan.space",
+  "name": "upayan.dev",
   "version": "3.1.2",
   "description": "My Portfolio Site",
   "main": "api/server.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/upayanmazumder/upayan.space.git"
+    "url": "git+https://github.com/upayanmazumder/upayan.dev.git"
   },
   "keywords": [
     "upayan",
@@ -21,9 +21,9 @@
   "author": "upayanmazumder",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/upayanmazumder/upayan.space/issues"
+    "url": "https://github.com/upayanmazumder/upayan.dev/issues"
   },
-  "homepage": "https://github.com/upayanmazumder/upayan.space#readme",
+  "homepage": "https://github.com/upayanmazumder/upayan.dev#readme",
   "dependencies": {
     "axios": "^1.7.7",
     "cors": "^2.8.5",
