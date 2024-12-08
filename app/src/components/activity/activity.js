@@ -43,13 +43,18 @@ const Activity = () => {
       const data = await fetchGuildStatistics();
       setGuildStatistics(data);
     };
-    fetchData();
+
+    fetchData(); // Initial fetch
+
+    const intervalId = setInterval(() => {
+      fetchData(); // Fetch every 15 seconds
+    }, 15000);
+
+    return () => clearInterval(intervalId); // Cleanup interval on component unmount
   }, []);
 
   if (!guildStatistics || guildStatistics.length === 0) {
-    return <>
-      {/*Dont show anything until the data is loaded*/}
-    </>;
+    return null; // Don't show anything until data is loaded
   }
 
   return (
