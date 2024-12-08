@@ -109,8 +109,8 @@ Contributions are welcome! Please follow these steps:
 
 ## Code of Conduct
 
-Please read our [Code of Conduct](https://github.com/upayanmazumder/upayan.dev/blob/main/CODE_OF_CONDUCT.md) to ensure a welcoming environment for all contributors.
+Please read our [Code of Conduct](https://github.com/upayanmazumder/upayan.dev/blob/master/CODE_OF_CONDUCT.md) to ensure a welcoming environment for all contributors.
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/upayanmazumder/upayan.dev/blob/main/LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/upayanmazumder/upayan.dev/blob/master/LICENSE) file for details.
