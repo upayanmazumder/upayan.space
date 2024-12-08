@@ -12,7 +12,7 @@ export const certificates = [
         tags: ["fundamentals", "programminghub", "basics"] 
     },
     { 
-        title: "C & PLT", 
+        title: "C and PLT", 
         path: "/certificates/C&PROGRAMMINGINLOGICTECHNIC_SOFTECH_20-06-2024.webp", 
         tags: ["softech", "c", "logic techniques", "programming basics"] 
     },
