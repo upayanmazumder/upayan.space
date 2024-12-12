@@ -8,6 +8,7 @@ const DevJourneyPage = () => {
   return (
     <main className={styles.main}>
       <DevJourney />
+      <h1>Hello world</h1>
     </main>
   );
 };
