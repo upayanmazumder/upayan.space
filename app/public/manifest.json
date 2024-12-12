@@ -1,11 +1,11 @@
 {
-    "name": "My PWA App",
-    "short_name": "PWA App",
-    "description": "An awesome PWA built with Next.js",
+    "name": "Upayan",
+    "short_name": "Upayan",
+    "description": "Upayan's portfolio site",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#ffffff",
-    "theme_color": "#000000",
+    "theme_color": "#a8c7fa",
     "icons": [
         {
             "src": "/icons/icon-16x16.png",
