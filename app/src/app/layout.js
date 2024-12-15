@@ -1,6 +1,9 @@
+"use client"
+
 import localFont from "next/font/local";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/react"
+import { Analytics } from "@vercel/analytics/react";
+import React from "react";
 import Header from "../components/header/header";
 import Navbar from "../components/navbar/navbar";
 import Footer from "../components/footer/footer";
@@ -16,12 +19,20 @@ const geistMono = localFont({
   weight: "100 900",
 });
 
-export const metadata = {
-  title: "Upayan",
-  description: "Explore my page",
-};
-
 export default function RootLayout({ children }) {
+  React.useEffect(() => {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("/service-worker.js")
+        .then((registration) => {
+          console.log("Service Worker registered with scope:", registration.scope);
+        })
+        .catch((error) => {
+          console.error("Service Worker registration failed:", error);
+        });
+    }
+  }, []);
+
   return (
     <html lang="en">
       <head>
