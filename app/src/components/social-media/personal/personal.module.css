@@ -5,6 +5,7 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  color: white;
 }
 
 .personal ul {
@@ -54,40 +55,34 @@
   box-shadow: 0 0 0 3px rgba(30, 144, 255, 0.6);
 }
 
-.personal .linkedin:hover {
+.personal .linkedin-button:hover {
   background-color: #0077b5;
   border: 2px solid #0077b5;
   box-shadow: 0 0 10px rgba(0, 119, 181, 0.6);
 }
 
-.personal .github:hover {
-  background-color: #333;
-  border: 2px solid #333;
+.personal .github-button:hover {
+  background-color: black;
+  border: 2px solid black;
   box-shadow: 0 0 10px rgba(51, 51, 51, 0.6);
 }
 
-.personal .discord:hover {
-  background-color: #7289da;
-  border: 2px solid #7289da;
-  box-shadow: 0 0 10px rgba(114, 137, 218, 0.6);
+.personal .discord-button:hover {
+  background-color: #5765f2;
+  border: 2px solid #5765f2;
+  box-shadow: 0 0 10px #5765f2;
 }
 
-.personal .instagram:hover {
-  background-color: #e4405f;
-  border: 2px solid #e4405f;
-  box-shadow: 0 0 10px rgba(228, 64, 95, 0.6);
+.personal .instagram-button:hover {
+  background-color: #d103b6;
+  border: 2px solid #d103b6;
+  box-shadow: 0 0 10px #d103b6;
 }
 
-.personal .facebook:hover {
+.personal .facebook-button:hover {
   background-color: #3b5998;
   border: 2px solid #3b5998;
   box-shadow: 0 0 10px rgba(59, 89, 152, 0.6);
-}
-
-.personal .pinterest:hover {
-  background-color: #e60023;
-  border: 2px solid #e60023;
-  box-shadow: 0 0 10px rgba(230, 0, 35, 0.6);
 }
 
 @media (max-width: 1024px) {
