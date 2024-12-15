@@ -20,13 +20,14 @@ const geistMono = localFont({
 
 import localFont from "next/font/local";
 
-
 export default function RootLayoutClient({ children }) {
 
     return (
         <html lang="en">
             <head>
                 <link rel="manifest" href="/manifest.json" />
+                <meta name="apple-mobile-web-app-capable" content="yes" />
+                <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
             </head>
             <body className={`${geistSans.variable} ${geistMono.variable}`}>
                 <Header />

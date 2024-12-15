@@ -3,7 +3,7 @@
     "short_name": "Upayan",
     "description": "Upayan's portfolio site",
     "start_url": "/",
-    "display": "standalone",
+    "display": "fullscreen",
     "background_color": "#ffffff",
     "theme_color": "#3373b0",
     "icons": [
@@ -33,9 +33,10 @@
             "type": "image/png"
         },
         {
-            "src": "/icons/icon-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
+            "src": "/icons/apple-icon-180x180.png",
+            "sizes": "180x180",
+            "type": "image/png",
+            "purpose": "any maskable"
         }
     ]
 }
