@@ -30,7 +30,6 @@ body {
   overflow-x: hidden;
   font-size: 24px;
   scroll-behavior: smooth;
-
 }
 
 body {
@@ -73,40 +72,44 @@ body::before {
 h1,
 h2,
 h3 {
-    color: white;
-    margin: 0;
+  color: white;
+  margin: 0;
 }
 
 h1 {
-    font-size: 3.2rem;
-    text-align: center;
+  font-size: 3.2rem;
+  text-align: center;
 }
+
 h1 .highlight,
 h3 .highlight {
-    color: var(--qwik-light-blue);
+  color: var(--qwik-light-blue);
 }
 
 h2 {
-    font-weight: 400;
-    font-size: 2.4rem;
+  font-weight: 400;
+  font-size: 2.4rem;
 }
+
 h2 .highlight {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 h3 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
 
 @media screen and (max-width: 768px) {
   h1 {
-      font-size: 30px;
+    font-size: 30px;
   }
+
   h2 {
-      font-size: 3.4rem;
+    font-size: 3.4rem;
   }
+
   h3 {
-      font-size: 3rem;
+    font-size: 3rem;
   }
 }
 
@@ -137,13 +140,16 @@ ul {
   margin: 0 auto;
   padding: 30px 40px;
 }
+
 .container.container-purple {
   background: var(--qwik-light-purple);
 }
+
 .container.container-dark {
   background: var(--qwik-dark-background);
   color: var(--qwik-dark-text);
 }
+
 .container.container-center {
   text-align: center;
 }
@@ -154,15 +160,17 @@ ul {
 
 @media screen and (min-width: 768px) {
   .container {
-      padding: 60px 80px;
+    padding: 60px 80px;
   }
+
   .container.container-spacing-xl {
-      padding: 100px 60px;
+    padding: 100px 60px;
   }
+
   .container.container-flex {
-      display: flex;
-      justify-content: center;
-      gap: 60px;
+    display: flex;
+    justify-content: center;
+    gap: 60px;
   }
 }
 

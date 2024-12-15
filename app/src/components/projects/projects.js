@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
-import styles from './projects.module.css';
+import projectStyles from './projects.module.css';
 import projects from '../../shared/projects.json';
 
 const ProjectsDisplay = () => {
     return (
-        <section className={styles.container}>
+        <section className={projectStyles.container}>
             <header>
-                <h3 className={styles.heading}>My Projects</h3>
+                <h3 className={projectStyles.heading}>My Projects</h3>
             </header>
-            <div className={styles.projectsWrapper}>
+            <div className={projectStyles.projectsWrapper}>
                 {projects.map((project, index) => (
                     <ProjectCard key={index} project={project} />
                 ))}
@@ -22,44 +22,44 @@ const ProjectCard = ({ project }) => {
     const [showPackages, setShowPackages] = useState(false);
 
     return (
-        <article className={styles.projectCard}>
+        <article className={projectStyles.projectCard}>
             {/* Project Icon */}
             {project.icon && (
-                <figure className={styles.iconWrapper}>
+                <figure className={projectStyles.iconWrapper}>
                     <img
                         src={project.icon}
                         alt={`${project.name} icon`}
-                        className={styles.icon}
+                        className={projectStyles.icon}
                     />
                 </figure>
             )}
 
             {/* Project Name */}
-            <h2 className={styles.projectName}>{project.name}</h2>
+            <h2 className={projectStyles.projectName}>{project.name}</h2>
 
             {/* Project Description */}
             {project.description && (
-                <p className={styles.description}>{project.description}</p>
+                <p className={projectStyles.description}>{project.description}</p>
             )}
 
             {/* Links Section */}
-            <div className={styles.linksSection}>
+            <div className={projectStyles.linksSection}>
                 <button
                     onClick={() => setShowLinks(!showLinks)}
-                    className={styles.dropdownButton}
+                    className={projectStyles.dropdownButton}
                 >
                     {showLinks ? 'Hide Links' : 'Show Links'}
                 </button>
 
                 {showLinks && (
-                    <div className={styles.linksWrapper}>
+                    <div className={projectStyles.linksWrapper}>
                         {project.github && (
                             <p>
                                 <a
                                     href={project.github}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={styles.link}
+                                    className={projectStyles.link}
                                 >
                                     GitHub Repository
                                 </a>
@@ -71,7 +71,7 @@ const ProjectCard = ({ project }) => {
                                     href={project.deploymentUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={styles.link}
+                                    className={projectStyles.link}
                                 >
                                     Deployed Application
                                 </a>
@@ -83,7 +83,7 @@ const ProjectCard = ({ project }) => {
                                     href={project.apiUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={styles.link}
+                                    className={projectStyles.link}
                                 >
                                     API Documentation
                                 </a>
@@ -95,24 +95,24 @@ const ProjectCard = ({ project }) => {
 
             {/* Package Links */}
             {project.packageLinks && project.packageLinks.length > 0 && (
-                <div className={styles.packagesSection}>
+                <div className={projectStyles.packagesSection}>
                     <button
                         onClick={() => setShowPackages(!showPackages)}
-                        className={styles.dropdownButton}
+                        className={projectStyles.dropdownButton}
                     >
                         {showPackages ? 'Hide Packages' : 'Show Packages'}
                     </button>
 
                     {showPackages && (
                         <section>
-                            <ul className={styles.packageList}>
+                            <ul className={projectStyles.packageList}>
                                 {project.packageLinks.map((link, idx) => (
                                     <li key={idx}>
                                         <a
                                             href={link}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className={styles.link}
+                                            className={projectStyles.link}
                                         >
                                             {link}
                                         </a>
