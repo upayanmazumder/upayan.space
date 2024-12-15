@@ -1,21 +1,6 @@
-import localFont from "next/font/local";
-import "./globals.css";
-import { Analytics } from "@vercel/analytics/react"
-import Header from "../components/header/header";
-import Navbar from "../components/navbar/navbar";
-import Footer from "../components/footer/footer";
+import RootLayoutClient from "./RootLayoutClient";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
-
+import React from "react";
 export const metadata = {
   title: "Upayan",
   description: "Explore my page",
@@ -23,13 +8,9 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        <Header />
-        <Navbar />
-        {children}
-        <Analytics />
-        <Footer />
+    <html lang="en" suppressHydrationWarning>
+      <body>
+        <RootLayoutClient>{children}</RootLayoutClient>
       </body>
     </html>
   );
