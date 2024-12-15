@@ -129,14 +129,14 @@ a.secondary {
 
 @media (max-width: 900px) {
   .page {
-    padding: 30px;
+    padding: 15px;
     padding-bottom: 80px;
   }
 }
 
 @media (max-width: 600px) {
   .page {
-    padding: 32px;
+    padding: 10px;
     padding-bottom: 80px;
   }
 

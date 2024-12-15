@@ -47,3 +47,40 @@
     color: black;
     background-color: #23d1da;
 }
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .socialmediawork ul {
+        gap: 10px;
+    }
+
+    .socialmediawork button {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .socialmediawork ul {
+        gap: 8px;
+    }
+
+    .socialmediawork button {
+        font-size: 0.9rem;
+        padding: 8px 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .socialmediawork ul {
+        gap: 5px;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .socialmediawork button {
+        font-size: 0.8rem;
+        padding: 6px 15px;
+        width: 100%;
+    }
+}
