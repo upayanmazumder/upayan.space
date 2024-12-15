@@ -1,0 +1,153 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: #3333332d;
+    backdrop-filter: blur(5px);
+    color: #e0e0e0;
+    border-radius: var(--border-radius-medium);
+}
+
+.heading {
+    margin-bottom: 30px;
+    color: #00aaff;
+    text-shadow: 0 2px 4px rgba(0, 170, 255, 0.5);
+    animation: fadeIn 1.2s ease-in-out;
+}
+
+.projectsWrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    animation: slideIn 0.8s ease-in-out;
+}
+
+.projectCard {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 20px;
+}
+
+.projectCard:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6);
+}
+
+.iconWrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.icon {
+    max-width: 80px;
+    max-height: 80px;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.projectName {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #00aaff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.description {
+    font-size: 1em;
+    line-height: 1.5;
+    text-align: center;
+    color: #e0e0e0;
+    margin-bottom: 20px;
+}
+
+.linksSection {
+    margin-bottom: 15px;
+}
+
+.link {
+    color: #00aaff !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 0.9em;
+}
+
+.link:hover {
+    color: #1cc1ff !important;
+}
+
+.dropdownButton {
+
+    color: #e0e0e0;
+    background-color: rgba(115, 111, 111, 0.51);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.dropdownButton:hover {
+    background: #9999997b;
+}
+
+.packageList {
+    list-style: none;
+    padding: 0;
+}
+
+.packageList li {
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 2em;
+    }
+
+    .projectCard {
+        padding: 15px;
+    }
+
+    .projectName {
+        font-size: 1.3em;
+    }
+
+    .description {
+        font-size: 0.9em;
+    }
+
+    .dropdownButton {
+        padding: 8px 16px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
