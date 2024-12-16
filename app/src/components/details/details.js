@@ -1,5 +1,4 @@
 import React from 'react';
-import heroStyles from './details.module.css';
 import Infobox from "../infobox/infobox";
 import ContactForm from "../contact/contact";
 
@@ -18,8 +17,8 @@ const age = getUserAge(birthDate);
 
 const Details = () => {
     return (
-        <div className={heroStyles.hero}>
-            <div id="about" className={heroStyles.card}>
+        <div>
+            <div id="about">
                 <Infobox title="About Me">
                     <p>
                         I&apos;m Upayan, a {age}-year-old student currently pursuing a BTech in Computer Science
@@ -30,7 +29,7 @@ const Details = () => {
                 </Infobox>
             </div>
 
-            <div id="interests" className={heroStyles.card}>
+            <div id="interests">
                 <Infobox title="Interests">
                     <p>
                         I primarily focus on web development, but I also have experience in Discord bot development.
@@ -41,7 +40,7 @@ const Details = () => {
                 </Infobox>
             </div>
 
-            <div id="contact" className={heroStyles.card}>
+            <div id="contact">
                 <Infobox title="Contact">
                     <p>
                         Feel free to get in touch with me at <a href="mailto:contact@upayan.dev">contact@upayan.dev</a>.

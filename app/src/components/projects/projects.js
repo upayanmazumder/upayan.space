@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
-import projectStyles from './projects.module.css';
 import projects from '../../shared/projects.json';
 
 const ProjectsDisplay = () => {
     return (
-        <section className={projectStyles.container}>
+        <section>
             <header>
-                <h3 className={projectStyles.heading}>My Projects</h3>
+                <h3>My Projects</h3>
             </header>
-            <div className={projectStyles.projectsWrapper}>
+            <div>
                 {projects.map((project, index) => (
                     <ProjectCard key={index} project={project} />
                 ))}
@@ -22,44 +21,44 @@ const ProjectCard = ({ project }) => {
     const [showPackages, setShowPackages] = useState(false);
 
     return (
-        <article className={projectStyles.projectCard}>
+        <article>
             {/* Project Icon */}
             {project.icon && (
-                <figure className={projectStyles.iconWrapper}>
+                <figure>
                     <img
                         src={project.icon}
                         alt={`${project.name} icon`}
-                        className={projectStyles.icon}
+
                     />
                 </figure>
             )}
 
             {/* Project Name */}
-            <h2 className={projectStyles.projectName}>{project.name}</h2>
+            <h2>{project.name}</h2>
 
             {/* Project Description */}
             {project.description && (
-                <p className={projectStyles.description}>{project.description}</p>
+                <p>{project.description}</p>
             )}
 
             {/* Links Section */}
-            <div className={projectStyles.linksSection}>
+            <div>
                 <button
                     onClick={() => setShowLinks(!showLinks)}
-                    className={projectStyles.dropdownButton}
+
                 >
                     {showLinks ? 'Hide Links' : 'Show Links'}
                 </button>
 
                 {showLinks && (
-                    <div className={projectStyles.linksWrapper}>
+                    <div>
                         {project.github && (
                             <p>
                                 <a
                                     href={project.github}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={projectStyles.link}
+
                                 >
                                     GitHub Repository
                                 </a>
@@ -71,7 +70,7 @@ const ProjectCard = ({ project }) => {
                                     href={project.deploymentUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={projectStyles.link}
+
                                 >
                                     Deployed Application
                                 </a>
@@ -83,7 +82,7 @@ const ProjectCard = ({ project }) => {
                                     href={project.apiUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className={projectStyles.link}
+
                                 >
                                     API Documentation
                                 </a>
@@ -95,24 +94,24 @@ const ProjectCard = ({ project }) => {
 
             {/* Package Links */}
             {project.packageLinks && project.packageLinks.length > 0 && (
-                <div className={projectStyles.packagesSection}>
+                <div>
                     <button
                         onClick={() => setShowPackages(!showPackages)}
-                        className={projectStyles.dropdownButton}
+
                     >
                         {showPackages ? 'Hide Packages' : 'Show Packages'}
                     </button>
 
                     {showPackages && (
                         <section>
-                            <ul className={projectStyles.packageList}>
+                            <ul>
                                 {project.packageLinks.map((link, idx) => (
                                     <li key={idx}>
                                         <a
                                             href={link}
                                             target="_blank"
                                             rel="noopener noreferrer"
-                                            className={projectStyles.link}
+
                                         >
                                             {link}
                                         </a>

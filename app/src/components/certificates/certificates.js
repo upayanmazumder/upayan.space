@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from 'react';
-import certificateStyles from './certificates.module.css';
 import { createSlug, certificates } from '../../shared/certificatesData';
 import { BsFunnel, BsFunnelFill } from "react-icons/bs";
 
@@ -18,28 +17,17 @@ const Certificates = () => {
 
     return (
         <div>
-            <details className={certificateStyles.filterContainer}>
-                <summary className={certificateStyles.filterSummary}>
+            <details>
+                <summary>
                     {/* Toggle between funnel icons based on whether a filter is selected */}
                     {selectedTag ? <BsFunnelFill /> : <BsFunnel />}
                 </summary>
-                <div className={certificateStyles.filterButtons}>
-                    <button
-                        className={`${certificateStyles.filterButton} ${
-                            selectedTag === '' ? certificateStyles.active : ''
-                        }`}
-                        onClick={() => setSelectedTag('')}
-                    >
+                <div>
+                    <button>
                         All
                     </button>
                     {allTags.map((tag, index) => (
-                        <button
-                            key={index}
-                            className={`${certificateStyles.filterButton} ${
-                                selectedTag === tag ? certificateStyles.active : ''
-                            }`}
-                            onClick={() => setSelectedTag(tag)}
-                        >
+                        <button key={index}>
                             {tag}
                         </button>
                     ))}
@@ -47,16 +35,16 @@ const Certificates = () => {
             </details>
 
             {/* Certificates Display Section */}
-            <div className={certificateStyles.certificatesContainer}>
+            <div>
                 {filteredCertificates.map((certificate, index) => (
-                    <div key={index} className={certificateStyles.certificateCard}>
+                    <div key={index}>
                         <h2>{certificate.title}</h2>
                         <a href={`/certificates/${createSlug(certificate.title)}#image`}>
                             <img src={certificate.path} alt={`${certificate.title} certificate`} />
                         </a>
                         <div>
                             {certificate.tags.map((tag, tagIndex) => (
-                                <span key={tagIndex} className={certificateStyles.certificateTag}>
+                                <span key={tagIndex}>
                                     {tag}
                                 </span>
                             ))}

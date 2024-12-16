@@ -1,6 +1,5 @@
 import React from 'react';
 import { BsHouse, BsBasket, BsPersonBadge, BsPatchCheck, BsCompass, BsPersonRolodex, BsCodeSlash } from 'react-icons/bs';
-import navbarStyles from './navbar.module.css';
 
 const Navbar = () => {
     const navItems = [
@@ -14,12 +13,12 @@ const Navbar = () => {
     ];
 
     return (
-        <nav className={navbarStyles.nav}>
-            <ul className={navbarStyles.navList}>
+        <nav>
+            <ul>
                 {navItems.map(({ name, href, icon: Icon }) => (
-                    <li key={name} className={navbarStyles.navItem}>
-                        <a href={href} className={navbarStyles.navLink}>
-                            <Icon className={navbarStyles.navIcon} />{' '}
+                    <li key={name}>
+                        <a href={href}>
+                            <Icon />{' '}
                             {name}
                         </a>
                     </li>

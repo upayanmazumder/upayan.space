@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { BsCircleFill, BsMoonFill, BsDashCircleFill, BsWifiOff } from 'react-icons/bs';
-import styles from './activity.module.css'; // CSS Module
 
 const fetchGuildStatistics = async () => {
   try {
@@ -44,42 +43,42 @@ const Activity = () => {
       setGuildStatistics(data);
     };
 
-    fetchData(); // Initial fetch
+    fetchData();
 
     const intervalId = setInterval(() => {
-      fetchData(); // Fetch every 15 seconds
+      fetchData();
     }, 15000);
 
-    return () => clearInterval(intervalId); // Cleanup interval on component unmount
+    return () => clearInterval(intervalId);
   }, []);
 
   if (!guildStatistics || guildStatistics.length === 0) {
-    return null; // Don't show anything until data is loaded
+    return null;
   }
 
   return (
-    <div className={styles.container}>
-      <div className={styles.cardWrapper}>
+    <div>
+      <div>
         {guildStatistics.map((guild, guildIndex) => (
-          <div key={guildIndex} className={styles.card}>
-            <div className={styles.header}>
+          <div key={guildIndex}>
+            <div>
               {getStatusIcon(guild.discordstatus)}
               <span>{guild.discordstatus}</span>
             </div>
-            <div className={styles.activities}>
+            <div>
               {guild.activities.map((activity, activityIndex) => (
-                <div key={activityIndex} className={styles.activity}>
+                <div key={activityIndex}>
                   {activity.largeImageURL && (
                     <img
                       src={activity.largeImageURL}
                       alt={activity.largeText}
-                      className={styles.largeImage}
+
                     />
                   )}
-                  <h3 className={styles.activityName}>{activity.name}</h3>
-                  <p className={styles.activityDetails}>{activity.details}</p>
-                  <p className={styles.activityState}>{activity.state}</p>
-                  <p className={styles.activityTime}>
+                  <h3>{activity.name}</h3>
+                  <p>{activity.details}</p>
+                  <p>{activity.state}</p>
+                  <p>
                     {formatElapsedTime(activity.startTimestamp)}
                   </p>
                 </div>

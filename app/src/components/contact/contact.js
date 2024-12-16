@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import contactStyles from './contact.module.css';
 import { BsInfoCircle } from 'react-icons/bs';
 
 const ContactForm = () => {
@@ -15,7 +14,7 @@ const ContactForm = () => {
 
   const submitForm = async () => {
     setForm((prevForm) => ({ ...prevForm, error: null, successMessage: null }));
-    
+
     if (form.message.length > 200) {
       setForm((prevForm) => ({
         ...prevForm,
@@ -56,20 +55,20 @@ const ContactForm = () => {
   };
 
   return (
-    <details className={contactStyles.container}>
+    <details>
       <summary>Send me a message</summary>
-      {form.loading && <p className={contactStyles.loading}>Sending message...</p>}
+      {form.loading && <p>Sending message...</p>}
       {form.error && (
-        <p className={contactStyles.error} aria-live="assertive">
+        <p aria-live="assertive">
           An error occurred! <br /> {form.error}
         </p>
       )}
       {form.successMessage && (
-        <p className={contactStyles.success} aria-live="polite">
+        <p aria-live="polite">
           {form.successMessage}
         </p>
       )}
-      <div className={contactStyles.formGroup}>
+      <div>
         <label htmlFor="name">Name:</label>
         <input
           type="text"
@@ -79,7 +78,7 @@ const ContactForm = () => {
           required
         />
       </div>
-      <div className={contactStyles.formGroup}>
+      <div>
         <label htmlFor="email">Email:</label>
         <input
           type="email"
@@ -89,7 +88,7 @@ const ContactForm = () => {
           required
         />
       </div>
-      <div className={contactStyles.formGroup}>
+      <div>
         <label htmlFor="message">Message:</label>
         <textarea
           id="message"
@@ -111,7 +110,6 @@ const ContactForm = () => {
       <button
         onClick={submitForm}
         disabled={form.loading}
-        className={contactStyles.button}
       >
         Send Message
       </button>

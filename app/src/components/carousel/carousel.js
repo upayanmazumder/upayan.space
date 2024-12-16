@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { FaCaretLeft, FaCaretRight } from 'react-icons/fa';
-import styles from './carousel.module.css';
 import Image from 'next/image';
 
 const carouselData = [
@@ -32,27 +31,27 @@ const Carousel = () => {
     };
 
     return (
-        <div id="services" className={styles.carouselContainer}>
+        <div id="services">
             <h3>Services</h3>
             {carouselData.length > 0 && (
-                <div className={styles.card}>
-                    <Image 
-                        src={carouselData[currentIndex].imagePath} 
-                        alt={carouselData[currentIndex].name} 
+                <div>
+                    <Image
+                        src={carouselData[currentIndex].imagePath}
+                        alt={carouselData[currentIndex].name}
                         width={60}
                         height={60}
                         loading="lazy"
                     />
-                    <div className={styles.cardContent}>
+                    <div>
                         <h3 style={{ color: carouselData[currentIndex].color }}>{carouselData[currentIndex].name}</h3>
                         <p>{carouselData[currentIndex].description}</p>
                         <a href={carouselData[currentIndex].link} target='_blank' rel="noopener noreferrer">Learn More</a>
                     </div>
                 </div>
             )}
-            <div className={styles.buttonContainer}>
-                <button onClick={prevSlide} className={styles.button}><FaCaretLeft /></button>
-                <button onClick={nextSlide} className={styles.button}><FaCaretRight /></button>
+            <div>
+                <button onClick={prevSlide}><FaCaretLeft /></button>
+                <button onClick={nextSlide}><FaCaretRight /></button>
             </div>
         </div>
     );

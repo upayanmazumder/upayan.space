@@ -1,11 +1,10 @@
 import React from 'react';
 import Image from "next/image";
-import headerStyles from './header.module.css';
 
 const Header = () => {
     return (
-        <div className={headerStyles.header}>
-            <div className={headerStyles.icon}>
+        <div>
+            <div>
                 <Image
                     src="/upayan.svg"
                     alt="Upayan"
@@ -14,7 +13,7 @@ const Header = () => {
                     priority
                 />
             </div>
-            <div className={headerStyles.text}>
+            <div>
                 <h1>Upayan</h1>
             </div>
         </div>

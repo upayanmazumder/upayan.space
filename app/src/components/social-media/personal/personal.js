@@ -3,7 +3,6 @@
 import React, { useEffect, useState } from 'react';
 import { FaLinkedin, FaGithub, FaDiscord, FaInstagram, FaFacebook, FaPinterest } from 'react-icons/fa';
 import linksData from '../../../data/links.json';
-import styles from './personal.module.css';
 
 const Personal = () => {
   const [links, setLinks] = useState([]);
@@ -37,11 +36,11 @@ const Personal = () => {
   };
 
   return (
-    <div className={styles.personal}>
+    <div>
       <ul>
         {links.map((link, index) => (
           <li key={index}>
-            <a className={styles[link.classname]} href={link.link} target="_blank" rel="noopener noreferrer">
+            <a href={link.link} target="_blank" rel="noopener noreferrer">
               {getIcon(link.name)}
             </a>
           </li>
