@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from 'react';
 import linksData from '../../../data/links.json';
+import workStyles from './work.module.css';
 
 const SocialMediaWork = () => {
   const [links, setLinks] = useState([]);
@@ -20,11 +21,11 @@ const SocialMediaWork = () => {
   };
 
   return (
-    <div>
+    <div class={workStyles.socialmediawork}>
       <ul>
         {links.map((link, index) => (
           <li key={index} >
-            <button onClick={() => handleClick(link.link)}>{link.name}</button>
+            <button className={workStyles[link.classname]} onClick={() => handleClick(link.link)}>{link.name}</button>
           </li>
         ))}
       </ul>
