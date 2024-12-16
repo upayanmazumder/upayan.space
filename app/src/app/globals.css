@@ -9,7 +9,12 @@
   --background: url('/background/bg8.svg') no-repeat center center fixed;
 
   --header-background-color: rgba(0, 0, 0, 0.7);
+  --header-color: white;
   --footer-background-color: transparent;
+  --footer-color: gray;
+
+  --link-text-color: #1356ad;
+  --link-text-hover-color: #2665b8;
 
   --border-radius-tiny: 5px;
   --border-radius-small: 15px;
@@ -122,7 +127,7 @@ a {
 }
 
 a:hover {
-  color: var(--link-hover-color) !important;
+  color: var(--link-text-hover-color) !important;
 }
 
 code {
@@ -134,6 +139,7 @@ code {
 ul {
   margin: 0;
   padding-left: 20px;
+  list-style: none;
 }
 
 /* CONTAINER ------------------------------------ */
@@ -178,7 +184,7 @@ ul {
 button {
   display: inline-block;
   width: max-content;
-  height: 40px;
+  height: min-content;
   padding: 8px 16px;
   font-size: 1.1em;
   font-weight: 600;
@@ -194,6 +200,10 @@ button {
   overflow: hidden;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
   margin: 5px;
+  text-align: center;
+  vertical-align: middle;
+  align-items: center;
+  align-content: center;
 }
 
 button:hover {

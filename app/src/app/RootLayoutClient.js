@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react"
 import React from "react";
 import Header from "../components/header/header";
 import Navbar from "../components/navbar/navbar";
+import SocialMediaWork from "../components/social-media/work/work";
 import Footer from "../components/footer/footer";
 import "./globals.css";
 
@@ -34,6 +35,7 @@ export default function RootLayoutClient({ children }) {
                 <Navbar />
                 {children}
                 <Analytics />
+                <SocialMediaWork />
                 <Footer />
             </body>
         </html>

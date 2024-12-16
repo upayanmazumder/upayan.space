@@ -1,0 +1,18 @@
+.header {
+    background-color: var(--header-background-color);
+    padding: 0 var(--padding-large);
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    gap: 30px;
+}
+
+.header img {
+    align-self: center;
+}
+
+.header h1 {
+    color: var(--header-color);
+    font-size: 2rem;
+    align-self: center;
+}

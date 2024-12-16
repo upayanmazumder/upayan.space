@@ -1,13 +1,12 @@
 "use client";
 
 import React from 'react';
-import SocialMediaPersonal from "../social-media/personal/personal";
 import packageJson from '../../../../package.json';
+import footerStyles from './footer.module.css';
 
 const Footer = () => {
   return (
-    <div>
-      <SocialMediaPersonal />
+    <div className={footerStyles.footer}>
       <br />
       <a href="/p/terms-of-service">Terms of Service</a>
       <span>  |  </span>

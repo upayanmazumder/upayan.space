@@ -1,22 +1,18 @@
 import React from 'react';
 import Image from "next/image";
+import headerStyles from './header.module.css';
 
 const Header = () => {
     return (
-        <div>
-            <div>
-                <Image
-                    src="/upayan.svg"
-                    alt="Upayan"
-                    width={80}
-                    height={80}
-                    priority
-                />
-            </div>
-            <div>
-                <h1>Upayan</h1>
-            </div>
-        </div>
+        <div class={headerStyles.header}>
+            <Image
+                src="/upayan-transparent.svg"
+                alt="Upayan"
+                width={120}
+                height={120}
+                priority
+            />
+        </div >
     );
 };
 

@@ -1,0 +1,11 @@
+.footer {
+    color: var(--footer-color);
+    background-color: var(--footer-background-color);
+    padding: var(--padding-small) var(--padding-large);
+    align-items: center;
+    text-align: center;
+}
+
+.footer a {
+    color: white !important;
+}
