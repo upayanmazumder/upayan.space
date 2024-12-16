@@ -1,5 +1,6 @@
 import React from 'react';
 import { BsHouse, BsBasket, BsPersonBadge, BsPatchCheck, BsCompass, BsPersonRolodex, BsCodeSlash } from 'react-icons/bs';
+import navbarStyles from './navbar.module.css';
 
 const Navbar = () => {
     const navItems = [
@@ -12,19 +13,25 @@ const Navbar = () => {
         { name: 'Contact', href: '/#contact', icon: BsPersonRolodex }
     ];
 
+    const handleNavigation = (href) => {
+        window.location.href = href;
+    };
+
     return (
-        <nav>
-            <ul>
-                {navItems.map(({ name, href, icon: Icon }) => (
-                    <li key={name}>
-                        <a href={href}>
-                            <Icon />{' '}
-                            {name}
-                        </a>
-                    </li>
-                ))}
-            </ul>
-        </nav>
+        <div className={navbarStyles.navbar}>
+            <nav>
+                <ul>
+                    {navItems.map(({ name, href, icon: Icon }) => (
+                        <li key={name}>
+                            <button onClick={() => handleNavigation(href)}>
+                                <Icon />{' '}
+                                {name}
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
+        </div>
     );
 };
 

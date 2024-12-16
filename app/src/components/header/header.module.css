@@ -5,14 +5,12 @@
     justify-content: center;
     vertical-align: middle;
     gap: 30px;
+    position: fixed;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+    width: 100vw;
 }
 
 .header img {
-    align-self: center;
-}
-
-.header h1 {
-    color: var(--header-color);
-    font-size: 2rem;
     align-self: center;
 }

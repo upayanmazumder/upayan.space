@@ -1,0 +1,25 @@
+.navbar {
+    align-self: center;
+    font-size: 0.8em;
+}
+
+.navbar nav {
+    position: sticky;
+    top: 0;
+    background-color: rgba(38, 38, 38, 0.075);
+    padding: var(--padding-medium);
+    width: fit-content;
+    border-radius: var(--border-radius-medium);
+}
+
+.navbar nav ul {
+    display: flex;
+    flex-direction: row;
+    padding: 0;
+}
+
+.navbar li button {
+    background-color: rgba(58, 58, 60, 0.301);
+    padding: var(--padding-tiny) var(--padding-small);
+    border-radius: calc(1.5*var(--border-radius-tiny));
+}

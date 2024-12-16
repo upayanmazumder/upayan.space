@@ -7,7 +7,6 @@ import footerStyles from './footer.module.css';
 const Footer = () => {
   return (
     <div className={footerStyles.footer}>
-      <br />
       <a href="/p/terms-of-service">Terms of Service</a>
       <span>  |  </span>
       <a href="/p/privacy-policy">Privacy Policy</a>
