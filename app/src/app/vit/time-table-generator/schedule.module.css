@@ -33,3 +33,72 @@
     font-weight: bold;
     text-align: center;
 }
+
+.highlightCell {
+    background-color: #d1e7dd;
+    font-weight: bold;
+}
+
+.addButton {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.addButton:hover {
+    background-color: #0056b3;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 400px;
+    text-align: center;
+}
+
+.modalActions {
+    margin-top: 20px;
+}
+
+.modalActions button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modalActions button:first-child {
+    background-color: #28a745;
+    color: white;
+}
+
+.modalActions button:first-child:hover {
+    background-color: #218838;
+}
+
+.modalActions button:last-child {
+    background-color: #dc3545;
+    color: white;
+}
+
+.modalActions button:last-child:hover {
+    background-color: #c82333;
+}

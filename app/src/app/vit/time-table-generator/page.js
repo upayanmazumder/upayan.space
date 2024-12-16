@@ -1,14 +1,37 @@
-// ScheduleTable.js
-import React from 'react';
+'use client';
+
+import React, { useState } from 'react';
 import styles from './schedule.module.css';
 import scheduleData from '../../../data/schedule.json';
 
 const ScheduleTable = () => {
+  const [customSubjects, setCustomSubjects] = useState([]);
+  const [modalVisible, setModalVisible] = useState(false);
+  const [formData, setFormData] = useState({
+    subjectName: '',
+    slot: '',
+    facultyName: '',
+    venue: '',
+  });
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleAddSubject = () => {
+    setCustomSubjects([...customSubjects, formData]);
+    setModalVisible(false);
+    setFormData({ subjectName: '', slot: '', facultyName: '', venue: '' });
+  };
+
   const renderTable = (type, data) => {
-    // Extract unique time slots for the header row
-    const timeSlots = Array.from(
-      new Set(data.flatMap((slot) => (slot.start && slot.end ? [`${slot.start} - ${slot.end}`] : [])))
-    );
+    // Extract all unique time slots for consistent columns
+    const timeSlots = data
+      .filter((slot) => slot.start && slot.end) // Filter valid time slots
+      .map((slot) => `${slot.start} - ${slot.end}`);
+
+    const uniqueTimeSlots = Array.from(new Set(timeSlots));
 
     return (
       <>
@@ -17,43 +40,43 @@ const ScheduleTable = () => {
           <thead>
             <tr>
               <th>Day</th>
-              {timeSlots.map((time, index) => (
+              {uniqueTimeSlots.map((time, index) => (
                 <th key={index}>{time}</th>
               ))}
             </tr>
           </thead>
           <tbody>
-            {['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'].map((day, dayIndex) => (
+            {['mon', 'tue', 'wed', 'thu', 'fri'].map((dayKey, dayIndex) => (
               <tr key={dayIndex}>
-                <td>{day}</td>
-                {timeSlots.map((time, timeIndex) => {
+                <td>{dayKey.charAt(0).toUpperCase() + dayKey.slice(1)}</td>
+                {uniqueTimeSlots.map((time, timeIndex) => {
                   const slot = data.find(
-                    (s) =>
-                      s.start &&
-                      s.end &&
-                      `${s.start} - ${s.end}` === time &&
-                      s.days &&
-                      Object.keys(s.days).length > 0
+                    (s) => `${s.start} - ${s.end}` === time
                   );
 
-                  if (slot) {
-                    // Handle lunch break
-                    if (slot.lunch) {
+                  if (slot && slot.days[dayKey]) {
+                    // Check for custom subjects in the slot
+                    const customSubject = customSubjects.find((subject) =>
+                      subject.slot.includes(slot.days[dayKey])
+                    );
+
+                    if (customSubject) {
                       return (
-                        <td key={timeIndex} className={styles.lunchRow} colSpan={1}>
-                          Lunch Break
+                        <td key={timeIndex} className={styles.highlightCell}>
+                          <div>
+                            <strong>{customSubject.subjectName}</strong>
+                          </div>
+                          <div>{customSubject.facultyName}</div>
+                          <div>{customSubject.venue}</div>
                         </td>
                       );
                     }
 
-                    // Render the specific schedule for the day
-                    const dayKey = day.toLowerCase().slice(0, 3);
-                    return (
-                      <td key={timeIndex}>{slot.days[dayKey] || '-'}</td>
-                    );
+                    // Render default schedule for the slot
+                    return <td key={timeIndex}>{slot.days[dayKey]}</td>;
                   }
 
-                  // Render empty slot
+                  // Render empty cell for missing data
                   return <td key={timeIndex}>-</td>;
                 })}
               </tr>
@@ -66,8 +89,61 @@ const ScheduleTable = () => {
 
   return (
     <div className={styles.container}>
+      <button className={styles.addButton} onClick={() => setModalVisible(true)}>
+        Add Subject
+      </button>
       {renderTable('Theory', scheduleData.theory)}
       {renderTable('Lab', scheduleData.lab)}
+
+      {/* Modal for adding subjects */}
+      {modalVisible && (
+        <div className={styles.modal}>
+          <div className={styles.modalContent}>
+            <h2>Add Subject</h2>
+            <label>
+              Subject Name:
+              <input
+                type="text"
+                name="subjectName"
+                value={formData.subjectName}
+                onChange={handleInputChange}
+              />
+            </label>
+            <label>
+              Slot:
+              <input
+                type="text"
+                name="slot"
+                value={formData.slot}
+                placeholder="e.g., B1+TB1"
+                onChange={handleInputChange}
+              />
+            </label>
+            <label>
+              Faculty Name:
+              <input
+                type="text"
+                name="facultyName"
+                value={formData.facultyName}
+                onChange={handleInputChange}
+              />
+            </label>
+            <label>
+              Venue:
+              <input
+                type="text"
+                name="venue"
+                value={formData.venue}
+                onChange={handleInputChange}
+              />
+            </label>
+            <div className={styles.modalActions}>
+              <button onClick={handleAddSubject}>Add</button>
+              <button onClick={() => setModalVisible(false)}>Cancel</button>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };
