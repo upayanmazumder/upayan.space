@@ -3,12 +3,13 @@
     padding: 0 var(--padding-large);
     display: flex;
     justify-content: center;
-    vertical-align: middle;
+    align-items: center;
     gap: 30px;
-    position: fixed;
+    position: sticky;
+    top: 0;
     backdrop-filter: blur(10px);
     z-index: 1000;
-    width: 100vw;
+    width: 100%;
 }
 
 .header img {

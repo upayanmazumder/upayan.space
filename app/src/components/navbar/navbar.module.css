@@ -6,7 +6,6 @@
 .navbar nav {
     position: sticky;
     top: 0;
-    background-color: rgba(38, 38, 38, 0.075);
     padding: var(--padding-medium);
     width: fit-content;
     border-radius: var(--border-radius-medium);
