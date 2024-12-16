@@ -1,0 +1,35 @@
+.container {
+    margin: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.tableTitle {
+    margin: 10px 0;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: left;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+.table th,
+.table td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    text-align: center;
+}
+
+.table th {
+    background-color: #000000;
+    color: white;
+}
+
+.lunchRow {
+    background-color: #b49721;
+    font-weight: bold;
+    text-align: center;
+}
