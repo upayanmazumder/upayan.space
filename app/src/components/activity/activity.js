@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { BsCircleFill, BsMoonFill, BsDashCircleFill, BsWifiOff } from 'react-icons/bs';
+import activityStyles from './activity.module.css';
 
 const fetchGuildStatistics = async () => {
   try {

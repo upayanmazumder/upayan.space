@@ -3,7 +3,8 @@
 import { Analytics } from "@vercel/analytics/react"
 import React from "react";
 import Header from "../components/header/header";
-import SocialMediaWork from "../components/social-media/work/work";
+import Navbar from "../components/navbar/navbar";
+import SocialMediaPersonal from "../components/social-media/personal/personal";
 import Footer from "../components/footer/footer";
 import "./globals.css";
 
@@ -31,9 +32,10 @@ export default function RootLayoutClient({ children }) {
             </head>
             <body className={`${geistSans.variable} ${geistMono.variable}`}>
                 <Header />
+                <Navbar />
                 {children}
                 <Analytics />
-                <SocialMediaWork />
+                <SocialMediaPersonal />
                 <Footer />
             </body>
         </html>

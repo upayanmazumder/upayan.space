@@ -8,7 +8,7 @@
 :root {
   --background: url('/background/bg8.svg') no-repeat center center fixed;
 
-  --header-background-color: rgba(0, 0, 0, 0.7);
+  --header-background-color: rgba(0, 0, 0, 0.164);
   --header-color: white;
   --footer-background-color: transparent;
   --footer-color: gray;

@@ -1,8 +1,7 @@
 import React from 'react';
 import Image from "next/image";
 import headerStyles from './header.module.css';
-import navbar from '../navbar/navbar';
-import Navbar from '../navbar/navbar';
+
 const Header = () => {
     return (
         <div class={headerStyles.header}>
@@ -13,7 +12,6 @@ const Header = () => {
                 height={120}
                 priority
             />
-            <Navbar />
         </div >
     );
 };
