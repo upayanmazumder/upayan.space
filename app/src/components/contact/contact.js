@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import contactStyles from './contact.module.css';
 import { BsInfoCircle } from 'react-icons/bs';
 
 const ContactForm = () => {
@@ -55,20 +56,20 @@ const ContactForm = () => {
   };
 
   return (
-    <details>
+    <details className={contactStyles.container}>
       <summary>Send me a message</summary>
-      {form.loading && <p>Sending message...</p>}
+      {form.loading && <p className={contactStyles.loading}>Sending message...</p>}
       {form.error && (
-        <p aria-live="assertive">
+        <p className={contactStyles.error} aria-live="assertive">
           An error occurred! <br /> {form.error}
         </p>
       )}
       {form.successMessage && (
-        <p aria-live="polite">
+        <p className={contactStyles.success} aria-live="polite">
           {form.successMessage}
         </p>
       )}
-      <div>
+      <div className={contactStyles.formGroup}>
         <label htmlFor="name">Name:</label>
         <input
           type="text"
@@ -78,7 +79,7 @@ const ContactForm = () => {
           required
         />
       </div>
-      <div>
+      <div className={contactStyles.formGroup}>
         <label htmlFor="email">Email:</label>
         <input
           type="email"
@@ -88,7 +89,7 @@ const ContactForm = () => {
           required
         />
       </div>
-      <div>
+      <div className={contactStyles.formGroup}>
         <label htmlFor="message">Message:</label>
         <textarea
           id="message"
@@ -110,6 +111,7 @@ const ContactForm = () => {
       <button
         onClick={submitForm}
         disabled={form.loading}
+        className={contactStyles.button}
       >
         Send Message
       </button>

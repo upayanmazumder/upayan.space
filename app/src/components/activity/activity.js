@@ -58,37 +58,35 @@ const Activity = () => {
   }
 
   return (
-    <div>
-      <div>
-        {guildStatistics.map((guild, guildIndex) => (
-          <div key={guildIndex}>
-            <div>
-              {getStatusIcon(guild.discordstatus)}
-              <span>{guild.discordstatus}</span>
-            </div>
-            <div>
-              {guild.activities.map((activity, activityIndex) => (
-                <div key={activityIndex}>
-                  {activity.largeImageURL && (
-                    <img
-                      src={activity.largeImageURL}
-                      alt={activity.largeText}
-
-                    />
-                  )}
-                  <h3>{activity.name}</h3>
-                  <p>{activity.details}</p>
-                  <p>{activity.state}</p>
-                  <p>
-                    {formatElapsedTime(activity.startTimestamp)}
-                  </p>
-                </div>
-              ))}
-            </div>
+    <div class={activityStyles.activities}>
+      {guildStatistics.map((guild, guildIndex) => (
+        <div key={guildIndex}>
+          <div class={activityStyles.status}>
+            {getStatusIcon(guild.discordstatus)} <span>{guild.discordstatus}</span>
           </div>
-        ))}
-      </div>
-    </div>
+          <ul>
+            {guild.activities.map((activity, activityIndex) => (
+              <div key={activityIndex} class={activityStyles.activity}>
+                {activity.largeImageURL && (
+                  <img
+                    src={activity.largeImageURL}
+                    alt={activity.largeText}
+
+                  />
+                )}
+                <h3>{activity.name}</h3>
+                <p>{activity.details}</p>
+                <p>{activity.state}</p>
+                <p>
+                  {formatElapsedTime(activity.startTimestamp)}
+                </p>
+              </div>
+            ))}
+          </ul>
+        </div>
+      ))
+      }
+    </div >
   );
 };
 

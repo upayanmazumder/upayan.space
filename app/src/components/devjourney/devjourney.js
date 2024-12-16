@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import styles from "./devjourney.module.css";
 import { BsFileEarmark, BsFolder, BsGithub } from "react-icons/bs";
 import { marked } from "marked";
 
@@ -107,21 +108,21 @@ const Repository = () => {
   };
 
   const renderContents = () => {
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error}</p>;
+    if (loading) return <p className={styles.loading}>Loading...</p>;
+    if (error) return <p className={styles.error}>Error: {error}</p>;
 
     return (
-      <ul>
+      <ul className={styles.fileList}>
         {data.map((item) => (
-          <li key={item.sha}>
+          <li key={item.sha} className={styles.fileItem}>
             <button
-
+              className={styles.fileLink}
               onClick={() => handleItemClick(item)}
             >
               {item.type === "dir" ? (
-                <BsFolder />
+                <BsFolder className={styles.icon} />
               ) : (
-                <BsFileEarmark />
+                <BsFileEarmark className={styles.icon} />
               )}
               {item.name}
             </button>
@@ -135,15 +136,15 @@ const Repository = () => {
     if (!fileContent) return null;
 
     return (
-      <div>
-        <h2>{fileContent.name}</h2>
+      <div className={styles.fileViewer}>
+        <h2 className={styles.fileName}>{fileContent.name}</h2>
         {fileContent.name.endsWith(".md") ? (
           <div
-
+            className={styles.fileContent}
             dangerouslySetInnerHTML={{ __html: marked(fileContent.content) }}
           />
         ) : (
-          <pre>{fileContent.content}</pre>
+          <pre className={styles.fileContent}>{fileContent.content}</pre>
         )}
       </div>
     );
@@ -175,7 +176,7 @@ const Repository = () => {
       return (
         <span key={path}>
           <button
-
+            className={styles.breadcrumbLink}
             onClick={() => router.push(path)}
           >
             {decodedSegment}
@@ -186,9 +187,9 @@ const Repository = () => {
     });
 
     return (
-      <div>
+      <div className={styles.breadcrumb}>
         <button
-
+          className={styles.breadcrumbLink}
           onClick={() => router.push("/devjourney")}
         >
           Home
@@ -203,12 +204,12 @@ const Repository = () => {
     const repoPath = pathname.replace("/devjourney", "").replace(/^\//, "");
     const githubUrl = `https://github.com/${repoOwner}/${repoName}/tree/main/${repoPath}`;
     return (
-      <div>
+      <div className={styles.githubButtonContainer}>
         <a
           href={githubUrl}
           target="_blank"
           rel="noopener noreferrer"
-
+          className={styles.githubButton}
         >
           <BsGithub /> View this page on GitHub
         </a>
@@ -217,7 +218,7 @@ const Repository = () => {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       {renderBreadcrumb()}
       {renderGitHubButton()}
       {renderFileContent()}

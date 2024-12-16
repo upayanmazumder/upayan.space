@@ -1,0 +1,121 @@
+.certificatesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 20px;
+    background: linear-gradient(145deg, #0d0d0d, #1a1a1a);
+    color: #f0f0f0;
+    margin: 20px;
+    border: 1px solid #2a2a2a;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    border-radius: 12px;
+}
+
+.certificateCard {
+    background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+    border: 1px solid #444;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 320px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    text-align: center;
+    margin: auto;
+}
+
+.certificateCard h2 {
+    color: #a0cfff;
+    font-size: 1.1em;
+    margin-bottom: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.certificateCard img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #333;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.certificateTag {
+    display: inline-block;
+    background: #333;
+    color: #f0f0f0;
+    padding: 4px 8px;
+    margin: 2px;
+    border: 1px solid #444;
+    border-radius: 6px;
+    font-size: 0.7em;
+    text-transform: uppercase;
+}
+
+.filterContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 20px;
+    border-radius: 10px;
+    margin: 20px auto;
+    background: linear-gradient(145deg, #0d0d0d6f, #1a1a1a62);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+}
+
+.filterSummary {
+    font-size: 1em;
+    padding: 10px 15px;
+    text-align: center;
+    color: #f0f0f0;
+    background: linear-gradient(145deg, #222, #333);
+    border-radius: 8px;
+    border: 1px solid #444;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    transition: all 0.2s ease-in-out;
+}
+
+.filterButtons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+}
+
+.filterButton {
+    padding: 10px 12px;
+    border: 1px solid #444;
+    border-radius: 8px;
+    background: linear-gradient(145deg, #222, #333);
+    color: #f0f0f0;
+    font-size: 0.85em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.filterButton.active {
+    background: linear-gradient(145deg, #0056b3, #007bff);
+    color: #fff;
+    border-color: #007bff;
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.4);
+}
+
+.filterButton:hover {
+    background: linear-gradient(145deg, #333, #444);
+    color: #00d8ff;
+    border-color: #007bff;
+}
+
+
+@media (min-width: 480px) {
+    .certificatesContainer {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
