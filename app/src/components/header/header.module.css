@@ -24,5 +24,6 @@
 @media (max-width: 1200px) {
     .header {
         flex-direction: column;
+        display: block;
     }
 }
