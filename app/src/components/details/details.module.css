@@ -1,7 +1,7 @@
 .hero {
     font-family: 'Roboto Mono', monospace;
     color: #f1f1f1;
-    padding: 40px 20px;
+    padding: var(--padding-medium);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -19,7 +19,7 @@
     background-color: var(--card-background-color);
     border: 1px solid #333;
     border-radius: var(--border-radius-large);
-    padding: 20px;
+    padding: var(--padding-medium) var(--padding-large);
     width: 100%;
     max-width: 600px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);

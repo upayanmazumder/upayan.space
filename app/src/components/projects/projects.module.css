@@ -8,7 +8,7 @@
 
 .heading {
     text-align: center;
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: 600;
     margin-bottom: 40px;
     color: #f5f5f5;
@@ -18,160 +18,58 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    transition: grid-template-columns 0.3s ease-in-out;
-}
-
-@media (max-width: 768px) {
-    .projectsWrapper {
-        grid-template-columns: 1fr 1fr;
-    }
-}
-
-@media (max-width: 480px) {
-    .projectsWrapper {
-        grid-template-columns: 1fr;
-    }
 }
 
 .projectCard {
-    background-color: #59595962;
+    background-color: rgba(50, 50, 50, 0.8);
     border-radius: var(--border-radius-small);
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     overflow: hidden;
-    width: 100%;
 }
 
 .projectCard:hover {
-    transform: translateY(-10px);
+    transform: translateY(-5px);
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
 }
 
 .iconWrapper {
     text-align: center;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
 }
 
 .icon {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     object-fit: cover;
     border-radius: 50%;
-    transition: transform 0.3s ease;
-}
-
-.iconWrapper:hover .icon {
-    transform: scale(1.1);
 }
 
 .projectName {
-    font-size: 1em;
-    font-weight: 500;
-    margin: 15px 0;
-    color: #f5f5f5;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 10px 0;
     text-align: center;
+    color: #f5f5f5;
 }
 
 .description {
     font-size: 0.9em;
-    color: #888888;
+    color: #c0c0c0;
     text-align: center;
     margin-bottom: 20px;
 }
 
 .linksSection,
 .packagesSection {
-    margin-top: 20px;
-}
-
-.dropdownButton {
-    background-color: #333333;
-    color: #ffffff;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 0.8em;
-    transition: background-color 0.3s ease;
-}
-
-.dropdownButton:hover {
-    background-color: #444444;
-}
-
-.linksWrapper,
-.packageList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
     margin-top: 10px;
-    list-style: none;
 }
 
-.link {
-    display: block;
-    color: #0c74c9 !important;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-    margin-bottom: 8px;
-    font-size: 1em;
-    font-weight: 500;
-    padding: 8px 0;
-    border-bottom: 2px solid transparent;
-    position: relative;
-    margin-left: 15px;
-}
-
-.link:hover {
-    color: #1f88de !important;
-    transform: translateX(4px);
-    border-bottom-color: #82bcec;
-}
-
-.link:active {
-    color: #1f88de;
-    transform: scale(0.98);
-}
-
-.tooltip {
-    position: relative;
-}
-
-.tooltip:hover::after {
-    content: 'Click to open';
-    position: absolute;
-    top: -20px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #333;
-    color: white;
-    padding: 5px;
+.container button {
     font-size: 0.8em;
-    border-radius: 5px;
-}
-
-.packageList a {
-    font-size: 1em;
-    color: #0c74c9 !important;
-    text-decoration: none;
-    transition: color 0.3s ease, transform 0.3s ease;
-    padding: 5px 0;
-    border-bottom: 1px solid transparent;
-}
-
-.packageList a:hover {
-    color: #1f88de !important;
-    border-bottom-color: #82bcec;
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-.projectCard {
-    animation: fadeIn 0.5s ease-in;
 }
