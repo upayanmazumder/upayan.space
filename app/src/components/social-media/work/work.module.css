@@ -1,5 +1,6 @@
 .socialmediawork {
     width: 100%;
+    font-size: 0.8em;
 }
 
 .socialmediawork ul {
@@ -7,7 +8,7 @@
     justify-content: center;
     padding: 0;
     margin: 0;
-    gap: 30px;
+    gap: 10px;
 }
 
 .socialmediawork .IITM-button {

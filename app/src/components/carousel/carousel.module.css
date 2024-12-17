@@ -1,5 +1,5 @@
 .services {
-    background-color: rgba(55, 55, 55, 0.161);
+    background-color: var(--card-background-color);
     width: fit-content;
     padding: var(--padding-medium) var(--padding-large);
     border-radius: var(--border-radius-medium);
@@ -22,4 +22,15 @@
 
 .services .card h4 {
     transition: color 0.3s ease-in-out;
+}
+
+.services button {
+    background-color: rgba(66, 66, 66, 0.366);
+}
+
+.services button svg {
+    align-self: center;
+    margin: auto;
+    padding: auto;
+
 }

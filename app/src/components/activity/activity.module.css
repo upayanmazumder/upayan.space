@@ -12,11 +12,10 @@
 
 .activities .status {
     padding: 6px 12px;
-    border-radius: 6px;
+    border-radius: var(--border-radius-tiny);
     display: inline-flex;
     align-items: center;
     font-weight: 500;
-    margin-bottom: 12px;
     text-transform: uppercase;
     gap: 6px;
     font-size: 0.85em;
@@ -40,7 +39,7 @@
 
 .activity {
     background-color: rgba(0, 0, 0, 0.4);
-    border-radius: 6px;
+    border-radius: var(--border-radius-small);
     padding: 10px;
     width: 180px;
     text-align: center;

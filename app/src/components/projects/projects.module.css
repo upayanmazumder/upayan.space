@@ -2,6 +2,8 @@
     padding: 40px;
     max-width: 1200px;
     margin: 0 auto;
+    background-color: var(--card-background-color);
+    border-radius: var(--border-radius-medium);
 }
 
 .heading {
@@ -32,8 +34,8 @@
 }
 
 .projectCard {
-    background-color: #1f1f1f62;
-    border-radius: 10px;
+    background-color: #59595962;
+    border-radius: var(--border-radius-small);
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
