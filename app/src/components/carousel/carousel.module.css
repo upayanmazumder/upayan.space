@@ -1,13 +1,13 @@
 .services {
     background-color: var(--card-background-color);
     width: fit-content;
-    padding: var(--padding-medium) var(--padding-large);
+    padding: var(--padding-small) var(--padding-medium);
     border-radius: var(--border-radius-medium);
     text-align: center;
     align-items: center;
     vertical-align: middle;
     align-self: center;
-    font-size: 1em;
+    font-size: 0.8em;
 }
 
 .services .card {
@@ -15,22 +15,26 @@
     flex-direction: row;
 }
 
-.services h3,
 .services .card h4 {
-    font-size: 2.5em;
-}
-
-.services .card h4 {
+    font-size: 1.5em;
     transition: color 0.3s ease-in-out;
 }
 
 .services button {
     background-color: rgba(66, 66, 66, 0.366);
+    margin-top: 15px;
+}
+
+.services .card img {
+    background-color: rgba(21, 21, 21, 0.637);
+    border-radius: 50%;
+    padding: 15px;
+    border: gray 2px outset;
+    margin-right: 20px;
 }
 
 .services button svg {
     align-self: center;
     margin: auto;
     padding: auto;
-
 }

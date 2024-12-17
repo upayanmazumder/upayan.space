@@ -10,7 +10,7 @@ const CertificatePage = () => {
     const { certificate: slug } = useParams();
 
     return (
-        <div className={styles.page}>
+        <div className={styles.page} id="image">
             <main className={styles.main}>
                 <Certificate slug={slug} />
             </main>

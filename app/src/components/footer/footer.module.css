@@ -4,6 +4,7 @@
     padding: var(--padding-small) var(--padding-large);
     align-items: center;
     text-align: center;
+    font-size: 0.7em;
 }
 
 .footer a {

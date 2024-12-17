@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaCaretLeft, FaCaretRight } from 'react-icons/fa';
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Image from 'next/image';
 import carouselStyles from './carousel.module.css';
 
@@ -33,7 +33,6 @@ const Carousel = () => {
 
     return (
         <div id="services" class={carouselStyles.services}>
-            <h3>Services</h3>
             {carouselData.length > 0 && (
                 <div class={carouselStyles.card}>
                     <Image
@@ -51,8 +50,8 @@ const Carousel = () => {
                 </div>
             )}
             <div>
-                <button onClick={prevSlide}><FaCaretLeft /></button>
-                <button onClick={nextSlide}><FaCaretRight /></button>
+                <button onClick={prevSlide}><IoIosArrowBack /></button>
+                <button onClick={nextSlide}><IoIosArrowForward /></button>
             </div>
         </div>
     );
