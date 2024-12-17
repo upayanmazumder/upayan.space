@@ -1,25 +1,12 @@
 .footer {
+    color: var(--footer-color);
     background-color: var(--footer-background-color);
-    color: #bdbcbcaf;
-    padding: 20px;
+    padding: var(--padding-small) var(--padding-large);
+    align-items: center;
     text-align: center;
-    transition: background-color 0.3s ease-in-out;
+    font-size: 16px;
 }
 
-.footer .link {
-    color: rgb(44, 135, 245) !important;
-}
-
-.footer .link:hover {
-    color: rgb(69, 148, 245) !important;
-}
-
-.footer span:hover {
-    cursor: default;
-}
-
-.footer .version {
-    font-size: 0.8em;
-    margin-top: 5px;
-    cursor: default;
+.footer a {
+    color: white !important;
 }

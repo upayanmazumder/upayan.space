@@ -1,53 +1,91 @@
-.certificatesContainer {
+.detailPageContainer {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
+    padding: calc(2*var(--padding-large)) var(--padding-medium);
+    min-height: max-content;
+    color: #f0f0f0;
+    border-radius: var(--border-radius-medium);
 }
 
 .certificateCard {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5px;
-    max-width: 250px;
+    background: linear-gradient(145deg, #1a1a1a, #2a2a2a);
+    border: 1px solid #444;
+    border-radius: var(--border-radius-medium);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+    max-width: 600px;
+    width: 100%;
     text-align: center;
-    flex: 1 1 calc(33.333% - 20px);
-    box-sizing: border-box;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.certificateImage img {
-    height: auto;
+.certificateCard:hover {
+    transform: scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.9);
+}
+
+.imageContainer {
     width: 100%;
-    max-width: 100%;
-    max-height: 100vh;
+    background: #111;
+    border-bottom: 1px solid #444;
+}
+
+.certificateImage {
+    width: 100%;
+    height: auto;
+    display: block;
     object-fit: contain;
 }
 
-.certificateDetailContainer {
-    text-align: center;
+.cardContent {
+    padding: 20px;
 }
 
-.certificateDetailContainer h2 {
+.certificateTitle {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #a0cfff;
     margin-bottom: 10px;
-    cursor: default;
-    font-size: 1.5rem;
+    text-transform: uppercase;
 }
 
-.certificateDetailContainer p {
+.tagsContainer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
     margin-top: 10px;
 }
 
-@media (max-width: 1200px) {
-    .certificateCard {
-        flex: 1 1 calc(50% - 20px);
-    }
+.certificateTag {
+    display: inline-block;
+    background: #333;
+    color: #f0f0f0;
+    padding: 6px 12px;
+    border: 1px solid #444;
+    border-radius: var(--border-radius-tiny);
+    font-size: 0.8em;
+    text-transform: uppercase;
 }
 
 @media (max-width: 768px) {
-    .certificateDetailContainer h2 {
-        font-size: 1.3rem;
+    .certificateTitle {
+        font-size: 1.3em;
     }
+
     .certificateCard {
-        flex: 1 1 calc(100% - 20px);
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .certificateTitle {
+        font-size: 1.1em;
+    }
+
+    .certificateTag {
+        padding: 4px 8px;
+        font-size: 0.7em;
     }
 }

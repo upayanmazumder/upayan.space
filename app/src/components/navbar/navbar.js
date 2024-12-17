@@ -13,19 +13,25 @@ const Navbar = () => {
         { name: 'Contact', href: '/#contact', icon: BsPersonRolodex }
     ];
 
+    const handleNavigation = (href) => {
+        window.location.href = href;
+    };
+
     return (
-        <nav className={navbarStyles.nav}>
-            <ul className={navbarStyles.navList}>
-                {navItems.map(({ name, href, icon: Icon }) => (
-                    <li key={name} className={navbarStyles.navItem}>
-                        <a href={href} className={navbarStyles.navLink}>
-                            <Icon className={navbarStyles.navIcon} />{' '}
-                            {name}
-                        </a>
-                    </li>
-                ))}
-            </ul>
-        </nav>
+        <div className={navbarStyles.navbar}>
+            <nav>
+                <ul>
+                    {navItems.map(({ name, href, icon: Icon }) => (
+                        <li key={name}>
+                            <button onClick={() => handleNavigation(href)}>
+                                <Icon />{' '}
+                                {name}
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
+        </div>
     );
 };
 

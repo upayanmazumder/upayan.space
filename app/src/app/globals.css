@@ -8,13 +8,22 @@
 :root {
   --background: url('/background/bg8.svg') no-repeat center center fixed;
 
-  --header-background-color: rgba(0, 0, 0, 0.7);
+  --header-background-color: rgba(0, 0, 0, 0.164);
+  --header-color: white;
   --footer-background-color: transparent;
+  --footer-color: gray;
 
+  --card-background-color: rgba(104, 104, 104, 0.202);
+
+  --link-text-color: #1356ad;
+  --link-text-hover-color: #2665b8;
+
+  --border-radius-tiny: 5px;
   --border-radius-small: 15px;
   --border-radius-medium: 25px;
   --border-radius-large: 30px;
 
+  --padding-tiny: 5px;
   --padding-small: 15px;
   --padding-medium: 20px;
   --padding-large: 30px;
@@ -27,7 +36,6 @@
 html,
 body {
   max-width: 100vw;
-  overflow-x: hidden;
   font-size: 24px;
   scroll-behavior: smooth;
 }
@@ -41,7 +49,6 @@ body {
   position: relative;
   z-index: 0;
   background-position: center center;
-  font-size: 16px;
   font-family: 'RedHatDisplay', sans-serif;
 }
 
@@ -121,7 +128,7 @@ a {
 }
 
 a:hover {
-  color: var(--link-hover-color) !important;
+  color: var(--link-text-hover-color) !important;
 }
 
 code {
@@ -133,6 +140,7 @@ code {
 ul {
   margin: 0;
   padding-left: 20px;
+  list-style: none;
 }
 
 /* CONTAINER ------------------------------------ */
@@ -175,42 +183,70 @@ ul {
 }
 
 button {
-  padding: 12px 24px;
-  border-radius: 50px;
-  border: none;
-  color: #fff;
-  font-size: 16px;
+  display: inline-block;
+  width: max-content;
+  height: min-content;
+  padding: 8px 16px;
+  font-size: 1.1em;
   font-weight: 600;
   text-transform: uppercase;
+  color: #ffffff;
+  background-color: #171717a2;
+  border: none;
+  border-radius: var(--border-radius-tiny);
   cursor: pointer;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.4s;
+  outline: none;
   position: relative;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-button::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-radius: 50px;
-  z-index: -1;
-  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  margin: 5px;
+  text-align: center;
+  vertical-align: middle;
+  align-items: center;
+  align-content: center;
 }
 
 button:hover {
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25), 0 0 10px rgba(128, 173, 249, 0.7);
-}
-
-button:active {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  transform: translateY(-1px);
+  box-shadow: 0 1px 0 -2px #f85959,
+    0 5px 0 -4px #39a2db,
+    0 6px 10px -3px #39a2db;
 }
 
 button:focus {
-  outline: none;
-  box-shadow: 0 0 5px 2px rgba(37, 117, 252, 0.5);
+  box-shadow: 0 0 0 3px rgba(136, 136, 136, 0.233),
+    0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+button:active {
+  transition: all 0.2s;
+  transform: translateY(-5px);
+  box-shadow: 0 2px 0 -2px #f85959,
+    0 8px 0 -4px #39a2db,
+    0 12px 10px -3px #39a2db;
+  background-color: #1c1c2a;
+}
+
+@media (max-width: 768px) {
+  button {
+    width: auto;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  button {
+    width: auto;
+    padding: 8px 16px;
+    font-size: 0.8rem;
+  }
+}
+
+button:focus-visible {
+  outline: 2px solid #1e90ff;
+  outline-offset: 2px;
 }
 
 /* SCROLLBAR STYLES ----------------------------- */

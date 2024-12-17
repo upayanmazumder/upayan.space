@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { FaCaretLeft, FaCaretRight } from 'react-icons/fa';
-import styles from './carousel.module.css';
+import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import Image from 'next/image';
+import carouselStyles from './carousel.module.css';
 
 const carouselData = [
     {
@@ -32,27 +32,26 @@ const Carousel = () => {
     };
 
     return (
-        <div id="services" className={styles.carouselContainer}>
-            <h3>Services</h3>
+        <div id="services" class={carouselStyles.services}>
             {carouselData.length > 0 && (
-                <div className={styles.card}>
-                    <Image 
-                        src={carouselData[currentIndex].imagePath} 
-                        alt={carouselData[currentIndex].name} 
+                <div class={carouselStyles.card}>
+                    <Image
+                        src={carouselData[currentIndex].imagePath}
+                        alt={carouselData[currentIndex].name}
                         width={60}
                         height={60}
                         loading="lazy"
                     />
-                    <div className={styles.cardContent}>
-                        <h3 style={{ color: carouselData[currentIndex].color }}>{carouselData[currentIndex].name}</h3>
+                    <div>
+                        <h4 style={{ color: carouselData[currentIndex].color }}>{carouselData[currentIndex].name}</h4>
                         <p>{carouselData[currentIndex].description}</p>
                         <a href={carouselData[currentIndex].link} target='_blank' rel="noopener noreferrer">Learn More</a>
                     </div>
                 </div>
             )}
-            <div className={styles.buttonContainer}>
-                <button onClick={prevSlide} className={styles.button}><FaCaretLeft /></button>
-                <button onClick={nextSlide} className={styles.button}><FaCaretRight /></button>
+            <div>
+                <button onClick={prevSlide}><IoIosArrowBack /></button>
+                <button onClick={nextSlide}><IoIosArrowForward /></button>
             </div>
         </div>
     );

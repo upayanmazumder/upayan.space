@@ -1,23 +1,14 @@
 .socialmediawork {
-    text-align: center;
-    color: #f8f9fa;
+    width: 100%;
+    font-size: 0.8em;
 }
 
 .socialmediawork ul {
-    list-style: none;
+    display: flex;
+    justify-content: center;
     padding: 0;
     margin: 0;
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    flex-wrap: wrap;
-    text-align: center;
-    align-items: center;
-    justify-content: center;
-}
-
-.socialmediawork li {
-    margin: 10px 0;
+    gap: 10px;
 }
 
 .socialmediawork .IITM-button {
@@ -46,41 +37,4 @@
 .socialmediawork .amazonmusic-button {
     color: black;
     background-color: #23d1da;
-}
-
-/* Responsive styles */
-@media (max-width: 1200px) {
-    .socialmediawork ul {
-        gap: 10px;
-    }
-
-    .socialmediawork button {
-        font-size: 1rem;
-        padding: 10px 20px;
-    }
-}
-
-@media (max-width: 768px) {
-    .socialmediawork ul {
-        gap: 8px;
-    }
-
-    .socialmediawork button {
-        font-size: 0.9rem;
-        padding: 8px 18px;
-    }
-}
-
-@media (max-width: 480px) {
-    .socialmediawork ul {
-        gap: 5px;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .socialmediawork button {
-        font-size: 0.8rem;
-        padding: 6px 15px;
-        width: 100%;
-    }
 }

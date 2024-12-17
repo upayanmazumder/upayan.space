@@ -15,7 +15,7 @@ const ContactForm = () => {
 
   const submitForm = async () => {
     setForm((prevForm) => ({ ...prevForm, error: null, successMessage: null }));
-    
+
     if (form.message.length > 200) {
       setForm((prevForm) => ({
         ...prevForm,
