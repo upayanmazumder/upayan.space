@@ -25,9 +25,10 @@
 .navbar nav ul {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     padding: 0;
     margin: 0;
+    flex-wrap: wrap;
 }
 
 .navbar li {
@@ -49,28 +50,42 @@
 
 @media (max-width: 768px) {
     .navbar {
-        display: block;
+        position: relative;
+        font-size: 0.6em;
+    }
+
+    .navbar nav {
+        padding: 0;
     }
 
     .navbar nav ul {
         flex-direction: column;
         align-items: center;
+        text-align: center;
+        align-items: center;
     }
 
     .navbar li {
         width: 100%;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        align-self: center;
+        display: flex;
     }
 
     .navbar li button {
         justify-content: center;
         width: 90%;
+        padding: var(--padding-tiny);
+        align-self: center;
     }
 }
 
 @media (max-width: 480px) {
     .navbar li button {
         font-size: 0.8em;
-        padding: var(--padding-small);
     }
 
     .navbar li button svg {

@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import styles from "./devjourney.module.css";
+import djStyles from "./devjourney.module.css";
 import { BsFileEarmark, BsFolder, BsGithub } from "react-icons/bs";
 import { marked } from "marked";
 
@@ -107,22 +107,22 @@ const Repository = () => {
     router.push(newPath);
   };
 
-  const renderContents = () => {
-    if (loading) return <p className={styles.loading}>Loading...</p>;
-    if (error) return <p className={styles.error}>Error: {error}</p>;
+  const renderDirMap = () => {
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error}</p>;
 
     return (
-      <ul className={styles.fileList}>
+      <ul className={djStyles.dirMapContainer}>
         {data.map((item) => (
-          <li key={item.sha} className={styles.fileItem}>
+          <li key={item.sha}>
             <button
-              className={styles.fileLink}
+
               onClick={() => handleItemClick(item)}
             >
               {item.type === "dir" ? (
-                <BsFolder className={styles.icon} />
+                <BsFolder />
               ) : (
-                <BsFileEarmark className={styles.icon} />
+                <BsFileEarmark />
               )}
               {item.name}
             </button>
@@ -132,35 +132,25 @@ const Repository = () => {
     );
   };
 
-  const renderFileContent = () => {
+  const renderContent = () => {
     if (!fileContent) return null;
 
     return (
-      <div className={styles.fileViewer}>
-        <h2 className={styles.fileName}>{fileContent.name}</h2>
+      <div className={djStyles.contentContainer}>
+        <h2 className={djStyles.fileName}>{fileContent.name}</h2>
         {fileContent.name.endsWith(".md") ? (
-          <div
-            className={styles.fileContent}
+          // Render markdown content
+          <div className={djStyles.markdownContent}
             dangerouslySetInnerHTML={{ __html: marked(fileContent.content) }}
           />
         ) : (
-          <pre className={styles.fileContent}>{fileContent.content}</pre>
+          // Render plain text content
+          <pre className={djStyles.fileContent}>
+            {fileContent.content}
+          </pre>
         )}
       </div>
     );
-  };
-
-  const renderReadme = () => {
-    if (readmeContent) {
-      return (
-        <div>
-          <div
-            dangerouslySetInnerHTML={{ __html: readmeContent }}
-          />
-        </div>
-      );
-    }
-    return null;
   };
 
   const renderBreadcrumb = () => {
@@ -174,22 +164,22 @@ const Repository = () => {
       const decodedSegment = decodeURIComponent(segment);
 
       return (
-        <span key={path}>
+        <div key={path} className={djStyles.breadcrumbHome}>
           <button
-            className={styles.breadcrumbLink}
+
             onClick={() => router.push(path)}
           >
             {decodedSegment}
           </button>
           {index < pathSegments.length - 1 && " / "}
-        </span>
+        </div>
       );
     });
 
     return (
-      <div className={styles.breadcrumb}>
+      <div className={djStyles.breadcrumbContainer} id='breadcrumb'>
         <button
-          className={styles.breadcrumbLink}
+
           onClick={() => router.push("/devjourney")}
         >
           Home
@@ -204,26 +194,23 @@ const Repository = () => {
     const repoPath = pathname.replace("/devjourney", "").replace(/^\//, "");
     const githubUrl = `https://github.com/${repoOwner}/${repoName}/tree/main/${repoPath}`;
     return (
-      <div className={styles.githubButtonContainer}>
-        <a
-          href={githubUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.githubButton}
+      <div className={djStyles.githubButtonContainer}>
+        <button
+          onClick={() => window.open(githubUrl, "_blank", "noopener,noreferrer")}
         >
           <BsGithub /> View this page on GitHub
-        </a>
+        </button>
       </div>
     );
   };
 
   return (
-    <div className={styles.container}>
+    <div className={djStyles.devjourneyContainer} id='main'>
       {renderBreadcrumb()}
       {renderGitHubButton()}
-      {renderFileContent()}
-      {renderContents()}
-      {renderReadme()}
+      {renderContent()}
+      {renderDirMap()}
+
     </div>
   );
 };
