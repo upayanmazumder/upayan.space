@@ -9,8 +9,21 @@
 }
 
 .filterContainer {
-    text-align: center;
-    margin: 0 auto;
+    margin: 0 0 0 auto;
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.filterContainer .filterSelect {
+    padding: 8px 12px;
+    font-size: 0.9em;
+    color: #f0f0f0;
+    background: #222;
+    border: 1px solid #444;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .filterSummary {

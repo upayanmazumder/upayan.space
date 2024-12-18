@@ -3,12 +3,24 @@
     font-size: 0.8em;
 }
 
+@media (max-width: 900px) {
+    .socialmediawork {
+        max-width: 100vw;
+    }
+}
+
 .socialmediawork ul {
     display: flex;
     justify-content: center;
     padding: 0;
     margin: 0;
     gap: 10px;
+}
+
+@media (max-width: 900px) {
+    .socialmediawork ul {
+        flex-wrap: wrap;
+    }
 }
 
 .socialmediawork .IITM-button {

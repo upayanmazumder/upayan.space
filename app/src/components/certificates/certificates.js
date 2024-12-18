@@ -8,8 +8,16 @@ import { BsFunnel, BsFunnelFill } from "react-icons/bs";
 const Certificates = () => {
     const [selectedTag, setSelectedTag] = useState("");
 
-    // Get all unique tags for the filter options
-    const allTags = [...new Set(certificates.flatMap((certificate) => certificate.tags))];
+    // Count the occurrence of each tag
+    const tagOccurrences = certificates
+        .flatMap((certificate) => certificate.tags)
+        .reduce((acc, tag) => {
+            acc[tag] = (acc[tag] || 0) + 1;
+            return acc;
+        }, {}); // Removed TypeScript type annotation
+
+    // Filter tags to include only those that occur at least twice
+    const validTags = Object.keys(tagOccurrences).filter((tag) => tagOccurrences[tag] >= 2);
 
     // Filter certificates based on the selected tag
     const filteredCertificates = selectedTag
@@ -22,26 +30,20 @@ const Certificates = () => {
             <div className={certificateStyles.filterContainer}>
                 <summary className={certificateStyles.filterSummary}>
                     {selectedTag ? <BsFunnelFill /> : <BsFunnel />}
-                    <span>Filter Certificates</span>
                 </summary>
-                <div className={certificateStyles.filterButtons}>
-                    <button
-                        className={`${certificateStyles.filterButton} ${selectedTag === "" ? certificateStyles.active : ""
-                            }`}
-                        onClick={() => setSelectedTag("")}
+                <div className={certificateStyles.filterDropdown}>
+                    <select
+                        value={selectedTag}
+                        onChange={(e) => setSelectedTag(e.target.value)}
+                        className={certificateStyles.filterSelect}
                     >
-                        All
-                    </button>
-                    {allTags.map((tag, index) => (
-                        <button
-                            key={index}
-                            className={`${certificateStyles.filterButton} ${selectedTag === tag ? certificateStyles.active : ""
-                                }`}
-                            onClick={() => setSelectedTag(tag)}
-                        >
-                            {tag}
-                        </button>
-                    ))}
+                        <option value="">All</option>
+                        {validTags.map((tag, index) => (
+                            <option key={index} value={tag}>
+                                {tag}
+                            </option>
+                        ))}
+                    </select>
                 </div>
             </div>
 
