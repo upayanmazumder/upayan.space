@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
+import { FaExternalLinkAlt } from "react-icons/fa";
 import Image from 'next/image';
 import carouselStyles from './carousel.module.css';
 
@@ -35,21 +36,23 @@ const Carousel = () => {
         <div id="services" class={carouselStyles.services}>
             {carouselData.length > 0 && (
                 <div class={carouselStyles.card}>
-                    <Image
-                        src={carouselData[currentIndex].imagePath}
-                        alt={carouselData[currentIndex].name}
-                        width={60}
-                        height={60}
-                        loading="lazy"
-                    />
-                    <div>
-                        <h4 style={{ color: carouselData[currentIndex].color }}>{carouselData[currentIndex].name}</h4>
+                    <a href={carouselData[currentIndex].link} target='_blank' rel="noopener noreferrer">
+                        <Image
+                            src={carouselData[currentIndex].imagePath}
+                            alt={carouselData[currentIndex].name}
+                            width={60}
+                            height={60}
+                            loading="lazy"
+                        />
+                    </a>
+                    <div class={carouselStyles.content}>
+                        <h4 style={{ color: carouselData[currentIndex].color }}>{carouselData[currentIndex].name}<a href={carouselData[currentIndex].link} target='_blank' rel="noopener noreferrer"><FaExternalLinkAlt /></a></h4>
                         <p>{carouselData[currentIndex].description}</p>
-                        <a href={carouselData[currentIndex].link} target='_blank' rel="noopener noreferrer">Learn More</a>
+
                     </div>
                 </div>
             )}
-            <div>
+            <div class={carouselStyles.controls}>
                 <button onClick={prevSlide}><IoIosArrowBack /></button>
                 <button onClick={nextSlide}><IoIosArrowForward /></button>
             </div>

@@ -19,6 +19,15 @@
     text-transform: uppercase;
     gap: 6px;
     font-size: 0.85em;
+    vertical-align: middle;
+    align-content: center;
+}
+
+.activities .status span {
+    align-self: center;
+    margin: auto 0;
+    vertical-align: middle;
+    font-family: 'Roboto', sans-serif;
 }
 
 .activities ul {
@@ -26,7 +35,8 @@
     flex-wrap: wrap;
     gap: 16px;
     justify-content: center;
-    padding: 10px;
+    padding: 0;
+    margin: 0 10px;
 }
 
 .activities img {
@@ -49,10 +59,12 @@
     align-items: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    align-self: center;
+    margin: auto;
 }
 
 .activity:hover {
-    transform: translateY(-4px);
+    transform: translateY(-2px);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 }
 

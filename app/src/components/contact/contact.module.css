@@ -7,15 +7,9 @@
     width: 90%;
     max-width: 500px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    transition: background-color 0.5s ease, transform 0.3s ease, max-height 0.3s ease, border-color 0.4s ease-in-out;
     overflow: hidden;
     font-size: 0.9em;
     border: 1px solid black;
-}
-
-.container:hover {
-    border-color: #17a2e0;
-    background-color: #4040408e;
 }
 
 .container p {
@@ -43,7 +37,7 @@
     width: 100%;
     padding: 10px;
     border: 1px solid #3535357d;
-    border-radius: var(--border-radius-small);
+    border-radius: var(--border-radius-tiny);
     background-color: #8585858e;
     color: #e0e0e0;
     transition: border-color 0.3s ease;
@@ -57,7 +51,7 @@
     max-height: 60px;
     min-width: 100%;
     min-height: min-content !important;
-    border-radius: var(--border-radius-small) var(--border-radius-small) 0 var(--border-radius-small);
+    border-radius: var(--border-radius-tiny) var(--border-radius-tiny) 0 var(--border-radius-tiny);
 }
 
 .container input:focus,
@@ -66,25 +60,24 @@
     outline: none;
 }
 
-.container input:hover,
-.container textarea:hover {
-    background-color: #a3a3a38e;
+.container input:focus,
+.container textarea:focus {
+    background-color: #acacac8e;
 }
 
 .button {
-    background-color: #1f8ef1;
+    background-color: var(--primary-color);
     color: #ffffff;
     border: none;
     border-radius: var(--border-radius-small);
     padding: 10px 20px;
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    transition: all 0.2s ease;
     display: inline-block;
     font-size: 0.7em;
 }
 
 .button:hover {
-    background-color: #17a2e0;
     transform: scale(1.05);
 }
 

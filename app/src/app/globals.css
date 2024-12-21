@@ -15,7 +15,11 @@
 
   --card-background-color: rgba(104, 104, 104, 0.202);
 
-  --link-text-color: #1356ad;
+  --primary-color: #1356ad;
+  --primary-hover-color: #17a2e0;
+  --secondary-color: #f85959;
+
+  --link-text-color: var(--theme-color);
   --link-text-hover-color: #2665b8;
 
   --border-radius-tiny: 5px;
@@ -209,7 +213,7 @@ button {
 
 button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 1px 0 -2px #f85959,
+  box-shadow: 0 1px 0 -2px var(--secondary-color),
     0 5px 0 -4px #39a2db,
     0 6px 10px -3px #39a2db;
 }
@@ -222,7 +226,7 @@ button:focus {
 button:active {
   transition: all 0.2s;
   transform: translateY(-5px);
-  box-shadow: 0 2px 0 -2px #f85959,
+  box-shadow: 0 2px 0 -2px var(--secondary-color),
     0 8px 0 -4px #39a2db,
     0 12px 10px -3px #39a2db;
   background-color: #1c1c2a;
